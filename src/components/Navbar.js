@@ -26,7 +26,8 @@ const Navbar = ({ layout }) => {
     return (
         <div css={css({
             position:'fixed',
-                width:'100%'
+                width:'100%',
+                top:0
         })}>
 
        

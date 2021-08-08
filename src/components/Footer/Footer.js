@@ -62,7 +62,6 @@ const footerCss = {
 const Footer = ({ }) => {
     return (
         <footer css={css({
-            paddingTop:100,
             display:'grid',
             gridTemplateColumns:'repeat(12, 1fr)',
             columnGap:15,
