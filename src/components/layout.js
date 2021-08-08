@@ -5,14 +5,40 @@
  * See: https://www.gatsbyjs.com/docs/use-static-query/
  */
 
-import * as React from "react"
+import React from "react";
+import { jsx, css } from '@emotion/react';
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Navbar from "./Navbar"
 import Footer from "./Footer/Footer";
 import ContactForm from "./Footer/ContactForm";
+import './layout.css';
 
+// breakpoints for the layouts
+const breakpoints = [576, 768, 992, 1200, 1400]
+const mq = breakpoints.map(
+  bp => `@media (min-width: ${bp}px)`
+)
+
+const layoutCentering = {
+
+  [mq[1]]: {
+    maxWidth: 600,
+  },
+  [mq[2]]: {
+    maxWidth: 800,
+  },
+  [mq[3]]: {
+    maxWidth: 920,
+  },
+  [mq[4]]: {
+    maxWidth: 1200,
+  },
+  margin: `0 auto`,
+  padding: `0 1.0875rem 1.45rem`,
+
+}
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -27,18 +53,19 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <Navbar />
+      <Navbar layout={layoutCentering}/>
       <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
+        css={css(layoutCentering)}
+
       >
-        <main>{children}</main>
+
+        <main>
+          {children}
+        </main>
+        <ContactForm />
+        <Footer />
       </div>
-      <ContactForm />
-      <Footer />
+
     </>
   )
 }
