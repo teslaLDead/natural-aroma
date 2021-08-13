@@ -1,0 +1,19 @@
+@font-face {
+    font-family: "AxiformaRegular";
+    src: url("../../fonts/Axiforma-Regular.woff");
+}
+
+@font-face {
+    font-family: "AxiformaBlack";
+    src: url("../../fonts/Axiforma-Black.woff");
+}
+
+@font-face {
+    font-family: "AxiformaMedium";
+    src: url("../../fonts/Axiforma-Medium.woff");
+}
+
+h1 {
+    font-size: 54px;
+    font-family: "AxiformaBlack"
+}

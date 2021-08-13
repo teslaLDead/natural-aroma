@@ -16,7 +16,7 @@ import ContactForm from "./Footer/ContactForm";
 import './layout.css';
 
 // breakpoints for the layouts
-const breakpoints = [576, 768, 992, 1200, 1400]
+const breakpoints = [576, 768, 992, 1200, 1600]
 const mq = breakpoints.map(
   bp => `@media (min-width: ${bp}px)`
 )
@@ -33,8 +33,10 @@ const layoutCentering = {
     maxWidth: 920,
   },
   [mq[4]]: {
-    maxWidth: 1200,
+    maxWidth: 1500,
   },
+ 
+ 
   margin: `0 auto`,
   padding: `0 1.0875rem 1.45rem`,
 
