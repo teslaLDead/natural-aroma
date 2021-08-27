@@ -10,6 +10,7 @@ const useStyles = makeStyles({
 const CategoryPage = ({ category }) => {
   const classes = useStyles()
   const blogs = []
+  // pagination will also be required here
   return (
     <>
       <Box className={classes.header}>
@@ -18,7 +19,7 @@ const CategoryPage = ({ category }) => {
       <Box>
         <Grid container>
           <Grid item xs={2}>
-            <CategoryNav />
+            <CategoryNav categories={[]}/>
           </Grid>
           <Grid item xs={10}>
             <Grid container>
@@ -32,3 +33,5 @@ const CategoryPage = ({ category }) => {
     </>
   )
 }
+
+export default CategoryPage;

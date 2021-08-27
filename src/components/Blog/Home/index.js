@@ -7,6 +7,7 @@ import { Grid, Box, makeStyles } from "@material-ui/core"
 
 const useStyles = makeStyles({})
 const BlogHome = ({}) => {
+  // connect this to the cms
   const blogs = []
   return (
     <Box>
@@ -35,7 +36,7 @@ const BlogHome = ({}) => {
         <Grid container>
           {/* // todo fix this nav bar while scrolling */}
           <Grid item xs={2}>
-            <CategoryNav />
+            <CategoryNav categories={[]}/>
           </Grid>
           <Grid item xs={10}>
             <Grid container>
@@ -51,3 +52,5 @@ const BlogHome = ({}) => {
     </Box>
   )
 }
+
+export default BlogHome

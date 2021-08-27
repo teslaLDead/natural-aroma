@@ -42,7 +42,7 @@ const layoutCentering = {
 
 }
 
-const Layout = ({ children }) => {
+const Layout = ({ children, removeContactForm }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -64,7 +64,7 @@ const Layout = ({ children }) => {
         <main>
           {children}
         </main>
-        <ContactForm />
+        {!removeContactForm && <ContactForm /> }
         <Footer />
       </div>
 
