@@ -106,7 +106,8 @@ const Navbar = ({ layout }) => {
                         </div>
                     </Link>
                     <div css={css({
-                        position: 'relative'
+                        position: 'relative',
+                       
                     })}>
                         <div id="about-navbar"
                             onMouseLeave={closeAboutNavHover}
@@ -132,7 +133,7 @@ const Navbar = ({ layout }) => {
                                     background: 'white',
                                     marginLeft: '1rem',
                                     padding: '0.8rem 1rem',
-                                    boxShadow: '8px 6px 15px 4px #00000014',
+                                    boxShadow: '0px 15px 25px 2px #00000014',
                                     transition: '200ms ease-out',
                                     '&:hover': {
                                         color: '#56C035'
@@ -180,7 +181,7 @@ const Navbar = ({ layout }) => {
                                     background: 'white',
                                     marginLeft: '1rem',
                                     padding: '0.8rem 1rem',
-                                    boxShadow: '8px 6px 15px 4px #00000014',
+                                    boxShadow: '0px 15px 25px 2px #00000014',
                                     transition: '200ms ease-out',
                                     '&:hover': {
                                         color: '#56C035'

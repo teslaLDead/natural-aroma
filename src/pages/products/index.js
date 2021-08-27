@@ -1,12 +1,12 @@
 import React from "react";
 import Layout from "../../components/layout";
+import ProductsHome from '../../components/Pages/ProductsHome'
 
-const Products = ({}) =>{
+
+const Products = ({ }) => {
     return (
         <Layout>
-        <div>
-            
-        </div>
+            <ProductsHome />
         </Layout>
     )
 }

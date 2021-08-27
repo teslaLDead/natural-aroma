@@ -1,8 +1,19 @@
 import React from "react";
-import { css } from "@emotion/react";
-import ProductSection from "./ProductSection";
+import Header from "common/Header"
 import Typography from "common/Typography";
-import basil from '../../images/basil.jpg';
+import { Grid, Box, makeStyles } from "@material-ui/core";
+import ProductSection from "../../Home/ProductSection";
+import basil from '../../../images/basil.jpg';
+import BlogSuggestions from "../../Blog/BlogSuggestions";
+
+const useStyles = makeStyles({
+    productContainer:{
+       "& > div":{
+           marginTop:0
+       }
+    }
+})
+
 const products = () => {
     return [{
         title: "Essential Oils",
@@ -109,37 +120,28 @@ const products = () => {
 
     }]
 }
-export default function Products() {
-    return (
-        <div css={css({
-            marginTop: 150,
-            marginBottom: 150
-        })}>
-            <div css={css({
-                textAlign: 'center',
-                display: 'flex',
-                alignItems: 'center',
-                flexDirection: "column",
-                marginTop: 100,
-                marginBottom: 150
-            })}>
-                <Typography variant="h2">
-                    PRODUCTS
-                </Typography >
-                <Typography variant="p"
-                    // todo add responsiveness
-                    style={{
-                        maxWidth: '55%'
-                    }}>
-                    We are manufacturing <b>Natural Essential Oils</b>, <b>Aroma Oils </b>, <b>Natural Isolates</b>, and <b>Reconstituted Oils</b> on a large
-                    scale. Our products are exported across the globe and we have firm presence in Europe, Asia, North America, Middle
-                    East etc. and continuing to expand through out world by serving products of International standards.
-                </Typography>
-            </div>
-            <div>
-                {products().map((product, ind) => <ProductSection reversed={ind%2!==0} {...product} />)}
-            </div>
 
-        </div>
+const ProductsHome = ({ }) => {
+    const classes = useStyles()
+    return (
+      <>
+            <Header variant="secondary">
+                <Typography variant="h1">
+                    <Grid container>
+                        <span>Oils and Aroma Products</span>
+                        <span>for Various Uses</span>
+                    </Grid>
+                </Typography>
+            </Header>
+            <Box className={classes.productContainer}>
+                {products().map((product, ind) => <ProductSection reversed={ind % 2 !== 0} {...product} />)}
+            </Box>
+            <Box>
+                {/* // todo connect this to cms */}
+                <BlogSuggestions title="Product blogs" suggestions={[]}/>
+            </Box>
+     </>
     )
 }
+
+export default ProductsHome

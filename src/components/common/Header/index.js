@@ -4,7 +4,7 @@ import Typography from "../Typography";
 
 const Header = ({ variant,children  }) => {
     const style = css({
-        minHeight: variant==="secondary" ?  '80vh' : '100vh',
+        minHeight: variant==="secondary" ?  '70vh' : '100vh',
         display:'grid',
         gridTemplateColumns:'repeat(12, 1fr)',
         h1:{

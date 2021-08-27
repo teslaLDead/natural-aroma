@@ -5,35 +5,45 @@ const typography = {
     h1: {
         fontSize: 54,
         color: 'black',
-        fontFamily:"AxiformaBlack",
-        '& .underline':{
-            position:'relative',
-            "&:after":{
-                left:0,
-                bottom:1,
-                content:'""',
-                position:'absolute',
-                width:'100%',
-                height:8,
-                background:'#56c035'
+        fontFamily: "AxiformaBlack",
+        '& .underline': {
+            position: 'relative',
+            "&:after": {
+                left: 0,
+                bottom: 1,
+                content: '""',
+                position: 'absolute',
+                width: '100%',
+                height: 8,
+                background: '#56c035'
             }
-            
+
         }
     },
     h2: {
         fontSize: 28,
         color: 'black',
-        fontFamily:"AxiformaBlack"
+        fontFamily: "AxiformaBlack"
+    },
+    h3: {
+        fontSize: 24,
+        color: 'black',
+        fontFamily: "AxiformaBlack"
+    },
+    h4: {
+        fontSize: 16,
+        color: 'black',
+        fontFamily: "AxiformaBlack"
     },
     p: {
         fontSize: 14,
         color: 'black',
-        "& b":{
-            fontFamily:"AxiformaBlack"
+        "& b": {
+            fontFamily: "AxiformaBlack"
         }
     },
-   
-    
+
+
 }
 export default function Typography({ variant, style, children }) {
     switch (variant) {
@@ -47,12 +57,25 @@ export default function Typography({ variant, style, children }) {
                 {children}
             </h2>
             break;
+        case "h3":
+            return <h3 css={css(style, typography.h3)}>
+                {children}
+            </h3>
+            break;
+        case "h4":
+            return <h4 css={css(style, typography.h4)}>
+                {children}
+            </h4>
+            break;
         case "p":
             return <p css={css(style, typography.p)}>
                 {children}
             </p>
             break
         default:
+            return <p css={css(style, typography.p)}>
+                {children}
+            </p>
             break;
     }
 }
