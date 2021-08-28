@@ -19,4 +19,19 @@ collections:
     slug: "about" # Filename template, e.g., about.md
     fields: # The fields for each document, usually in front matter
       - {label: "Title", name: "title", widget: "string"}
+      - {label: "para1", name: "para1", widget: "text"}
+      - {label: "para2", name: "para2", widget: "text"}
+      - {label: "para3", name: "para3", widget: "text"}
+      - {label: "para4", name: "para4", widget: "text"}
      
+  - name: "manufacturing" # Used in routes, e.g., /admin/collections/blog
+    label: "Manufacturing" # Used in the UI
+    folder: "content/about" # The path to the folder where the documents are stored
+    create: false # Allow users to create new documents in this collection
+    slug: "manufacturing" # Filename template, e.g., about.md
+    fields: # The fields for each document, usually in front matter
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "para1", name: "para1", widget: "text"}
+      - {label: "para2", name: "para2", widget: "text"}
+      - {label: "para3", name: "para3", widget: "text"}
+      - {label: "para4", name: "para4", widget: "text"}

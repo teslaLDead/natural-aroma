@@ -18,6 +18,8 @@ import medal from '../images/medal.jpg';
 import reliability from '../images/reliability.jpg';
 import Products from "../components/Home/Products";
 import ComapnyStats from "../components/Home/CompanyStats"
+import CompanyQualities from "../components/Home/CompanyQualities";
+import BlogSuggestions from "../components/Blog/BlogSuggestions";
 
 const Header = () => {
   return (
@@ -188,6 +190,8 @@ const IndexPage = () => (
     <ComapnyProfile />
     <Products />
     <ComapnyStats clients="625" products="70"/>
+    <CompanyQualities />
+    <BlogSuggestions suggestions={[]} title="FROM OUR BLOG"/>
   </Layout >
 )
 

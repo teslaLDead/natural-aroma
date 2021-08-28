@@ -30,7 +30,7 @@ const Quality = ({ img, title, content }) => {
     )
 }
 
-const ComapnyQualities = ({ }) => {
+const CompanyQualities = ({ }) => {
     return (
         <Box>
             <Grid container>
@@ -54,4 +54,4 @@ const ComapnyQualities = ({ }) => {
     )
 }
 
-export default ComapnyQualities
+export default CompanyQualities
