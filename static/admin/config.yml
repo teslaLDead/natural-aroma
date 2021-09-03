@@ -23,6 +23,7 @@ collections:
       - {label: "para2", name: "para2", widget: "text"}
       - {label: "para3", name: "para3", widget: "text"}
       - {label: "para4", name: "para4", widget: "text"}
+      - {label: "major_markets", name: "major_markets", widget: "list", create: true, field: {label: "country", name: "market_country", widget: "string"} }
      
   - name: "manufacturing" # Used in routes, e.g., /admin/collections/blog
     label: "Manufacturing" # Used in the UI
