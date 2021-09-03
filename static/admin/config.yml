@@ -48,9 +48,8 @@ collections:
       - {label: "Product5", name: "Product5", widget: "string"}
       - {label: "Product6", name: "Product6", widget: "string"}
 
-  - file: "content/products/categories.md"
-    folder: "content/products"
-    name: "productCatgories"
+  - name: "Product Catgories"
+    folder: "content/products/productCategories"
     label: "ProductCategories"
     fields: 
       - { label: "products", name: "products",widget: "list",create: true, field:  { label: "test", name: "test", widget: "object", fields: [{label: "id", name: "id", widget: "string"},        {label: "name", name: "name", widget: "string"},{label: "description", name: "description", widget: "text"}          ] }}
