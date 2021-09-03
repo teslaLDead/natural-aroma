@@ -43,11 +43,11 @@ collections:
       - { label: "para3", name: "para3", widget: "text" }
       - { label: "para4", name: "para4", widget: "text" }
 
-  - name: "Product Catgories"
+  - name: "Product_Catgories"
     folder: "content/products/productCategories"
     label: "Product Categories"
     create: true
-    slug: "{{name}}-{{id}}"
+    slug: "{{slug}}"
     fields:
       - { label: "name", name: "name", widget: "string", required: true }
       - { label: "id", name: "id", widget: "string", required: true }
@@ -56,7 +56,7 @@ collections:
   - name: "Product"
     folder: "content/productList"
     create: true
-    slug: "{{name}}"
+    slug: "{{slug}}"
     label: "Products"
     fields:
       - { label: name, name: name, widget: string }
