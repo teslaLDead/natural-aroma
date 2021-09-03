@@ -47,7 +47,7 @@ collections:
     folder: "content/products/productCategories"
     label: "Product Categories"
     create: true
-    slug: "{{slug}}"
+    slug: "{{name}}"
     fields:
       - { label: "name", name: "name", widget: "string", required: true }
       - { label: "id", name: "id", widget: "string", required: true }
