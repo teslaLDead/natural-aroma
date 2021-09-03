@@ -1,5 +1,5 @@
 ---
-title: Manufacturing Natural Oils and Aroma Products since 1995 this is a nice test
+title: Manufacturing Natural Oils and Aroma Products since 1995
 para1: Our company was founded in 1995 since then we have pioneered in the
   manufacturing of essential oils, aroma chemicals, and natural isolates. Our
   company products are defined by creative adaptation, strategic enhancement,
