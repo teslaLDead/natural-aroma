@@ -44,7 +44,7 @@ const MajorMarkets = ({ markets }) => {
     )
 }
 
-const AboutPage = ({title, para1, para2, para3, para4}) => {
+const AboutPage = ({title, para1, para2, para3, para4, major_markets}) => {
     return (
         <div>
             <Header variant="secondary">
@@ -98,7 +98,7 @@ const AboutPage = ({title, para1, para2, para3, para4}) => {
                                     Major Markets
                                 </Typography>
                             </Box>
-                            <MajorMarkets markets={['Span', 'Australia']} />
+                            <MajorMarkets markets={major_markets} />
                         </Box>
                         <Box>
                             <Typography>

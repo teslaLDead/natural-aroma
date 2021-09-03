@@ -2,11 +2,11 @@ backend:
   name: git-gateway
   branch: master # Branch to update (optional; defaults to master)
   commit_messages:
-    create: 'Create {{collection}} “{{slug}}”'
-    update: 'Update {{collection}} “{{slug}}”'
-    delete: 'Delete {{collection}} “{{slug}}”'
-    uploadMedia: '[skip ci] Upload “{{path}}”'
-    deleteMedia: '[skip ci] Delete “{{path}}”'
+    create: "Create {{collection}} “{{slug}}”"
+    update: "Update {{collection}} “{{slug}}”"
+    delete: "Delete {{collection}} “{{slug}}”"
+    uploadMedia: "[skip ci] Upload “{{path}}”"
+    deleteMedia: "[skip ci] Delete “{{path}}”"
 
 publish_mode: editorial_workflow
 media_folder: "images"
@@ -18,41 +18,50 @@ collections:
     create: false # Allow users to create new documents in this collection
     slug: "about" # Filename template, e.g., about.md
     fields: # The fields for each document, usually in front matter
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "para1", name: "para1", widget: "text"}
-      - {label: "para2", name: "para2", widget: "text"}
-      - {label: "para3", name: "para3", widget: "text"}
-      - {label: "para4", name: "para4", widget: "text"}
-      - {label: "major_markets", name: "major_markets", widget: "list", create: true, field: {label: "country", name: "market_country", widget: "string"} }
-     
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "para1", name: "para1", widget: "text" }
+      - { label: "para2", name: "para2", widget: "text" }
+      - { label: "para3", name: "para3", widget: "text" }
+      - { label: "para4", name: "para4", widget: "text" }
+      - {
+          label: "major_markets",
+          name: "major_markets",
+          widget: "list",
+          create: true,
+          field: { label: "country", name: "market_country", widget: "string" },
+        }
+
   - name: "manufacturing" # Used in routes, e.g., /admin/collections/blog
     label: "Manufacturing" # Used in the UI
     folder: "content/about/manufacturing" # The path to the folder where the documents are stored
     create: false # Allow users to create new documents in this collection
     slug: "manufacturing" # Filename template, e.g., about.md
     fields: # The fields for each document, usually in front matter
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "para1", name: "para1", widget: "text"}
-      - {label: "para2", name: "para2", widget: "text"}
-      - {label: "para3", name: "para3", widget: "text"}
-      - {label: "para4", name: "para4", widget: "text"}
-  
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "para1", name: "para1", widget: "text" }
+      - { label: "para2", name: "para2", widget: "text" }
+      - { label: "para3", name: "para3", widget: "text" }
+      - { label: "para4", name: "para4", widget: "text" }
 
   - name: "Product Catgories"
     folder: "content/products/productCategories"
     label: "Product Categories"
-    fields: 
-      - { label: "products", name: "products",widget: "list",create: true, field:  { label: "test", name: "test", widget: "object", fields: [{label: "id", name: "id", widget: "string"},        {label: "name", name: "name", widget: "string"},{label: "description", name: "description", widget: "text"}          ] }}
-      
+    create: true
+    slug: "{{name}}-{{id}}"
+    fields:
+      - { label: "name", name: "name", widget: "string", required: true }
+      - { label: "id", name: "id", widget: "string", required: true }
+      - { label: "description", name: "description", widget: "text", required: true }
+
   - name: "Product"
     folder: "content/productList"
     create: true
     slug: "{{name}}"
     label: "Products"
     fields:
-      - {label: name, name: name, widget: string}
-      - {label: Heading, name: heading, widget: string}
-      - {label: Description, name: description, widget: string}
+      - { label: name, name: name, widget: string }
+      - { label: Heading, name: heading, widget: string }
+      - { label: Description, name: description, widget: string }
 
   - name: "Blogs"
     folder: "content/blogs"
@@ -60,20 +69,18 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     label: "Blogs"
     fields:
-      - {label: name, name: name, widget: string}
-      - {label: title, name: title, widget: string}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: Heading, name: heading, widget: string}
-      - {label: Description, name: description, widget: string}
-      - {label: "Body", name: "body", widget: "markdown"}
-      - {label: "Tags", name: "tags", widget: "list"}
+      - { label: name, name: name, widget: string }
+      - { label: title, name: title, widget: string }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: Heading, name: heading, widget: string }
+      - { label: Description, name: description, widget: string }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Tags", name: "tags", widget: "list" }
 
   - name: "Home"
     folder: "content/home"
     label: "Home"
     fields:
-      - {label: heading1, name: heading1, widget: string, required: true}
-      - {label: heading2, name: heading2, widget: string, required: true}
-      - {label: heading3, name: heading3, widget: string, required: true}
-      
-    
+      - { label: heading1, name: heading1, widget: string, required: true }
+      - { label: heading2, name: heading2, widget: string, required: true }
+      - { label: heading3, name: heading3, widget: string, required: true }

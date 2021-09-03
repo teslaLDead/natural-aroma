@@ -152,11 +152,11 @@ const Navbar = ({ layout }) => {
                 },
               })}
             >
-              <Link css={css(navBarLinks)} to="/about-us">
+              <Link css={css(navBarLinks)} to="/about">
                 <div>About Us</div>
               </Link>
 
-              <Link css={css(navBarLinks)} to="/about-us">
+              <Link css={css(navBarLinks)} to="/about/infrastructure">
                 <div>Infrastructure and Manafacturing</div>
               </Link>
             </div>
@@ -269,3 +269,5 @@ const Navbar = ({ layout }) => {
 }
 
 export default Navbar
+
+
