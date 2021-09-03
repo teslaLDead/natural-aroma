@@ -77,6 +77,15 @@ collections:
       - { label: "Body", name: "body", widget: "markdown" }
       - { label: "Tags", name: "tags", widget: "list" }
 
+  - name: "Blog_Categories"
+    folder: "content/blogs/categories"
+    label: "Blog Categories"
+    create: true
+    slug: "{{id}}"
+    fields:
+      - { label: "name", name: "name", widget: "string", required: true }
+      - { label: "id", name: "id", widget: "string", required: true }
+
   - name: "Home"
     folder: "content/home"
     label: "Home"
