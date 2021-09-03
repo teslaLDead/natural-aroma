@@ -54,5 +54,14 @@ collections:
     fields: 
       - { label: "products", name: "products",widget: "list",create: true, field:  { label: "test", name: "test", widget: "object", fields: [{label: "id", name: "id", widget: "string"},        {label: "name", name: "name", widget: "string"},{label: "description", name: "description", widget: "text"}          ] }}
       
-
-  
+  - name: "Product"
+    folder: "content/productList"
+    create: true
+    slug: "{{name}}"
+    label: "Products"
+    fields:
+      - {label: name, name: name, widget: string}
+      - {label: Heading, name: heading, widget: string}
+      - {label: Description, name: description, widget: string}
+      
+    
