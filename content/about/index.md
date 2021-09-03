@@ -27,4 +27,8 @@ majorMarkets:
   - Test1
   - test2
   - test4
+major_markets:
+  - Spain
+  - Australia
+  - Mexico
 ---
