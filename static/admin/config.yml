@@ -9,7 +9,7 @@ backend:
     deleteMedia: "[skip ci] Delete “{{path}}”"
 
 publish_mode: editorial_workflow
-media_folder: "images"
+media_folder: "src/images"
 
 collections:
   - name: "about" # Used in routes, e.g., /admin/collections/blog
@@ -43,7 +43,7 @@ collections:
       - { label: "para3", name: "para3", widget: "text" }
       - { label: "para4", name: "para4", widget: "text" }
 
-  - name: "Product_Catgories"
+  - name: "product_catgories"
     folder: "content/products/productCategories"
     label: "Product Categories"
     create: true
@@ -51,7 +51,12 @@ collections:
     fields:
       - { label: "name", name: "name", widget: "string", required: true }
       - { label: "id", name: "id", widget: "string", required: true }
-      - { label: "description", name: "description", widget: "text", required: true }
+      - {
+          label: "description",
+          name: "description",
+          widget: "text",
+          required: true,
+        }
 
   - name: "Product"
     folder: "content/productList"
@@ -60,8 +65,56 @@ collections:
     label: "Products"
     fields:
       - { label: name, name: name, widget: string }
-      - { label: Heading, name: heading, widget: string }
-      - { label: Description, name: description, widget: string }
+      - { label: title, name: title, widget: string }
+      - {
+          label: details,
+          name: details,
+          widget: list,
+          create: true,
+          field:
+            {
+              label: "detail",
+              name: "detail",
+              widget: object,
+              fields:
+                [
+                  { label: key, name: key, widget: string },
+                  { label: value, name: value, widget: string },
+                ],
+            },
+        }
+      - {
+          label: Description,
+          name: description,
+          widget: markdown,
+          required: true,
+        }
+      - {
+          label: "Manufacturing Details",
+          name: manufacturing_details,
+          widget: list,
+          create: true,
+          field: { label: detail, name: detail, widget: markdown },
+        }
+      - { label: "Show on home", name: showOnHome, widget: boolean }
+      - {
+          label: "Featured Image",
+          name: "thumbnail",
+          widget: image,
+          choose_url: true,
+          default: "/src/images/basil.jpg",
+          media_library: { config: { multiple: false } },
+        }
+      - {
+          label: Category,
+          name: category,
+          widget: "relation",
+          required: true,
+          collection: "product_catgories",
+          value_field: "name",
+          search_fields: ["name"],
+          display_fields: ["name"],
+        }
 
   - name: "Blogs"
     folder: "content/blogs"

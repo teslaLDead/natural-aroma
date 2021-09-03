@@ -6,8 +6,9 @@ import ActionButton from "./common/ActionButton"
 import SearchIcon from "../images/search-logo.png"
 import { useState } from "react"
 import SearchForm from "./Search/SearchForm"
-import {StaticQuery, graphql } from "gatsby";
-import capitalize from "lodash/capitalize"
+import { StaticQuery, graphql, useStaticQuery } from "gatsby"
+import capitalize from "lodash/capitalize";
+import BlogCategories from "./BlogCategories";
 
 const displayFlexCenter = {
   display: "flex",
@@ -61,29 +62,29 @@ const Navbar = ({ layout }) => {
   }
 
   return (
-    <StaticQuery 
-    query={graphql`
-  query productListQuery {
-    allMarkdownRemark(
-      filter: {
-        fileAbsolutePath: { regex: "content/products/productCategories/" }
-      }
-    ) {
-      edges {
-        node {
-          frontmatter {
-            id
-            name
+    <StaticQuery
+      query={graphql`
+        query productListQuery {
+          allMarkdownRemark(
+            filter: {
+              fileAbsolutePath: { regex: "content/products/productCategories/" }
+            }
+          ) {
+            edges {
+              node {
+                frontmatter {
+                  id
+                  name
+                }
+              }
+            }
           }
         }
-      }
-    }
-  }
-`}
-    render={ (data) => {
-      const {
-      allMarkdownRemark: { edges }
-    } = data ;
+      `}
+      render={data => {
+        const {
+          allMarkdownRemark: { edges },
+        } = data
         return (
           <div
             onMouseLeave={handleNavBarMouseLeave}
@@ -181,7 +182,7 @@ const Navbar = ({ layout }) => {
                     <Link css={css(navBarLinks)} to="/about">
                       <div>About Us</div>
                     </Link>
-      
+
                     <Link css={css(navBarLinks)} to="/about/infrastructure">
                       <div>Infrastructure and Manafacturing</div>
                     </Link>
@@ -226,7 +227,7 @@ const Navbar = ({ layout }) => {
                           frontmatter: { id, name },
                         },
                       }) => (
-                        <Link css={css(navBarLinks)} to={"/"+id}>
+                        <Link css={css(navBarLinks)} to={"/" + id}>
                           <div>{capitalize(name)}</div>
                         </Link>
                       )
@@ -252,6 +253,7 @@ const Navbar = ({ layout }) => {
                       </Link>
                     </div>
                     <div>
+                      <BlogCategories navBarLinks={navBarLinks}/>
                       <Link css={css(navBarLinks)} to="/blogs/home">
                         Blogs
                       </Link>
@@ -275,7 +277,9 @@ const Navbar = ({ layout }) => {
                   onClick={handleSearchClick}
                 >
                   <img src={SearchIcon} alt="search website" />
-                  <p css={css({ fontSize: 14, fontWeight: 600, marginLeft: 10 })}>
+                  <p
+                    css={css({ fontSize: 14, fontWeight: 600, marginLeft: 10 })}
+                  >
                     Search
                   </p>
                 </div>
@@ -287,15 +291,9 @@ const Navbar = ({ layout }) => {
             <SearchForm openState={openSearch} closeSearch={closeSearch} />
           </div>
         )
-      }
-    }
+      }}
     />
-    
   )
-  
-  
 }
 
 export default Navbar
-
-
