@@ -1,7 +1,7 @@
 ---
 products:
   - category:
-      id: asdfsadf
-      name: sadfasdf
-      description: sadfasdf
+      id: 123asd
+      name: asd
+      description: sadfasadsdsdfasd
 ---
