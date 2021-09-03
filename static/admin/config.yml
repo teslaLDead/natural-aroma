@@ -36,21 +36,10 @@ collections:
       - {label: "para3", name: "para3", widget: "text"}
       - {label: "para4", name: "para4", widget: "text"}
   
-  - name: "products" # Used in routes, e.g., /admin/collections/blog
-    label: "Products" # Used in the UI
-    folder: "content/products" # The path to the folder where the documents are stored
-    create: false # Allow users to create new documents in this collection
-    slug: "products.md" # Filename template, e.g., about.md
-    fields: # The fields for each document, usually in front matter
-      - {label: "Product1", name: "Product1", widget: "string"}
-      - {label: "Product2", name: "Product2", widget: "string"}
-      - {label: "Product3", name: "Product3", widget: "string"}
-      - {label: "Product5", name: "Product5", widget: "string"}
-      - {label: "Product6", name: "Product6", widget: "string"}
 
   - name: "Product Catgories"
     folder: "content/products/productCategories"
-    label: "ProductCategories"
+    label: "Product Categories"
     fields: 
       - { label: "products", name: "products",widget: "list",create: true, field:  { label: "test", name: "test", widget: "object", fields: [{label: "id", name: "id", widget: "string"},        {label: "name", name: "name", widget: "string"},{label: "description", name: "description", widget: "text"}          ] }}
       
@@ -63,5 +52,27 @@ collections:
       - {label: name, name: name, widget: string}
       - {label: Heading, name: heading, widget: string}
       - {label: Description, name: description, widget: string}
+
+  - name: "Blogs"
+    folder: "content/blogs"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    label: "Blogs"
+    fields:
+      - {label: name, name: name, widget: string}
+      - {label: title, name: title, widget: string}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: Heading, name: heading, widget: string}
+      - {label: Description, name: description, widget: string}
+      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Tags", name: "tags", widget: "list"}
+
+  - name: "Home"
+    folder: "content/home"
+    label: "Home"
+    fields:
+      - {label: heading1, name: heading1, widget: string, required: true}
+      - {label: heading2, name: heading2, widget: string, required: true}
+      - {label: heading3, name: heading3, widget: string, required: true}
       
     
