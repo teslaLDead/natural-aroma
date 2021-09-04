@@ -19,16 +19,70 @@ collections:
     slug: "about" # Filename template, e.g., about.md
     fields: # The fields for each document, usually in front matter
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "para1", name: "para1", widget: "text" }
-      - { label: "para2", name: "para2", widget: "text" }
-      - { label: "para3", name: "para3", widget: "text" }
-      - { label: "para4", name: "para4", widget: "text" }
       - {
-          label: "major_markets",
-          name: "major_markets",
-          widget: "list",
+          label: "About Us Paragraphs",
+          name: aboutUsParagraphs,
+          widget: list,
           create: true,
-          field: { label: "country", name: "market_country", widget: "string" },
+          field: { label: paragraph, name: paragraph, widget: text },
+        }
+      - {
+          label: "Header Images",
+          name: headerImages,
+          widget: list,
+          create: true,
+          field:
+            {
+              label: image,
+              name: image,
+              widget: image,
+              choose_url: true,
+              default: "/src/images/basil.jpg",
+              media_library: { config: { multiple: false } },
+            },
+        }
+      - {
+          label: "Major Markets",
+          name: "majorMarkets",
+          widget: list,
+          create: true,
+          field: { label: "country", name: countryName, widget: "string" },
+        }
+      - {
+          label: "Our Team Paragraphs",
+          name: ourTeamParagraphs,
+          widget: list,
+          create: true,
+          field: { label: paragraph, name: paragraph, widget: text },
+        }
+      - {
+          label: "Team Hero Image",
+          name: teamHeroImage,
+          widget: image,
+          choose_url: true,
+          default: "/src/images/basil.jpg",
+        }
+      - {
+          label: "Team Members",
+          name: teamMembers,
+          widget: list,
+          create: true,
+          field:
+            {
+              label: member,
+              name: member,
+              widget: object,
+              fields:
+                [
+                  { label: "Member Image", name: memberImage, widget: image },
+                  { label: "Member Name", name: memberName, widget: string },
+                  {
+                    label: "Member Designation",
+                    name: memberDesignation,
+                    widget: string,
+                  },
+                ],
+            },
         }
 
   - name: "manufacturing" # Used in routes, e.g., /admin/collections/blog
@@ -139,7 +193,6 @@ collections:
           search_fields: ["name"],
           display_fields: ["name"],
         }
-
 
   - name: "blog_categories"
     folder: "content/blogs/categories"
