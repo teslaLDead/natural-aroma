@@ -230,6 +230,7 @@ collections:
       - {
           label: stats,
           name: stats,
+          summary: "{{fields.stat.statName}}",
           widget: list,
           field:
             {
@@ -246,6 +247,7 @@ collections:
       - {
           label: highlights,
           name: highlights,
+          summary: "{{fields.highlight.title}}",
           widget: list,
           field:
             {
