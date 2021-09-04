@@ -12,6 +12,7 @@ publish_mode: editorial_workflow
 media_folder: "src/images"
 
 collections:
+  # collection 1
   - name: "about" # Used in routes, e.g., /admin/collections/blog
     label: "About" # Used in the UI
     folder: "content/about" # The path to the folder where the documents are stored
@@ -30,6 +31,7 @@ collections:
           label: "Header Images",
           name: headerImages,
           widget: list,
+          summary: "{{fields.image}}",
           create: true,
           field:
             {
@@ -45,6 +47,7 @@ collections:
           label: "Major Markets",
           name: "majorMarkets",
           widget: list,
+          summary: "{{fields.countryName}}",
           create: true,
           field: { label: "country", name: countryName, widget: "string" },
         }
@@ -84,7 +87,7 @@ collections:
                 ],
             },
         }
-
+  # collection 2
   - name: "manufacturing" # Used in routes, e.g., /admin/collections/blog
     label: "Manufacturing" # Used in the UI
     folder: "content/about/manufacturing" # The path to the folder where the documents are stored
@@ -96,8 +99,8 @@ collections:
       - { label: "para2", name: "para2", widget: "text" }
       - { label: "para3", name: "para3", widget: "text" }
       - { label: "para4", name: "para4", widget: "text" }
-
-  - name: "product_catgories"
+  # collection 3
+  - name: "productCatgories"
     folder: "content/products/productCategories"
     label: "Product Categories"
     create: true
@@ -111,7 +114,7 @@ collections:
           widget: "text",
           required: true,
         }
-
+  # collection 4
   - name: "Product"
     folder: "content/productList"
     create: true
@@ -160,53 +163,111 @@ collections:
           media_library: { config: { multiple: false } },
         }
       - {
-          label: Category,
-          name: category,
-          widget: "relation",
-          required: true,
-          collection: "product_catgories",
-          value_field: "name",
-          search_fields: ["name"],
-          display_fields: ["name"],
+          label: "Product Images",
+          name: productImages,
+          widget: list,
+          create: true,
+          field: { label: image, name: image, widget: image },
         }
-
-  - name: "Blogs"
-    folder: "content/blogs/pages"
-    create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    label: "Blog"
-    fields:
-      - { label: name, name: name, widget: string }
-      - { label: title, name: title, widget: string }
-      - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: Heading, name: heading, widget: string }
-      - { label: Description, name: description, widget: string }
-      - { label: "Body", name: "body", widget: "markdown" }
-      - { label: "Tags", name: "tags", widget: "list" }
       - {
           label: Category,
           name: category,
           widget: "relation",
           required: true,
-          collection: "blog_categories",
+          collection: "productCatgories",
           value_field: "name",
           search_fields: ["name"],
           display_fields: ["name"],
         }
-
-  - name: "blog_categories"
+  # collection 5
+  - name: "blog"
+    folder: "content/blogs/pages"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    label: "Blog"
+    fields:
+      - { label: title, name: title, widget: string }
+      - {
+          label: "Hero Image",
+          name: heroImage,
+          widget: image,
+          choose_url: true,
+        }
+      - {
+          label: "Tags",
+          name: "tags",
+          widget: "list",
+          create: true,
+          field: { label: tag, name: tag, widget: string },
+        }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Home", name: showOnHome, widget: boolean, default: false }
+      - {
+          label: Category,
+          name: category,
+          widget: "relation",
+          required: true,
+          collection: "blogCategories",
+          value_field: "name",
+          search_fields: ["name", "id"],
+          display_fields: ["name"],
+        }
+  # collection 6
+  - name: "blogCategories"
     folder: "content/blogs/categories"
     label: "Blog Categories"
     create: true
     slug: "{{id}}"
     fields:
       - { label: "name", name: "name", widget: "string", required: true }
-      - { label: "id", name: "id", widget: "string", required: true }
-
+      - { label: "id", name: "id", widget: "string", required: true } # id will be used to create category page urls
+  # collection 7
   - name: "Home"
     folder: "content/home"
     label: "Home"
     fields:
-      - { label: heading1, name: heading1, widget: string, required: true }
-      - { label: heading2, name: heading2, widget: string, required: true }
-      - { label: heading3, name: heading3, widget: string, required: true }
+      - {
+          label: stats,
+          name: stats,
+          widget: list,
+          field:
+            {
+              label: stat,
+              name: stat,
+              widget: object,
+              fields:
+                [
+                  { label: "Stat Amount", name: statAmount, widget: string },
+                  { label: "Stat Name", name: statName, widget: string },
+                ],
+            },
+        }
+      - {
+          label: highlights,
+          name: highlights,
+          widget: list,
+          field:
+            {
+              label: highlight,
+              name: highlight,
+              widget: object,
+              fields:
+                [
+                  { label: "Title", name: title, widget: string },
+                  { label: "Paragraph", name: paragraph, widget: text },
+                ],
+            },
+        }
+      - {
+          label: blogs,
+          name: blogs,
+          widget: relation,
+          collection: blog,
+          multiple: true,
+          min: 3,
+          max: 3,
+          value_field: "title",
+          search_fields: ["title", "tags", "category.name"],
+          display_fields: ["title", "tags", "category.name"],
+        }
