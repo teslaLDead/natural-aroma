@@ -37,9 +37,9 @@ collections:
             {
               label: image,
               name: image,
-              widget: image,
+              widget: file,
               choose_url: true,
-              default: "/src/images/basil.jpg",
+              # default: "/src/images/basil.jpg",
               media_library: { config: { multiple: false } },
             },
         }
