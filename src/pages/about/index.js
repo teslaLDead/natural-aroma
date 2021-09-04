@@ -27,7 +27,7 @@ export default About
 
 export const aboutPageQuery = graphql`
 query MyQuery {
-    markdownRemark(id: {eq: "4e46a895-bc1d-5ccf-bff2-cbc4e4a01fb1"}) {
+    markdownRemark(fileAbsolutePath: {regex: "/content/about/index.md/"}) {
       id
       frontmatter {
         title
