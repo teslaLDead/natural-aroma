@@ -1,10 +1,11 @@
 ---
 aboutUsParagraphs: []
 headerImages:
+  - /src/images/heroimage1.jpg
+  - /src/images/heroimage3.jpg
+  - /src/images/heroimage4.jpg
   - /src/images/basil.jpg
-  - /src/images/basil.jpg
-  - /src/images/basil.jpg
-  - /src/images/basil.jpg
+  - /src/images/heroimage3.jpg
 ourTeamParagraphs: []
 teamHeroImage: /src/images/about.jpg
 para1: Our company was founded in 1995 since then we have pioneered in the
