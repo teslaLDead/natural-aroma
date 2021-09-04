@@ -12,7 +12,7 @@ publish_mode: editorial_workflow
 media_folder: "src/images"
 
 collections:
-  # collection 1
+  # collection 0
   - name: "about" # Used in routes, e.g., /admin/collections/blog
     label: "About" # Used in the UI
     folder: "content/about" # The path to the folder where the documents are stored
@@ -87,7 +87,7 @@ collections:
                 ],
             },
         }
-  # collection 2
+  # collection 1
   - name: "manufacturing" # Used in routes, e.g., /admin/collections/blog
     label: "Manufacturing" # Used in the UI
     folder: "content/about/manufacturing" # The path to the folder where the documents are stored
@@ -99,7 +99,7 @@ collections:
       - { label: "para2", name: "para2", widget: "text" }
       - { label: "para3", name: "para3", widget: "text" }
       - { label: "para4", name: "para4", widget: "text" }
-  # collection 3
+  # collection 2
   - name: "productCatgories"
     folder: "content/products/productCategories"
     label: "Product Categories"
@@ -114,7 +114,7 @@ collections:
           widget: "text",
           required: true,
         }
-  # collection 4
+  # collection 3
   - name: "Product"
     folder: "content/productList"
     create: true
@@ -179,7 +179,7 @@ collections:
           search_fields: ["name"],
           display_fields: ["name"],
         }
-  # collection 5
+  # collection 4
   - name: "blog"
     folder: "content/blogs/pages"
     create: true
@@ -213,7 +213,7 @@ collections:
           search_fields: ["name", "id"],
           display_fields: ["name"],
         }
-  # collection 6
+  # collection 5
   - name: "blogCategories"
     folder: "content/blogs/categories"
     label: "Blog Categories"
@@ -222,7 +222,7 @@ collections:
     fields:
       - { label: "name", name: "name", widget: "string", required: true }
       - { label: "id", name: "id", widget: "string", required: true } # id will be used to create category page urls
-  # collection 7
+  # collection 6
   - name: "Home"
     folder: "content/home"
     label: "Home"
