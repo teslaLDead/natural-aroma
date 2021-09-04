@@ -24,20 +24,6 @@ module.exports = {
         path: `${__dirname}/content`,
       },
     },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `product`,
-        path: `${__dirname}/content/productList`,
-      },
-    },
-    {
-        resolve: `gatsby-source-filesystem`,
-        options: {
-          name: `product_categories`,
-          path: `${__dirname}/content/products/productCategories`,
-        },
-      },
     `gatsby-transformer-remark`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,

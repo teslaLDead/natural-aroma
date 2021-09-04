@@ -1,5 +1,5 @@
 import React from "react";
-import Typography from "common/Typography";
+import Typography from "../../common/Typography";
 import { Link } from "gatsby";
 import { Box, Grid } from "@material-ui/core";
 
