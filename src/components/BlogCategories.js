@@ -4,7 +4,7 @@ import { jsx, css } from "@emotion/react"
 import { StaticQuery, graphql, useStaticQuery } from "gatsby"
 const BlogCategories = ({navBarLinks}) => {
     const blogs = useStaticQuery(graphql`
-      query MyQuery {
+      query BlogCategories {
         allMarkdownRemark(
           filter: { fileAbsolutePath: { regex: "content/blogs/categories/" } }
         ) {
