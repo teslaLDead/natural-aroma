@@ -1,12 +1,41 @@
 ---
-aboutUsParagraphs: []
+aboutUsParagraphs:
+  - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Arcu dictum varius duis
+    at consectetur. Nulla aliquet enim tortor at auctor. Bibendum arcu vitae
+    elementum curabitur vitae nunc sed velit. Facilisis gravida neque convallis
+    a.
+  - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Feugiat pretium nibh
+    ipsum consequat nisl vel pretium. Velit euismod in pellentesque massa
+    placerat duis ultricies. Quam id leo in vitae turpis massa sed elementum.
+  - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Enim facilisis gravida
+    neque convallis a. Enim ut sem viverra aliquet eget sit amet tellus. Ac
+    felis donec et odio pellentesque diam volutpat commodo.
+  - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Enim facilisis gravida
+    neque convallis a. Enim ut sem viverra aliquet eget sit amet tellus. Ac
+    felis donec et odio pellentesque diam volutpat commodo.
 headerImages:
   - /src/images/heroimage1.jpg
   - /src/images/heroimage3.jpg
   - /src/images/heroimage4.jpg
   - /src/images/basil.jpg
   - /src/images/heroimage3.jpg
-ourTeamParagraphs: []
+ourTeamParagraphs:
+  - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Laoreet id donec
+    ultrices tincidunt arcu non sodales neque sodales. Donec ultrices tincidunt
+    arcu non. Erat pellentesque adipiscing commodo elit at imperdiet dui
+    accumsan. Urna porttitor rhoncus dolor purus. Lectus sit amet est placerat
+    in.
+  - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Laoreet id donec
+    ultrices tincidunt arcu non sodales neque sodales. Donec ultrices tincidunt
+    arcu non. Erat pellentesque adipiscing commodo elit at imperdiet dui
+    accumsan. Urna porttitor rhoncus dolor purus. Lectus sit amet est placerat
+    in.
 teamHeroImage: /src/images/about.jpg
 para1: Our company was founded in 1995 since then we have pioneered in the
   manufacturing of essential oils, aroma chemicals, and natural isolates. Our
@@ -41,4 +70,17 @@ majorMarkets:
   - test2
   - test4
   - India
+teamMembers:
+  - member:
+      memberImage: https://picsum.photos/200/300
+      memberName: Jon Doe
+      memberDesignation: ceo
+  - member:
+      memberImage: https://picsum.photos/200/200
+      memberName: Sanji Mugiwara
+      memberDesignation: Manager
+  - member:
+      memberImage: https://picsum.photos/200/200
+      memberName: Zoro Suke
+      memberDesignation: Associat Manager
 ---
