@@ -72,10 +72,10 @@ const ProductDetails = ({ details }) => {
   const classes = productDetailStyles()
   return (
     <>
-      {details.map(detail => (
+      {details.map(({detail}) => (
         <Box className={classes.detailItem}>
           <Box className={classes.property}>
-            <p>{detail.property}</p>
+            <p>{detail.key}</p>
           </Box>
           <Box className={classes.value}>
             <p>{detail.value}</p>
@@ -88,17 +88,19 @@ const ProductDetails = ({ details }) => {
 
 const ProductPage = ({
   name,
-  images,
+  productImages,
   details,
-  descriptions,
-  manufacturingDetails,
+  description,
+  manufacturing_details,
+  thumbnail
 }) => {
+  console.log(details)
   const classes = useStyles()
   return (
     <Box className={classes.mainContent}>
       <Grid container>
         <Grid item xs={2}>
-          <CategoryNav categories={sampleCategories} />
+          <CategoryNav />
         </Grid>
         <Grid item xs={5}>
           <Box>
@@ -106,7 +108,7 @@ const ProductPage = ({
               <Typography variant="h1">{name}</Typography>
             </Grid>
           </Box>
-          <ImageViewer images={images} />
+          <ImageViewer images={productImages} thumbnail={thumbnail}/>
         </Grid>
         <Grid item xs={5}>
           <Box>
@@ -118,21 +120,22 @@ const ProductPage = ({
           <Box>
             <Typography variant="h4">Description</Typography>
             <Box>
-              {descriptions.map(description => (
-                <Box>
-                  <Typography>{description}</Typography>
-                </Box>
-              ))}
+              {/* {descriptions.map(description => ( */}
+              <Box>
+                <Typography>{description}</Typography>
+              </Box>
+              {/* ))} */}
             </Box>
           </Box>
           <Box>
             <Typography variant="h4">Manufacturing Details</Typography>
             <Box>
-              {manufacturingDetails.map(detail => (
-                <Box>
-                  <Typography>{detail}</Typography>
-                </Box>
-              ))}
+              {manufacturing_details &&
+                manufacturing_details.map(detail => (
+                  <Box>
+                    <Typography>{detail}</Typography>
+                  </Box>
+                ))}
             </Box>
           </Box>
         </Grid>

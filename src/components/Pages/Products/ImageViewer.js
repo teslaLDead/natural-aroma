@@ -15,16 +15,20 @@ const useStyles = makeStyles({
     overflow: "hidden",
   },
 })
-const ImageViewer = ({ images }) => {
+const ImageViewer = ({ images, thumbnail }) => {
   const classes = useStyles()
   const [displayImages, setDisplayImages] = useState([]) // store images in this state to manipulate the one that will be displayed in the header
 
   useEffect(() => {
     // sets ids to image here
+    console.log(images)
     setDisplayImages(
-      images.map((el, index) => {
-        el.id = index
-        return el
+      images.concat(thumbnail).map((el, index) => {
+        return {
+          src: el,
+          id: index,
+          main: index === images.length
+        }
       })
     )
   }, [])

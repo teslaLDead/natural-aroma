@@ -70,12 +70,14 @@ const productTemplate = {
   ],
 }
 
-const ProductPageTemplate = ({pageContext}) => {
-    const {product} = pageContext
-    console.log(product, product.name)
+const ProductPageTemplate = ({ pageContext }) => {
+  const {
+    product: { frontmatter },
+  } = pageContext
+  console.log(pageContext, frontmatter.manufacturing_details ,frontmatter.productImages)
   return (
     <Layout>
-      <ProductPage {...productTemplate} />
+      <ProductPage {...frontmatter} />
     </Layout>
   )
 }

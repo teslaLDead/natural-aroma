@@ -8,6 +8,16 @@ exports.createPages = async function ({ actions, graphql }) {
           id
           frontmatter {
             name
+            description
+            thumbnail
+            details {
+              detail {
+                key
+                value
+              }
+            }
+            manufacturing_details
+            productImages
           }
         }
       }

@@ -3,6 +3,7 @@ const path = require("path")
 module.exports = {
   flags: {
     FAST_DEV: true,
+    PARALLEL_SOURCING: true,
   },
   siteMetadata: {
     title: `Gatsby Default Starter`,
@@ -21,13 +22,46 @@ module.exports = {
       },
     },
     {
+      // keep as first gatsby-source-filesystem plugin for gatsby image support
+      resolve: "gatsby-source-filesystem",
+      options: {
+        path: `${__dirname}/static/img`,
+        name: "uploads",
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `cms`,
         path: `${__dirname}/content`,
       },
     },
-    `gatsby-transformer-remark`,
+    // `gatsby-transformer-remark`,
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: "gatsby-remark-relative-images",
+            options: {
+              name: "uploads",
+            },
+          },
+          {
+            resolve: "gatsby-remark-images",
+            options: {
+              maxWidth: 2048,
+            },
+          },
+          {
+            resolve: "gatsby-remark-copy-linked-files",
+            options: {
+              destinationDir: "static",
+            },
+          },
+        ],
+      },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
