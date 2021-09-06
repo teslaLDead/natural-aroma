@@ -3,6 +3,6 @@ name: basil oil
 title: basil oil
 description: asdtesad
 showOnHome: false
-thumbnail: ./static/src/images/basil.jpg
+thumbnail: /img/basil.jpg
 category: essential oil
 ---

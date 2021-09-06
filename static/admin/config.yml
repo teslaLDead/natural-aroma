@@ -9,7 +9,11 @@ backend:
     deleteMedia: "[skip ci] Delete “{{path}}”"
 
 publish_mode: editorial_workflow
-media_folder: "src/images"
+media_folder: "static/img"
+media_library:
+  name: uploadcare
+  config:
+    publicKey: fe2af5991bdbb8dd5623
 
 collections:
   # collection 0
