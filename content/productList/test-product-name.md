@@ -38,7 +38,7 @@ description: The **Basil Oil** or Natural Essential Oils or Aromatic Essential
   Linalool.The word basil comes from the Greek "basilikon" meaning royal. Basil
   is also called 'Kings' herb.
 showOnHome: true
-thumbnail: https://picsum.photos/600
+thumbnail: https://ucarecdn.com/c6eeaf4d-1198-4d1e-a629-2a6433705223/
 productImages:
   - https://picsum.photos/200
   - https://picsum.photos/200
