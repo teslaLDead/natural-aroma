@@ -4,6 +4,7 @@ module.exports = {
   flags: {
     FAST_DEV: true,
     PARALLEL_SOURCING: true,
+    PARALLEL_QUERY_RUNNING: true
   },
   siteMetadata: {
     title: `Gatsby Default Starter`,
