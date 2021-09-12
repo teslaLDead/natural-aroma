@@ -18,11 +18,12 @@ aboutUsParagraphs:
     neque convallis a. Enim ut sem viverra aliquet eget sit amet tellus. Ac
     felis donec et odio pellentesque diam volutpat commodo.
 headerImages:
-  - /src/images/heroimage1.jpg
-  - /src/images/heroimage3.jpg
-  - /src/images/heroimage4.jpg
-  - /src/images/basil.jpg
-  - /src/images/heroimage3.jpg
+  - https://ucarecdn.com/4678fa4a-a135-402c-82a9-39fd42bf1260/
+  - https://ucarecdn.com/727daa46-8729-40a2-ae62-ad7e051cedb8/
+  - https://ucarecdn.com/8daca9c7-444b-4cb1-9d2a-9b863a454601/
+  - https://ucarecdn.com/44a06369-0332-4735-843c-41c6cba9f5c8/-/crop/398x479/19,0/-/preview/
+  - https://ucarecdn.com/fe115c62-6dfe-4e35-925d-6b0580108754/
+  - https://ucarecdn.com/24afd483-f2c8-4edf-b003-fbce7fcd7408/
 ourTeamParagraphs:
   - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
     tempor incididunt ut labore et dolore magna aliqua. Laoreet id donec
