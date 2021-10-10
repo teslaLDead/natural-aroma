@@ -32,14 +32,11 @@ details:
   - detail:
       key: Usage/Application
       value: Fragrance, Flavour, Pharma
-description: >-
-  <!--StartFragment-->
-
-
-  Owing to our rich experience of this domain, we have been able to offer optimum quality **Clove Bud Oil,** Clove Oil, Natural Essential Oil to our esteemed customers. With the aid of our rich packaging unit, we offer this range with standardized packaging option. Quality of the offered range of clove oil is never compromised and it is maintained at all the times.
-
-
-  <!--EndFragment-->
+description: Owing to our rich experience of this domain, we have been able to
+  offer optimum quality **Clove Bud Oil,** Clove Oil, Natural Essential Oil to
+  our esteemed customers. With the aid of our rich packaging unit, we offer this
+  range with standardized packaging option. Quality of the offered range of
+  clove oil is never compromised and it is maintained at all the times.
 showOnHome: true
 thumbnail: https://ucarecdn.com/bb71573a-4d02-442b-b66f-063e3e99589b/
 productImages:
