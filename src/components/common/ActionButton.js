@@ -17,7 +17,7 @@ const ActionButton = ({ link, title }) => {
                 <p css={css({
                     fontSize: 14,
                     color: 'white',
-                    fontFamily: 'AxiformaBlack'
+                    fontFamily: 'AxiformaMedium'
                 })}>{title}
                 </p>
             </div>

@@ -1,6 +1,7 @@
 // image viewer for a product
 import React, { useState, useEffect } from "react"
 import { Grid, Box, makeStyles } from "@material-ui/core"
+import Fade from "react-reveal/Fade"
 
 const useStyles = makeStyles({
   hero: {
@@ -27,7 +28,7 @@ const ImageViewer = ({ images, thumbnail }) => {
         return {
           src: el,
           id: index,
-          main: index === images.length
+          main: index === images.length,
         }
       })
     )
@@ -45,18 +46,24 @@ const ImageViewer = ({ images, thumbnail }) => {
         .filter(el => el.main)
         .map(el => (
           <Box className={classes.hero}>
-            <img src={el.src} alt={el.name} />
+            <Fade ssrReveal delay={200} duration={1500}>
+              {" "}
+              <img src={el.src} alt={el.name} />
+            </Fade>
           </Box>
         ))}
       <Box className={classes.thumbnailContainer}>
         {displayImages
           .filter(el => !el.main)
-          .map(el => (
+          .map((el, index) => (
             <Box
+              ml={index == 0 || index == displayImages.length - 1 ? 0 : 2}
               onClick={() => makeHeroImage(el.id)}
               className={classes.thumbnail}
             >
-              <img src={el.src} alt={el.name} />
+              <Fade ssrReveal delay={(index + 1) * 100}>
+                <img src={el.src} alt={el.name} />
+              </Fade>
             </Box>
           ))}
       </Box>

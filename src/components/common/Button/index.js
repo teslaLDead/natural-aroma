@@ -19,11 +19,16 @@ const SecondaryButton = ({ link, title }) => {
                     display: 'flex',
                     alignItems: 'center',
                     borderRadius: 8,
-                    borderWidth: 2.5
+                    borderWidth: 2.5,
+                    transition:'0.3s',
+                    color: '#0C0C0C',
+                    "&:hover":{
+                        background:'#56C035',
+                        color:'white'
+                    }
                 })}>
                     <p css={css({
                         fontSize: 14,
-                        color: '#0C0C0C',
                         fontFamily: 'AxiformaRegular',
                         fontWeight: 'bold'
                     })}>

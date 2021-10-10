@@ -7,8 +7,8 @@ import SearchIcon from "../images/search-logo.png"
 import { useState } from "react"
 import SearchForm from "./Search/SearchForm"
 import { StaticQuery, graphql, useStaticQuery } from "gatsby"
-import capitalize from "lodash/capitalize";
-import BlogCategories from "./BlogCategories";
+import capitalize from "lodash/capitalize"
+import BlogCategories from "./BlogCategories"
 
 const displayFlexCenter = {
   display: "flex",
@@ -52,6 +52,7 @@ const Navbar = ({ layout }) => {
   const [productNavBarOpen, setProductNavBarOpen] = useState(false)
   const openProductNavBarHover = () => {
     setProductNavBarOpen(true)
+    setBlogsNarOpen(false)
     closeAboutNavHover()
   }
   const closeProductNavBarHover = () => setProductNavBarOpen(false)
@@ -60,6 +61,12 @@ const Navbar = ({ layout }) => {
     closeProductNavBarHover()
     closeAboutNavHover()
   }
+  const [blogsNavBarOpen, setBlogsNarOpen] = useState(false)
+  const openBlogsNavBarHover = () => {
+    setProductNavBarOpen(false)
+    setBlogsNarOpen(true)
+  }
+  const closeBlogsNavBarHover = () => setBlogsNarOpen(false)
 
   return (
     <StaticQuery
@@ -252,12 +259,61 @@ const Navbar = ({ layout }) => {
                         Products
                       </Link>
                     </div>
-                    <div>
-                      <BlogCategories navBarLinks={navBarLinks}/>
+                    
+                    <div onMouseOver={openBlogsNavBarHover}>
+                      {/* <BlogCategories navBarLinks={navBarLinks}/> */}
                       <Link css={css(navBarLinks)} to="/blogs/home">
                         Blogs
                       </Link>
                     </div>
+                    <div
+                    id="blogs-navbar"
+                    style={{
+                      width:'280px'
+                    }}
+                    onMouseLeave={closeBlogsNavBarHover}
+                    css={css(aboutNavbar, {
+                      minWidth: 230,
+                      display: blogsNavBarOpen ? "block" : "none",
+                      position: "absolute",
+                      top: "calc(100% + 5px)",
+                      left: "15em",
+                      margin: "1rem 0rem",
+                      background: "white",
+                      boxShadow: "8px 6px 15px 4px #00000014",
+                      marginBottom: 150,
+                      marginRight: 20,
+                      transition: "200ms ease-out",
+                      a: {
+                        fontSize: 13,
+                      },
+                      "& div": {
+                        // margin:'1rem 0',
+                        border: "1px solid #f1f3f4",
+                        borderTop: "none",
+                        background: "white",
+                        marginLeft: "1rem",
+                        padding: "0.8rem 1rem",
+                        boxShadow: "0px 15px 25px 2px #00000014",
+                        transition: "200ms ease-out",
+                        "&:hover": {
+                          color: "#56C035",
+                        },
+                      },
+                    })}
+                  >
+                    {edges.map(
+                      ({
+                        node: {
+                          frontmatter: { id, name },
+                        },
+                      }) => (
+                        <Link css={css(navBarLinks)} to={"/blogs/" + id}>
+                          <div>{capitalize(name)}</div>
+                        </Link>
+                      )
+                    )}
+                  </div>
                   </nav>
                 </div>
               </div>

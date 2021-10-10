@@ -3,7 +3,6 @@ import Layout from "../../components/layout"
 import AboutPage from "../../components/Pages/About"
 import { graphql } from "gatsby"
 
-
 const About = ({ data }) => {
   const {
     markdownRemark: {
@@ -11,12 +10,13 @@ const About = ({ data }) => {
         title,
         aboutUsParagraphs,
         majorMarkets,
+        headerImages,
         ourTeamParagraphs,
-        teamMembers
+        teamMembers,
       },
     },
     imageSharp,
-    allImageSharp
+    allImageSharp,
   } = data
   return (
     <Layout>
@@ -26,7 +26,7 @@ const About = ({ data }) => {
         majorMarkets={majorMarkets}
         aboutUsParagraphs={aboutUsParagraphs}
         ourTeamParagraphs={ourTeamParagraphs}
-        headerImages={allImageSharp.edges}
+        headerImages={headerImages}
         teamHeroImage={imageSharp}
       />
     </Layout>
@@ -37,34 +37,27 @@ export default About
 
 export const aboutPageQuery = graphql`
   query MyQuery {
-    imageSharp(fluid: {originalName: {eq: "about.jpg"}}) {
+    imageSharp(fluid: { originalName: { eq: "about.jpg" } }) {
       id
       gatsbyImageData(breakpoints: 1)
       resize(width: 1920) {
         src
       }
     }
-    markdownRemark(fileAbsolutePath: {regex: "/content/about/index.md/"}) {
+    markdownRemark(fileAbsolutePath: { regex: "/content/about/index.md/" }) {
       id
       frontmatter {
         title
         majorMarkets
         aboutUsParagraphs
         ourTeamParagraphs
-        teamMembers{
-					member {
-					  memberImage
-					  memberName
-					  memberDesignation
-					}
-        }
-      }
-    }
- 
-    allImageSharp(filter: {fluid: {originalName: {regex: "/heroimage/"}}}) {
-      edges {
-        node {
-          gatsbyImageData
+        headerImages
+        teamMembers {
+          member {
+            memberImage
+            memberName
+            memberDesignation
+          }
         }
       }
     }

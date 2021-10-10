@@ -2,33 +2,10 @@ import React from "react"
 import Thumbnail from "./Thumbnail"
 import BlogSuggestions from "../../Blog/BlogSuggestions"
 import CategoryNav from "./CategoryNav"
-import { Box, Grid, makeStyles } from "@material-ui/core"
+import { Box, Button, Grid, makeStyles } from "@material-ui/core"
 import Typography from "../../common/Typography"
 import ImageViewer from "./ImageViewer"
-
-const sampleCategories = [
-  {
-    name: "Essential Oils",
-    count: 40,
-    link: "/essential-oils",
-    active: true,
-  },
-  {
-    name: "Essential Oils",
-    count: 40,
-    link: "/essential-oils",
-  },
-  {
-    name: "Essential Oils",
-    count: 40,
-    link: "/essential-oils",
-  },
-  {
-    name: "Essential Oils",
-    count: 40,
-    link: "/essential-oils",
-  },
-]
+import { Helmet } from "react-helmet"
 
 const sampleRelatedProducts = [
   {
@@ -54,17 +31,30 @@ const sampleRelatedProducts = [
 ]
 const useStyles = makeStyles({
   mainContent: {
-    marginTop: 100,
+    marginTop: 120,
   },
 })
 
 const productDetailStyles = makeStyles({
-  detailItem: {},
+  detailItem: {
+    border: "1px solid #F1F1F1",
+    display: "flex",
+    justifyContent: "space-evenly",
+    fontSize: 14,
+  },
   property: {
-    p: {},
+    width: "50%",
+    "& p": {
+      marginLeft: 10,
+      fontWeight: "bold",
+      textTransform: "capitalize",
+    },
   },
   value: {
-    p: {},
+    width: "50%",
+    "& p": {
+      color: "#000000a3",
+    },
   },
 })
 
@@ -72,8 +62,8 @@ const ProductDetails = ({ details }) => {
   const classes = productDetailStyles()
   return (
     <>
-      {details.map(({detail}) => (
-        <Box className={classes.detailItem}>
+      {details.map(({ detail }) => (
+        <Box py={2} className={classes.detailItem}>
           <Box className={classes.property}>
             <p>{detail.key}</p>
           </Box>
@@ -92,37 +82,52 @@ const ProductPage = ({
   details,
   description,
   manufacturing_details,
-  thumbnail
+  thumbnail,
 }) => {
-  console.log(details)
   const classes = useStyles()
   return (
     <Box className={classes.mainContent}>
+      <Helmet>
+        <title>{name.toUpperCase()} | Natural Aroma Products</title>
+      </Helmet>
       <Grid container>
         <Grid item xs={2}>
-          <CategoryNav />
+          <Box mr={1}>
+            <CategoryNav />
+          </Box>
         </Grid>
-        <Grid item xs={5}>
-          <Box>
-            <Grid container align="center">
-              <Typography variant="h1">{name}</Typography>
+        <Grid item xs={4}>
+          <Box my={2}>
+            <Grid container alignItems="center" justifyContent="space-between">
+              <Typography
+                style={{
+                  textTransform: "capitalize",
+                }}
+                variant="h2"
+              >
+                {name}
+              </Typography>
+              <Button >Bulk Enquiry</Button>
             </Grid>
           </Box>
-          <ImageViewer images={productImages} thumbnail={thumbnail}/>
+          <ImageViewer images={productImages} thumbnail={thumbnail} />
         </Grid>
+        <Grid item xs={1} />
         <Grid item xs={5}>
-          <Box>
+          <Box my={2}>
             <Typography variant="h4">Product Details</Typography>
             <Box>
               <ProductDetails details={details} />
             </Box>
           </Box>
-          <Box>
+          <Box my={5}>
             <Typography variant="h4">Description</Typography>
             <Box>
               {/* {descriptions.map(description => ( */}
               <Box>
-                <Typography>{description}</Typography>
+                <Typography style={{ color: "#000000a3" }}>
+                  {description}
+                </Typography>
               </Box>
               {/* ))} */}
             </Box>
@@ -132,8 +137,10 @@ const ProductPage = ({
             <Box>
               {manufacturing_details &&
                 manufacturing_details.map(detail => (
-                  <Box>
-                    <Typography>{detail}</Typography>
+                  <Box my={2}>
+                    <Typography style={{ color: "#000000a3" }}>
+                      {detail}
+                    </Typography>
                   </Box>
                 ))}
             </Box>
@@ -145,7 +152,7 @@ const ProductPage = ({
       </Box>
       <Box>
         <Grid container>
-          {sampleRelatedProducts.map(product => (
+          {sampleRelatedProducts.map((product, index) => (
             <Grid item xs={3}>
               <Thumbnail {...product} />
             </Grid>

@@ -10,16 +10,36 @@ import {
   Typography,
   IconButton,
 } from "@material-ui/core"
+import { Link } from "gatsby"
 import { makeStyles } from "@material-ui/styles"
 
-const useStyles = makeStyles({})
+const useStyles = makeStyles({
+  container: {
+    minWidth: "80%",
+  },
+  suggestionLink: {
+    color: "black",
+    textTransform: "capitalize",
+  },
+  linkContainer: {
+    border: "1px solid #f1f1f2",
+  },
+  lightText: {
+    opacity: 0.36,
+  },
+})
 
 const SearchForm = ({ openState, closeSearch }) => {
   const classes = useStyles()
   const [open, setOpen] = useState(false)
 
   // this suggested items will be changed depending on the search query entered
-  const [suggestedItems, setSuggestedItems] = useState([])
+  const [suggestedItems, setSuggestedItems] = useState([
+    "essential-oils",
+    "aroma-oils",
+    "natural-isolates",
+    "basil-oil",
+  ])
 
   // for search query results
   const [searchResults, setSearchResults] = useState([])
@@ -27,21 +47,25 @@ const SearchForm = ({ openState, closeSearch }) => {
     setOpen(openState)
   }, [openState])
   const handleClose = () => {
-      setOpen(false)
-      closeSearch()
-    }
+    setOpen(false)
+    closeSearch()
+  }
   return (
-    <Dialog open={open} onClose={handleClose}>
+    <Dialog fullWidth={true} maxWidth="lg" open={open} onClose={handleClose}>
       <DialogTitle>
-        <Grid container>
-          <Typography>Search or products range and more</Typography>
-          <Box>
-            <IconButton onClick={handleClose} />
-          </Box>
-        </Grid>
+        <Box mt={2} mb={5} mx={4}>
+          <Grid container>
+            <Typography variant="subtitle2">
+              Search or products range and more
+            </Typography>
+            <Box>
+              <IconButton onClick={handleClose} />
+            </Box>
+          </Grid>
+        </Box>
       </DialogTitle>
       <DialogContent>
-        <Box>
+        <Box className={classes.container} mx={4}>
           <TextField
             label="Search"
             placeholder="Enter Your Search Query"
@@ -49,15 +73,26 @@ const SearchForm = ({ openState, closeSearch }) => {
             variant="outlined"
           />
         </Box>
-        <Box>
-          <Grid container align="center">
+        <Box my={5} mx={4} pb={5}>
+          <Grid container alignItems="center">
             <Box>
-              <p>Suggested Results</p>
+              <Typography className={classes.lightText} variant="h6">
+                Suggested Results
+              </Typography>
             </Box>
             <Box>
               <Grid container>
                 {suggestedItems.map(suggestion => (
-                  <Box>{suggestion}</Box>
+                  <Box mx={2} px={2}  style={{ border: "1px solid #f1f1f2!important" }}>
+                    <Link
+                      to={`/${suggestion}`}
+                      className={classes.suggestionLink}
+                    >
+                      <Typography variant="h6">
+                        {suggestion.split("-").join(" ")}
+                      </Typography>
+                    </Link>
+                  </Box>
                 ))}
               </Grid>
             </Box>

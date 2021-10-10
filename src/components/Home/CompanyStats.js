@@ -1,55 +1,78 @@
-import React from "react";
-import { jsx, css } from "@emotion/react";
+import React, { useState, useEffect } from "react"
+import { jsx, css } from "@emotion/react"
+import Fade from "react-reveal/Fade"
 
 // todo - add animation
 const style = {
-    container: {
-        display: 'grid',
-        gridTemplateColumns: 'repeat(3, 1fr)',
-        marginTop:150,
-        marginBottom:150
-    },
-    stat: {
-        fontFamily: "AxiformaBlack",
-        fontSize: 38
-    },
-    title: {
-        fontFamily: "AxiformaBlack",
-        fontSize: 16
-    },
-    statItem: {
-        justifySelf: 'center'
-    }
+  container: {
+    display: "grid",
+    gridTemplateColumns: "repeat(3, 1fr)",
+    marginTop: 150,
+    marginBottom: 150,
+  },
+  stat: {
+    fontFamily: "AxiformaBlack",
+    fontSize: 38,
+  },
+  title: {
+    fontFamily: "AxiformaBlack",
+    fontSize: 16,
+  },
+  statItem: {
+    justifySelf: "center",
+  },
 }
 
 // todo - connect with the data layer
 export default function ComapnyStats({ clients, products }) {
-    return (
-        <div css={css(style.container)}>
-            <div css={css(style.statItem)}>
-                <p css={css(style.stat)}>
-                    {clients}+
-                </p>
-                <p css={css(style.title)}>
-                    SATISFIED CLIENTS
-                </p>
-            </div>
-            <div css={css(style.statItem)}>
-                <p css={css(style.stat)}>
-                    {products}+
-                </p>
-                <p css={css(style.title)}>
-                    TOTAL PRODUCTS
-                </p>
-            </div>
-            <div css={css(style.statItem)}>
-                <p css={css(style.stat)}>
-                    100%
-                </p>
-                <p css={css(style.title)}>
-                    CUSTOMER SATISFACTION
-                </p>
-            </div>
-        </div>
-    )
+  const [clientsCounter, setClientsCounter] = useState(0)
+  const [productsCounter, setProductsCounter] = useState(0)
+  const [qualityCounter, setQualityCounter] = useState(0)
+  useEffect(() => {
+    if (clientsCounter < clients && clientsCounter > 0)
+      setTimeout(() => {
+        setClientsCounter(clientsCounter + 1)
+      }, 1)
+  }, [clientsCounter])
+  useEffect(() => {
+    if (productsCounter < products && productsCounter > 0)
+      setTimeout(() => {
+        setProductsCounter(productsCounter + 1)
+      }, 20)
+  }, [productsCounter])
+  useEffect(() => {
+    if (qualityCounter < 100 && qualityCounter > 0)
+      setTimeout(() => {
+        setQualityCounter(qualityCounter + 1)
+      }, 10)
+  }, [qualityCounter])
+
+  return (
+    <div css={css(style.container)}>
+      <div css={css(style.statItem)}>
+        <Fade onReveal={() => setClientsCounter(1)} delay={100} duration={2000}>
+          <p css={css(style.stat)}>{clientsCounter}+</p>
+        </Fade>
+        <Fade delay={500} duration={2500}>
+          <p css={css(style.title)}>SATISFIED CLIENTS</p>
+        </Fade>
+      </div>
+      <div css={css(style.statItem)}>
+        <Fade delay={100} duration={2000}>
+          <p css={css(style.stat)}>{productsCounter}+</p>
+        </Fade>
+        <Fade onReveal={() => setProductsCounter(1)} delay={500} duration={2500}>
+          <p css={css(style.title)}>TOTAL PRODUCTS</p>
+        </Fade>
+      </div>
+      <div css={css(style.statItem)}>
+        <Fade onReveal={() => setQualityCounter(1)} delay={100} duration={2000}>
+          <p css={css(style.stat)}>{qualityCounter}%</p>
+        </Fade>
+        <Fade delay={500} duration={2500}>
+          <p css={css(style.title)}>CUSTOMER SATISFACTION</p>
+        </Fade>
+      </div>
+    </div>
+  )
 }

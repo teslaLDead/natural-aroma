@@ -80,5 +80,14 @@ module.exports = {
         common: path.join(__dirname, "src/components/common"),
       },
     },
+    {
+      resolve: `gatsby-plugin-nprogress`,
+      options: {
+        // Setting a color is optional.
+        color: `#56C035`,
+        // Disable the loading spinner.
+        showSpinner: false,
+      },
+    }
   ],
 }

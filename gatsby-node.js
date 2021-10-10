@@ -91,7 +91,7 @@ exports.createPages = async function ({ actions, graphql }) {
   data.blogCategories.nodes.forEach(node => {
     const slug = node.frontmatter.id
     actions.createPage({
-      path: `blogs/${slug}`,
+      path: `/blogs/${slug}`,
       component: require.resolve(
         `./src/components/templates/BlogCategoryPageTemplate.js`
       ),

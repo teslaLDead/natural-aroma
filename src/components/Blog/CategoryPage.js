@@ -5,7 +5,10 @@ import { Box, Grid, makeStyles } from "@material-ui/core"
 import CategoryNav from "../Pages/Products/CategoryNav"
 
 const useStyles = makeStyles({
-  header: {},
+  header: {
+    marginTop:150,
+    textTransform: "capitalize",
+  },
 })
 const CategoryPage = ({ category }) => {
   const classes = useStyles()
@@ -13,8 +16,8 @@ const CategoryPage = ({ category }) => {
   // pagination will also be required here
   return (
     <>
-      <Box className={classes.header}>
-        <Typography variant="h1">{category}</Typography>
+      <Box className={classes.header} my={5} py={5}>
+        <Typography variant="h1">{category.split('-').join(' ')}</Typography>
       </Box>
       <Box>
         <Grid container>
