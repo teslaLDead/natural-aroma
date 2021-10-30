@@ -40,7 +40,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque eget nulla ipsu
 const Quality = ({ img, title, content }) => {
   const classes = useStyles()
   return (
-    <Grid item xs={6} className={classes.qualityItemContainer}>
+    <Grid item xs={12} lg={6} className={classes.qualityItemContainer}>
       <Fade delay={200}>
         <Box py={5} mx={3}>
           <Grid container>
@@ -71,7 +71,7 @@ const CompanyQualities = ({}) => {
   return (
     <Box my={5} py={3}>
       <Grid container className={classes.qualitySectionContainer}>
-        <Grid item xs={6}>
+        <Grid item xs={12} lg={6}>
           <Box className={classes.heroImageContainer}>
             <img
               src="https://ucarecdn.com/9f21e4e0-9353-4165-bb22-4337da58987c/Group43.png"
@@ -97,7 +97,7 @@ const CompanyQualities = ({}) => {
             </Fade>
           </Box>
         </Grid>
-        <Grid item xs={6}>
+        <Grid item xs={12} lg={6}>
           <Grid container className={classes.qualityListContainer}>
             <Quality
               img="https://ucarecdn.com/c42d3056-cbd6-4a7a-be00-eef4ec76e894/badge.png"

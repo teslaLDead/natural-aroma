@@ -3,7 +3,7 @@ import { css } from "@emotion/react"
 import ProductSection from "./ProductSection"
 import Typography from "common/Typography"
 import basil from "../../images/basil.jpg"
-import { Box, Grid} from "@material-ui/core"
+import { Box, Grid } from "@material-ui/core"
 import Fade from "react-reveal/Fade"
 const products = () => {
   return [
@@ -109,7 +109,7 @@ const products = () => {
     },
   ]
 }
-export default function Products() {
+export default function Products({ noDescription }) {
   return (
     <div
       css={css({
@@ -120,7 +120,7 @@ export default function Products() {
       <div
         css={css({
           textAlign: "center",
-          display: "flex",
+          display: noDescription ? 'none' : "flex",
           alignItems: "center",
           justifyContent: "center",
           flexDirection: "column",
@@ -132,10 +132,7 @@ export default function Products() {
           <Typography variant="h2">PRODUCTS</Typography>
         </Fade>
         <Fade delay={600}>
-          <Grid
-            container
-            justifyContent="center"
-          >
+          <Grid container justifyContent="center">
             <Typography
               variant="p"
               style={{

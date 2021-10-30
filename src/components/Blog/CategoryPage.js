@@ -6,7 +6,7 @@ import CategoryNav from "../Pages/Products/CategoryNav"
 
 const useStyles = makeStyles({
   header: {
-    marginTop:150,
+    // marginTop:150,
     textTransform: "capitalize",
   },
 })
@@ -17,7 +17,7 @@ const CategoryPage = ({ category }) => {
   return (
     <>
       <Box className={classes.header} my={5} py={5}>
-        <Typography variant="h1">{category.split('-').join(' ')}</Typography>
+        {/* <Typography variant="h1">{category.split('-').join(' ')}</Typography> */}
       </Box>
       <Box>
         <Grid container>

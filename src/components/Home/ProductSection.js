@@ -8,7 +8,7 @@ import basil from "../../images/basil.jpg"
 import Button from "common/Button"
 import Fade from "react-reveal/Fade"
 
-import { Box } from "@material-ui/core"
+import { Box, Grid, makeStyles } from "@material-ui/core"
 
 const style = {
   grid: {
@@ -68,6 +68,12 @@ const style = {
   },
 }
 
+const useStyles = makeStyles({
+  productCategory: {
+    marginTop: 200,
+    marginBottom: 200,
+  },
+})
 const ProductThumbnail = ({ image, title, link, ind }) => {
   return (
     <Box css={css(style.product)}>
@@ -97,57 +103,38 @@ const ProductSection = ({
   popularProducts,
   reversed,
 }) => {
-  return reversed ? (
-    <Box py={5} css={css(style.grid)}>
-      <Box css={css(style.popularProductsReversed)}>
-        <Box>
-          <Fade ssrReveal>
-            <Typography variant="h4">Popular {title}</Typography>
-          </Fade>
-        </Box>
-        <div className="products">
-          {popularProducts.map((product, ind) => (
-            <ProductThumbnail ind={ind} {...product} />
-          ))}
-        </div>
-      </Box>
-      <div css={css(style.productCategoryReversed)}>
-        <Fade ssrReveal>
-          <Typography variant="h3">{title}</Typography>
-        </Fade>
-        <Fade ssrReveal>
-          <Typography variant="p">{description}</Typography>
-        </Fade>
-        <Box mt={3}>
-          <Button variant="secondary" title={"View " + title} to={link} />
-        </Box>
-      </div>
-    </Box>
-  ) : (
-    <Box css={css(style.grid)}>
-      <div css={css(style.productCategory)}>
-        <Fade ssrReveal>
-          <Typography variant="h3">{title}</Typography>
-        </Fade>
-        <Fade ssrReveal>
-          <Typography variant="p">{description}</Typography>
-        </Fade>
-        <Box mt={3}>
-          <Button variant="secondary" title={"View " + title} to={link} />
-        </Box>
-      </div>
-      <Box css={css(style.popularProducts)}>
-        <Box>
-          <Fade ssrReveal delay={300}>
-            <Typography variant="h4">Popular {title}</Typography>
-          </Fade>
-        </Box>
-        <div className="products">
-          {popularProducts.map((product, ind) => (
-            <ProductThumbnail ind={ind} {...product} />
-          ))}
-        </div>
-      </Box>
+  const classes = useStyles()
+  return (
+    <Box className={classes.productCategory}>
+      <Grid container direction={reversed ? "row-reverse" : "row"}>
+        <Grid item xs={12} lg={6}>
+          <Box>
+            <Fade ssrReveal>
+              <Typography style={{textAlign:'center'}} variant="h4">Popular {title}</Typography>
+            </Fade>
+          </Box>
+          <Grid container>
+            {popularProducts.map((product, ind) => (
+              <Grid item xs={12} lg={4}>
+                <ProductThumbnail ind={ind} {...product} />
+              </Grid>
+            ))}
+          </Grid>
+        </Grid>
+        <Grid item xs={12} lg={6}>
+          <Box mx={5}>
+            <Fade ssrReveal>
+              <Typography variant="h3">{title}</Typography>
+            </Fade>
+            <Fade ssrReveal>
+              <Typography variant="p">{description}</Typography>
+            </Fade>
+            <Box mt={3}>
+              <Button variant="secondary" title={"View " + title} to={link} />
+            </Box>
+          </Box>
+        </Grid>
+      </Grid>
     </Box>
   )
 }

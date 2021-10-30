@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react"
 import { jsx, css } from "@emotion/react"
 import Fade from "react-reveal/Fade"
+import { Grid, makeStyles } from "@material-ui/core"
 
 // todo - add animation
 const style = {
@@ -23,8 +24,20 @@ const style = {
   },
 }
 
+const useStyles = makeStyles({
+  stats: {
+    marginTop: 100,
+    marginBottom: 100,
+    ['@media (max-width:600px)'] : {
+      marginTop: 50,
+    marginBottom: 50,
+    }
+  },
+})
+
 // todo - connect with the data layer
 export default function ComapnyStats({ clients, products }) {
+  const classes = useStyles()
   const [clientsCounter, setClientsCounter] = useState(0)
   const [productsCounter, setProductsCounter] = useState(0)
   const [qualityCounter, setQualityCounter] = useState(0)
@@ -48,31 +61,62 @@ export default function ComapnyStats({ clients, products }) {
   }, [qualityCounter])
 
   return (
-    <div css={css(style.container)}>
-      <div css={css(style.statItem)}>
+    <Grid container justifyContent="space-evenly">
+      <Grid
+        item
+        xs={12}
+        lg={3}
+        container
+        justifyContent="center"
+        alignItems="center"
+        direction="column"
+        className={classes.stats}
+      >
         <Fade onReveal={() => setClientsCounter(1)} delay={100} duration={2000}>
           <p css={css(style.stat)}>{clientsCounter}+</p>
         </Fade>
         <Fade delay={500} duration={2500}>
           <p css={css(style.title)}>SATISFIED CLIENTS</p>
         </Fade>
-      </div>
-      <div css={css(style.statItem)}>
+      </Grid>
+      <Grid
+        item
+        xs={12}
+        lg={3}
+        container
+        justifyContent="center"
+        alignItems="center"
+        direction="column"
+        className={classes.stats}
+      >
         <Fade delay={100} duration={2000}>
           <p css={css(style.stat)}>{productsCounter}+</p>
         </Fade>
-        <Fade onReveal={() => setProductsCounter(1)} delay={500} duration={2500}>
+        <Fade
+          onReveal={() => setProductsCounter(1)}
+          delay={500}
+          duration={2500}
+        >
           <p css={css(style.title)}>TOTAL PRODUCTS</p>
         </Fade>
-      </div>
-      <div css={css(style.statItem)}>
+      </Grid>
+      <Grid
+        item
+        xs={12}
+        lg={3}
+        container
+        justifyContent="center"
+        alignItems="center"
+        direction="column"
+        className={classes.stats}
+      >
         <Fade onReveal={() => setQualityCounter(1)} delay={100} duration={2000}>
           <p css={css(style.stat)}>{qualityCounter}%</p>
         </Fade>
         <Fade delay={500} duration={2500}>
           <p css={css(style.title)}>CUSTOMER SATISFACTION</p>
         </Fade>
-      </div>
-    </div>
+      </Grid>
+    </Grid>
   )
 }

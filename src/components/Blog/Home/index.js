@@ -9,38 +9,42 @@ import { Helmet } from "react-helmet"
 const useStyles = makeStyles({
   quote: {
     position: "absolute",
-    right: 0,
+    left: "70%",
+  },
+  quoteText: {
+    fontSize: 14,
+    fontWeight: "bold",
   },
 })
-const BlogHome = ({}) => {
+const BlogHome = ({ blogs }) => {
   const classes = useStyles()
   // connect this to the cms
-  const blogs = []
   return (
-    <Box>
+    <Box mb={5} pb={5}>
       <Helmet>
         <title>Blogs | Essential Oils, Natural Aroma</title>
       </Helmet>
       <Header variant="secondary">
         Sharing our Knowledge About Oils and Aroma
+        <Box className={classes.quote}>
+          <Box>
+            <img src="" alt="" />{" "}
+            {/* for the double quote - this can be an image or test */}
+          </Box>
+          <Box>
+            <Typography className={classes.quoteText} variant="subtitle1">
+              Nothing in life is to be feared, it is only to be understood.
+            </Typography>
+            <Typography className={classes.quoteText} variant="subtitle1">
+              Now is the time to understand more, so that we may fear less.
+            </Typography>
+          </Box>
+          <Box>
+            <p className={classes.quoteText}>- Marie Curie</p>
+          </Box>
+        </Box>
       </Header>
-      <Box className={classes.quote}>
-        <Box>
-          <img src="" alt="" />{" "}
-          {/* for the double quote - this can be an image or test */}
-        </Box>
-        <Box>
-          <Typography variant="subtitle1">
-            Nothing in life is to be feared, it is only to be understood.
-          </Typography>
-          <Typography variant="subtitle1">
-            Now is the time to understand more, so that we may fear less.
-          </Typography>
-        </Box>
-        <Box>
-          <p>- Marie Curie</p>
-        </Box>
-      </Box>
+
       <Box>
         {/* // todo implement pagination  */}
         <Grid container>

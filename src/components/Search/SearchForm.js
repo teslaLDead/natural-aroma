@@ -55,8 +55,8 @@ const SearchForm = ({ openState, closeSearch }) => {
       <DialogTitle>
         <Box mt={2} mb={5} mx={4}>
           <Grid container>
-            <Typography variant="subtitle2">
-              Search or products range and more
+            <Typography variant="subtitle1">
+              Search our products range and more.
             </Typography>
             <Box>
               <IconButton onClick={handleClose} />

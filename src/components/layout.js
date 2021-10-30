@@ -41,6 +41,10 @@ const layoutCentering = {
 const theme = createTheme({
   typography: {
     fontFamily: "AxiformaRegular!important",
+    h1: {
+      fontFamily: "AxiformaBlack!important",
+      fontSize: "3rem",
+    },
   },
   palette: {
     primary: green,
@@ -56,15 +60,32 @@ const theme = createTheme({
         minHeight: "50px!important",
         fontFamily: "AxiformaBlack!important",
         border: "2px solid #56C035!important",
-        color: "#000000d4!important",
+        color: "#000000d4",
         borderRadius: "5px!important",
         minWidth: "150px!important",
         textTransform: "capitalize!important",
         fontSize: "14px!important",
-        transition:'0.4s',
+        transition: "0.4s",
         "&:hover": {
-          color: "white!important",
-          background: "#56C035!important",
+          color: "white",
+          background: "#56C035",
+        },
+      },
+      contained: {
+        color: "white",
+        background: "#56C035",
+        backgroundColor: "#56C035",
+        "&:hover": {
+          color: "#56C035",
+          backgroundColor: "white",
+        },
+      },
+      outlined: {
+        color: "black",
+        backgroundColor: "white",
+        "&:hover": {
+          color: "black",
+          backgroundColor: "#f1f2f3",
         },
       },
     },
@@ -80,6 +101,34 @@ const theme = createTheme({
       },
       subtitle2: {
         fontFamily: "AxiformaBlack!important",
+      },
+      h1: {
+        fontSize: "3.3rem",
+        ["@media (max-width: 720px)"]: {
+          fontSize: "2.5rem",
+        },
+      },
+      h2: {
+        fontFamily: "AxiformaBlack!important",
+        fontSize: "2.3rem",
+        ["@media (max-width: 720px)"]: {
+          fontSize: "1.7rem",
+        },
+      },
+      h3:{
+        fontSize:'1.65rem',
+        fontFamily: "AxiformaBlack!important",
+        ["@media (max-width: 720px)"]: {
+          fontSize: "1.55rem",
+        },
+        
+      },
+      body1:{
+        fontSize:'0.85rem'
+      },
+      p: {
+        fontFamily: "AxiformaRegular!important",
+        fontSize:'0.8rem'
       },
     },
   },

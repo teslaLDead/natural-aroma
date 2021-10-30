@@ -1,9 +1,8 @@
 import React from "react"
 import { jsx, css } from "@emotion/react"
-// import Header from "common/Header";
-import Typography from "../../common/Typography"
-import Header from "../../common/Header"
-import { Box, Grid } from "@material-ui/core"
+import Header from "common/Header"
+// import Typography from "../../common/Typography"
+import { Box, Grid, Typography, makeStyles } from "@material-ui/core"
 import { Link } from "gatsby"
 import TeamSection from "./TeamSection"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
@@ -29,18 +28,24 @@ const Industries = [
 
 const IndustriesSection = ({ industries }) => {
   return (
-    <Box style={{width:'100%'}} my={5} py={3}>
-      <Box style={{textAlign:'left'}} mb={3}>
+    <Box style={{ width: "100%" }} my={5} py={3}>
+      <Box style={{ textAlign: "left" }} mb={3}>
         <Typography variant="h3">Industries We Serve</Typography>
       </Box>
-      <Box style={{display:'flex'}}>
+      <Box style={{ display: "flex" }}>
         {industries.map(industry => (
           <Box mr={5} pr={3}>
             <Box>
-              <img style={{maxWidth:40}} src={industry.src} alt={industry.name} />
+              <img
+                style={{ maxWidth: 40 }}
+                src={industry.src}
+                alt={industry.name}
+              />
             </Box>
             <Box>
-              <Typography><b>{industry.name}</b></Typography>
+              <Typography>
+                <b>{industry.name}</b>
+              </Typography>
             </Box>
           </Box>
         ))}
@@ -70,6 +75,12 @@ const MajorMarkets = ({ markets }) => {
   )
 }
 
+const useStyles = makeStyles({
+  header: {
+    minHeight: "70vh",
+  },
+})
+
 const AboutPage = ({
   title,
   teamMembers,
@@ -80,15 +91,18 @@ const AboutPage = ({
   teamHeroImage,
 }) => {
   const teamImage = getImage(teamHeroImage)
+  const classes = useStyles()
   return (
     <div>
       <Header variant="secondary">
-        <Typography variant="h1">{title}</Typography>
+        <Grid item xl={6} xs={12}>
+          <Typography variant="h1">{title}</Typography>
+        </Grid>
       </Header>
 
       <Box my={5}>
         <Grid container>
-          <Grid item xs={5}>
+          <Grid item lg={5} xs={12}>
             {/* into section  */}
             <Box mb={1}>
               {/* intro heading */}
@@ -133,7 +147,7 @@ const AboutPage = ({
               ))}
             </Box>
           </Grid>
-          <Grid item xs={7}>
+          <Grid item lg={7} xs={12}>
             {/* // * image grid */}
             {/* // TODO add image source */}
             <Box

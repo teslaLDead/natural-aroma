@@ -7,10 +7,10 @@ module.exports = {
     PARALLEL_QUERY_RUNNING: true
   },
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
-    siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
+    title: `Natural Aroma Products`,
+    description: `Manufacturing best quality natural aroma products like essential oils, aroma oils, natural isolates for various uses and industries.`,
+    author: `@paritosh`,
+    siteUrl: `https://naturalaroma.co`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

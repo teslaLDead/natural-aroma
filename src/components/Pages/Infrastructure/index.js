@@ -1,19 +1,17 @@
 import React from "react"
 import Header from "common/Header"
-import Typography from "common/Typography"
-import { Grid, Box } from "@material-ui/core"
+import { Grid, Box, Typography } from "@material-ui/core"
 import Facilities from "./Facilities"
 
 const Infrastructure = () => {
   return (
     <div>
       <Header variant="secondary">
-        <Typography variant="h1">
-          <Grid container>
-            <span>World Class Facilities</span>
-            <span>for Manufacturing & Exporting</span>
-          </Grid>
-        </Typography>
+        <Grid item xs={12} lg={6}>
+          <Typography variant="h1">
+          World Class Facilities for Manufacturing & Exporting
+          </Typography>
+        </Grid>
       </Header>
       <Box>
         <Grid container>
@@ -148,7 +146,7 @@ const Infrastructure = () => {
       <Box style={{ marginTop: 100 }}>
         <Typography variant="h3">Manufacturing Facilities</Typography>
         <Box style={{ display: "flex", overflow: "hidden" }}>
-          {Array.apply(null, Array(6)).map( (src, index) => (
+          {Array.apply(null, Array(6)).map((src, index) => (
             <Box m={1} style={{ minWidth: 300, maxWidth: 300 }}>
               <img src={`https://picsum.photos/id/12${index}/600`} />
             </Box>

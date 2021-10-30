@@ -2,6 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import { jsx, css } from "@emotion/react"
 import logo from "../images/Logo6 (1).png"
+import menu from "../images/menu.png"
 import ActionButton from "./common/ActionButton"
 import SearchIcon from "../images/search-logo.png"
 import { useState } from "react"
@@ -9,6 +10,7 @@ import SearchForm from "./Search/SearchForm"
 import { StaticQuery, graphql, useStaticQuery } from "gatsby"
 import capitalize from "lodash/capitalize"
 import BlogCategories from "./BlogCategories"
+import { Box, Button, Grid, makeStyles } from "@material-ui/core"
 
 const displayFlexCenter = {
   display: "flex",
@@ -20,6 +22,11 @@ const navBarLinks = {
   fontWeight: 600,
   fontSize: 14,
   color: "#0C0C0C",
+  ['@media (max-width: 720px)']:{
+    fontSize:18,
+    marginTop:20,
+    marginBottom: 20
+  }
 }
 
 const aboutNavbar = {
@@ -29,7 +36,41 @@ const aboutNavbar = {
 
 const breakpoints = [576, 768, 992, 1200, 1400]
 const mq = breakpoints.map(bp => `@media (min-width: ${bp}px)`)
+
+const useStyles = makeStyles({
+  mobileMenu: {
+    display: "none",
+    margin: "0 20px",
+    width: 25,
+    ["@media (max-width: 720px)"]: {
+      display: "block",
+    },
+  },
+  navigationMenus: {
+    ["@media (max-width: 720px)"]: {
+      display: "none",
+    },
+    display: "block",
+  },
+  contactButton: {
+    display: "none",
+  },
+
+  mobileNavContainers: {
+    position: "fixed",
+    width: "100%",
+    height: "100%",
+    top: "80px",
+    zIndex: "1000",
+    background: "white",
+    textAlign: "center",
+  },
+  mobileLinks: {
+    fontSize: 16,
+  },
+})
 const Navbar = ({ layout }) => {
+  const classes = useStyles()
   const [scrollY, setScrollY] = useState(0)
 
   // for search functionality
@@ -68,11 +109,17 @@ const Navbar = ({ layout }) => {
   }
   const closeBlogsNavBarHover = () => setBlogsNarOpen(false)
 
+  const [mobileNavBarOpen, setMobileNavBarOpen] = useState(false)
+  const toggleMobileNarBarOpen = () => setMobileNavBarOpen(!mobileNavBarOpen)
+
+  const [mobileNavAbout, setMobileNavAbout] = useState(false);
+  const [mobileNavProducts, setMobileNavProducts] = useState(false);
+  const [mobileNavBlogs, setMobileNavBlogs] = useState(false);
   return (
     <StaticQuery
       query={graphql`
         query productListQuery {
-          allMarkdownRemark(
+          products: allMarkdownRemark(
             filter: {
               fileAbsolutePath: { regex: "content/products/productCategories/" }
             }
@@ -86,12 +133,22 @@ const Navbar = ({ layout }) => {
               }
             }
           }
+          blogs: allMarkdownRemark(
+            filter: { fileAbsolutePath: { regex: "content/blogs/categories/" } }
+          ) {
+            edges {
+              node {
+                frontmatter {
+                  id
+                  name
+                }
+              }
+            }
+          }
         }
       `}
       render={data => {
-        const {
-          allMarkdownRemark: { edges },
-        } = data
+        const { products, blogs } = data
         return (
           <div
             onMouseLeave={handleNavBarMouseLeave}
@@ -119,6 +176,12 @@ const Navbar = ({ layout }) => {
               })}
             >
               <div css={css(displayFlexCenter)}>
+                <img
+                  onClick={toggleMobileNarBarOpen}
+                  className={classes.mobileMenu}
+                  src={menu}
+                  alt="site menu"
+                />
                 <Link to="/">
                   <div
                     css={css({
@@ -126,13 +189,21 @@ const Navbar = ({ layout }) => {
                     })}
                   >
                     <img src={logo} />
-                    <div css={css({ marginLeft: 5, color: "#0C0C0C" })}>
+                    <div
+                      css={css({
+                        marginLeft: 5,
+                        color: "#0C0C0C",
+                      })}
+                    >
                       <p
                         css={css({
                           fontFamily: "AxiformaBlack",
                           fontSize: 18,
                           marginTop: 8,
                           marginBottom: -12,
+                          ["@media (max-width: 720px)"]: {
+                            marginTop: 0,
+                          },
                         })}
                       >
                         NAP
@@ -148,7 +219,84 @@ const Navbar = ({ layout }) => {
                     </div>
                   </div>
                 </Link>
+                {/* mobile nav bar */}
                 <div
+                  style={{ display: mobileNavBarOpen ? "block" : "none" }}
+                  className={classes.mobileNavContainers}
+                >
+                  <Grid container direction="column">
+                    <Grid item xs={12}>
+                      {/* main link for about */}
+                      <Box my={5}>
+                        <Link
+                          css={css(navBarLinks)}
+                          to="/about"
+                        >
+                          About
+                        </Link>
+                      </Box>
+                      <Box style={{display: mobileNavAbout ? 'block' : 'none'}}>
+                        <Link css={css(navBarLinks)} to="/about">
+                          <div>About Us</div>
+                        </Link>
+                        <Link css={css(navBarLinks)} to="/about/infrastructure">
+                          <div>Infrastructure and Manafacturing</div>
+                        </Link>
+                      </Box>
+                    </Grid>
+                    <Grid item xs={12}>
+                      {/* main link for products */}
+                      <Box my={5}>
+                        <Link css={css(navBarLinks)} to="/products">
+                          Products
+                        </Link>
+                      </Box>
+                      <Box style={{display: mobileNavProducts ? 'block' : 'none'}}>
+                        {products.edges.map(
+                          ({
+                            node: {
+                              frontmatter: { id, name },
+                            },
+                          }) => (
+                            <Link css={css(navBarLinks)} to={"/" + id}>
+                              <div>{capitalize(name)}</div>
+                            </Link>
+                          )
+                        )}
+                      </Box>
+                    </Grid>
+                    <Grid item xs={12}>
+                      {/* main link for products */}
+                      <Box my={5}>
+                        <Link css={css(navBarLinks)} to="/blogs/home">
+                          Blogs
+                        </Link>
+                      </Box>
+                      <Box style={{display: mobileNavBlogs ? 'block' : 'none'}}>
+                        {blogs.edges.map(
+                          ({
+                            node: {
+                              frontmatter: { id, name },
+                            },
+                          }) => (
+                            <Link css={css(navBarLinks)} to={"/blogs/" + id}>
+                              <div>{capitalize(name)}</div>
+                            </Link>
+                          )
+                        )}
+                      </Box>
+                    </Grid>
+                  </Grid>
+                  <Grid item xs={12}>
+                    <Link to="/contact-us">
+                      <Button disableElevation variant="contained">
+                        Contact Us
+                      </Button>
+                    </Link>
+                  </Grid>
+                </div>
+                <div
+                  className={classes.navigationMenus}
                   css={css({
                     position: "relative",
                   })}
@@ -228,7 +376,7 @@ const Navbar = ({ layout }) => {
                       },
                     })}
                   >
-                    {edges.map(
+                    {products.edges.map(
                       ({
                         node: {
                           frontmatter: { id, name },
@@ -259,7 +407,7 @@ const Navbar = ({ layout }) => {
                         Products
                       </Link>
                     </div>
-                    
+
                     <div onMouseOver={openBlogsNavBarHover}>
                       {/* <BlogCategories navBarLinks={navBarLinks}/> */}
                       <Link css={css(navBarLinks)} to="/blogs/home">
@@ -267,53 +415,53 @@ const Navbar = ({ layout }) => {
                       </Link>
                     </div>
                     <div
-                    id="blogs-navbar"
-                    style={{
-                      width:'280px'
-                    }}
-                    onMouseLeave={closeBlogsNavBarHover}
-                    css={css(aboutNavbar, {
-                      minWidth: 230,
-                      display: blogsNavBarOpen ? "block" : "none",
-                      position: "absolute",
-                      top: "calc(100% + 5px)",
-                      left: "15em",
-                      margin: "1rem 0rem",
-                      background: "white",
-                      boxShadow: "8px 6px 15px 4px #00000014",
-                      marginBottom: 150,
-                      marginRight: 20,
-                      transition: "200ms ease-out",
-                      a: {
-                        fontSize: 13,
-                      },
-                      "& div": {
-                        // margin:'1rem 0',
-                        border: "1px solid #f1f3f4",
-                        borderTop: "none",
+                      id="blogs-navbar"
+                      style={{
+                        width: "280px",
+                      }}
+                      onMouseLeave={closeBlogsNavBarHover}
+                      css={css(aboutNavbar, {
+                        minWidth: 230,
+                        display: blogsNavBarOpen ? "block" : "none",
+                        position: "absolute",
+                        top: "calc(100% + 5px)",
+                        left: "15em",
+                        margin: "1rem 0rem",
                         background: "white",
-                        marginLeft: "1rem",
-                        padding: "0.8rem 1rem",
-                        boxShadow: "0px 15px 25px 2px #00000014",
+                        boxShadow: "8px 6px 15px 4px #00000014",
+                        marginBottom: 150,
+                        marginRight: 20,
                         transition: "200ms ease-out",
-                        "&:hover": {
-                          color: "#56C035",
+                        a: {
+                          fontSize: 13,
                         },
-                      },
-                    })}
-                  >
-                    {edges.map(
-                      ({
-                        node: {
-                          frontmatter: { id, name },
+                        "& div": {
+                          // margin:'1rem 0',
+                          border: "1px solid #f1f3f4",
+                          borderTop: "none",
+                          background: "white",
+                          marginLeft: "1rem",
+                          padding: "0.8rem 1rem",
+                          boxShadow: "0px 15px 25px 2px #00000014",
+                          transition: "200ms ease-out",
+                          "&:hover": {
+                            color: "#56C035",
+                          },
                         },
-                      }) => (
-                        <Link css={css(navBarLinks)} to={"/blogs/" + id}>
-                          <div>{capitalize(name)}</div>
-                        </Link>
-                      )
-                    )}
-                  </div>
+                      })}
+                    >
+                      {blogs.edges.map(
+                        ({
+                          node: {
+                            frontmatter: { id, name },
+                          },
+                        }) => (
+                          <Link css={css(navBarLinks)} to={"/blogs/" + id}>
+                            <div>{capitalize(name)}</div>
+                          </Link>
+                        )
+                      )}
+                    </div>
                   </nav>
                 </div>
               </div>
@@ -339,8 +487,12 @@ const Navbar = ({ layout }) => {
                     Search
                   </p>
                 </div>
-                <div>
-                  <ActionButton link="/contact-us" title="Contact Us" />
+                <div className={classes.contactButton}>
+                  <Link to="/contact-us">
+                    <Button disableElevation variant="contained">
+                      Contact Us
+                    </Button>
+                  </Link>
                 </div>
               </div>
             </div>
