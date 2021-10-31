@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { Grid, TextField, Box, Button, makeStyles } from "@material-ui/core"
 import Typography from "common/Typography"
 import { Helmet } from "react-helmet"
@@ -88,6 +88,11 @@ const useStyles = makeStyles({
 
 const ContactPage = ({}) => {
   const classes = useStyles()
+  const [name, setName] = useState("")
+  const [email, setEmail] = useState("")
+  const [phone, setPhone] = useState("")
+  const [message, setMessage] = useState("")
+  const handleSubmit = e => {}
   return (
     <Box className={classes.mainContainer}>
       <Helmet>
@@ -100,49 +105,67 @@ const ContactPage = ({}) => {
               <Typography variant="h1">Contact Us</Typography>
               <Typography>Reach out to us for any inquiry</Typography>
             </Box>
-            <Box>
-              <Box my={3}>
-                <TextField
-                  className={classes.textField}
-                  variant="outlined"
-                  label="Full Name"
-                  required
-                  fullWidth
-                />
-              </Box>
-              <Box my={3}>
-                <TextField
-                  className={classes.textField}
-                  variant="outlined"
-                  label="Email"
-                  required
-                  fullWidth
-                />
-              </Box>
-              <Box my={3}>
-                <TextField
-                  className={classes.textField}
-                  variant="outlined"
-                  label="Mobile No."
-                  required
-                  fullWidth
-                />
-              </Box>
-              <Box my={3}>
-                <TextField
-                  className={classes.textField}
-                  variant="outlined"
-                  label="Message"
-                  multiline
-                  rows="5"
-                  required
-                  fullWidth
-                />
-              </Box>
+            <form name="contact" method="POST" data-netlify="true">
               <Box>
-                <Button className={classes.submitBtn}>Submit</Button>
+                <Box my={3}>
+                  <TextField
+                    value={name}
+                    name="name"
+                    type="text"
+                    onChange={e => setName(e.target.value)}
+                    className={classes.textField}
+                    variant="outlined"
+                    label="Full Name"
+                    required
+                    fullWidth
+                  />
+                </Box>
+                <Box my={3}>
+                  <TextField
+                    value={email}
+                    name="email"
+                    type="email"
+                    onChange={e => setEmail(e.target.value)}
+                    className={classes.textField}
+                    variant="outlined"
+                    label="Email"
+                    required
+                    fullWidth
+                  />
+                </Box>
+                <Box my={3}>
+                  <TextField
+                    value={phone}
+                    name="phone"
+                    type="text"
+                    onChange={e => setPhone(e.target.value)}
+                    className={classes.textField}
+                    variant="outlined"
+                    label="Mobile No."
+                    required
+                    fullWidth
+                  />
+                </Box>
+                <Box my={3}>
+                  <TextField
+                    value={message}
+                    name="message"
+                    type="text"
+                    onChange={e => setMessage(e.target.value)}
+                    className={classes.textField}
+                    variant="outlined"
+                    label="Message"
+                    multiline
+                    rows="5"
+                    required
+                    fullWidth
+                  />
+                </Box>
+                <Box>
+                  <Button type="submit" className={classes.submitBtn}>Submit</Button>
+                </Box>
               </Box>
-            </Box>
+            </form>
           </Grid>
           <Grid item lg={6} xs={12}>
             <Box mx={2} className={classes.mapContainer}>
