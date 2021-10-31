@@ -25,24 +25,32 @@ const BlogHome = ({ blogs }) => {
         <title>Blogs | Essential Oils, Natural Aroma</title>
       </Helmet>
       <Header variant="secondary">
-        Sharing our Knowledge About Oils and Aroma
-        <Box className={classes.quote}>
-          <Box>
-            <img src="" alt="" />{" "}
-            {/* for the double quote - this can be an image or test */}
-          </Box>
-          <Box>
-            <Typography className={classes.quoteText} variant="subtitle1">
-              Nothing in life is to be feared, it is only to be understood.
+        <Grid container>
+          <Grid item xs={6}>
+            <Typography variant="h1">
+              Sharing our Knowledge About Oils and Aroma
             </Typography>
-            <Typography className={classes.quoteText} variant="subtitle1">
-              Now is the time to understand more, so that we may fear less.
-            </Typography>
+          </Grid>
+        </Grid>
+        <Grid item={6}>
+          <Box className={classes.quote}>
+            <Box>
+              <img src="" alt="" />{" "}
+              {/* for the double quote - this can be an image or test */}
+            </Box>
+            <Box>
+              <Typography className={classes.quoteText} variant="subtitle1">
+                Nothing in life is to be feared, it is only to be understood.
+              </Typography>
+              <Typography className={classes.quoteText} variant="subtitle1">
+                Now is the time to understand more, so that we may fear less.
+              </Typography>
+            </Box>
+            <Box>
+              <p className={classes.quoteText}>- Marie Curie</p>
+            </Box>
           </Box>
-          <Box>
-            <p className={classes.quoteText}>- Marie Curie</p>
-          </Box>
-        </Box>
+        </Grid>
       </Header>
 
       <Box>

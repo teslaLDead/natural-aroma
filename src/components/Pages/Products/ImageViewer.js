@@ -7,10 +7,17 @@ const useStyles = makeStyles({
   hero: {
     width: "100%",
   },
+  heroImage:{
+    transform: 'scale(1)',
+    "& :hover":{
+      transform: 'scale(1.1)'
+    }
+  },
   thumbnailContainer: {
     display: "flex",
   },
   thumbnail: {
+    cursor:'pointer',
     maxWidth: 120,
     maxHeight: 120,
     overflow: "hidden",
@@ -48,7 +55,7 @@ const ImageViewer = ({ images, thumbnail }) => {
           <Box className={classes.hero}>
             <Fade ssrReveal delay={200} duration={1500}>
               {" "}
-              <img src={el.src} alt={el.name} />
+              <img className={classes.heroImage} src={el.src} alt={el.name} />
             </Fade>
           </Box>
         ))}

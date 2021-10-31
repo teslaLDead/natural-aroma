@@ -2,6 +2,7 @@ import React from "react"
 import { Grid, TextField, Box, Button, makeStyles } from "@material-ui/core"
 import Typography from "common/Typography"
 import { Helmet } from "react-helmet"
+import { Parallax } from "react-scroll-parallax"
 
 const useStyles = makeStyles({
   mainContainer: {
@@ -14,24 +15,30 @@ const useStyles = makeStyles({
   contactInfoContainer: {
     display: "flex",
     alignItems: "center",
+    ["@media (max-width: 680px)"]: {
+      justifyContent: "center",
+    },
   },
   secondAddress: {
     borderLeft: "0.5px solid red",
   },
-  mapContainer:{
-    position:'relative'
+  mapContainer: {
+    position: "relative",
   },
   mapStyleElement: {
-    top:-50,
-    right:-50,
-    zIndex:-1,
+    top: -50,
+    right: -50,
+    zIndex: -1,
     position: "absolute",
-    width: '50%',
-    height: '80%',
+    width: "50%",
+    height: "80%",
     background: "#40D068",
   },
-  map:{
-    marginTop:70
+  map: {
+    // marginTop: 70,
+    ["@media (max-width: 680px)"]: {
+      marginTop: 100,
+    },
   },
   submitBtn: {
     width: "100%",
@@ -88,7 +95,7 @@ const ContactPage = ({}) => {
       </Helmet>
       <Box className={classes.container}>
         <Grid container>
-          <Grid item xs={6}>
+          <Grid item lg={6} xs={12}>
             <Box mb={2}>
               <Typography variant="h1">Contact Us</Typography>
               <Typography>Reach out to us for any inquiry</Typography>
@@ -137,20 +144,22 @@ const ContactPage = ({}) => {
               </Box>
             </Box>
           </Grid>
-          <Grid item xs={6}>
+          <Grid item lg={6} xs={12}>
             <Box mx={2} className={classes.mapContainer}>
               <Box className={classes.mapStyleElement} />
               <Box className={classes.map}>
-                <img src="https://ucarecdn.com/c491b051-3c2b-4e7e-900b-1218cb10b9ad/googlemaps.png" />
+                <Parallax y={[-20, 20]}>
+                  <img src="https://ucarecdn.com/c491b051-3c2b-4e7e-900b-1218cb10b9ad/googlemaps.png" />
+                </Parallax>
               </Box>
             </Box>
           </Grid>
         </Grid>
       </Box>
       <Box>
-        <Grid container>
+        <Grid container spacing={2}>
           {/* the child components of these grid will require max width property */}
-          <Grid item xs={4}>
+          <Grid item xs={12} lg={4}>
             <Box className={classes.contactInfoContainer}>
               <Box>
                 <img
@@ -163,7 +172,7 @@ const ContactPage = ({}) => {
               </Box>
             </Box>
           </Grid>
-          <Grid item xs={4}>
+          <Grid item xs={12} lg={4}>
             <Box className={classes.contactInfoContainer}>
               <Box>
                 <img
@@ -176,7 +185,7 @@ const ContactPage = ({}) => {
               </Box>
             </Box>
           </Grid>
-          <Grid item xs={4}>
+          <Grid item xs={12} lg={4}>
             <Box className={classes.contactInfoContainer}>
               <Box>
                 <img

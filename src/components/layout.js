@@ -15,6 +15,7 @@ import Footer from "./Footer/Footer"
 import ContactForm from "./Footer/ContactForm"
 import "./layout.css"
 import { green } from "@material-ui/core/colors"
+import { ParallaxProvider } from "react-scroll-parallax"
 
 // breakpoints for the layouts
 const breakpoints = [576, 768, 992, 1200, 1600]
@@ -92,6 +93,41 @@ const theme = createTheme({
     body: {
       fontFamily: "AxiformaRegular!important",
     },
+    MuiFormLabel: {
+      root: {
+        fontSize: 14,
+        fontWeight: "bold",
+        fontFamily: "AxiformaBlack!important",
+      },
+    },
+    MuiMenuItem:{
+      root:{
+        fontSize: 14
+      }
+    },
+    MuiInputBase: {
+      root: {
+        fontSize: 14,
+        borderRadius: "0px",
+        fieldset: {
+          borderColor: "#ADF1F3",
+          color: "#5E5C5C",
+          fontSize: 15,
+        },
+        "&:hover fieldset": {
+          borderColor: "#ADF1F3",
+          color: "#5E5C5C",
+          fontSize: 15,
+          fontWeight: "bold",
+        },
+        "&.Mui-focused fieldset": {
+          borderColor: "#40D068",
+        },
+        "& label.Mui-focused": {
+          color: "#40D068",
+        },
+      },
+    },
     MuiTypography: {
       root: {
         fontFamily: "AxiformaRegular!important",
@@ -115,20 +151,40 @@ const theme = createTheme({
           fontSize: "1.7rem",
         },
       },
-      h3:{
-        fontSize:'1.65rem',
+      h3: {
+        fontSize: "1.55rem",
         fontFamily: "AxiformaBlack!important",
         ["@media (max-width: 720px)"]: {
           fontSize: "1.55rem",
         },
-        
       },
-      body1:{
-        fontSize:'0.85rem'
+      h4: {
+        fontSize: "1rem",
+        fontFamily: "AxiformaBlack!important",
+      },
+      body1: {
+        fontSize: "0.85rem",
+        lineHeight: "1.6rem",
+        color: "#010009d1",
+        "& b": {
+          color: "black",
+        },
+      },
+      body2: {
+        fontSize: "0.8rem",
+        lineHeight: "1.6rem",
+        color: "#020719bf",
+        "& b": {
+          color: "black",
+        },
       },
       p: {
         fontFamily: "AxiformaRegular!important",
-        fontSize:'0.8rem'
+        fontSize: "0.8rem",
+      },
+      subtitle2: {
+        fontSize: "0.8rem",
+        fontWeight: 500,
       },
     },
   },
@@ -147,14 +203,16 @@ const Layout = ({ children, removeContactForm }) => {
 
   return (
     <>
-      <ThemeProvider theme={theme}>
-        <Navbar layout={layoutCentering} />
-        <div css={css(layoutCentering)}>
-          <main>{children}</main>
-          {!removeContactForm && <ContactForm />}
-          <Footer />
-        </div>
-      </ThemeProvider>
+      <ParallaxProvider>
+        <ThemeProvider theme={theme}>
+          <Navbar layout={layoutCentering} />
+          <div css={css(layoutCentering)}>
+            <main>{children}</main>
+            {!removeContactForm && <ContactForm />}
+            <Footer />
+          </div>
+        </ThemeProvider>
+      </ParallaxProvider>
     </>
   )
 }

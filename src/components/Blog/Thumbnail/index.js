@@ -1,37 +1,31 @@
 import React from "react"
-import { Box, Grid } from "@material-ui/core"
-import Button from "common/Button"
-import Typography from "common/Typography"
+import { Box, Grid, Typography, Button } from "@material-ui/core"
+// import Button from "common/Button"
+// import Typography from "common/Typography"
 import PropTypes from "prop-types"
+import { Link } from "gatsby"
 const BlogThumbnail = ({ image, title, content, link }) => {
   return (
-    <Box>
+    <Box                         
+      style={{
+        border: "1px solid #e3e1e3",
+      }}
+    >
       <Grid container>
-        <img src={image} alt="title" style={{height: '100%'}}/>
+        <img src={image} alt="title" style={{ height: "100%" }} />
       </Grid>
-      <Box
-        pt={1}
-        pb={2}
-        px={2}
-        style={{
-          background: "#f3f3f3",
-        }}
-      >
+      <Box pt={1} pb={2} px={2}>
         <Box py={1}>
-          <Typography
-            style={{
-              fontSize: 18,
-              fontFamily: "AxiformaMedium",
-              fontWeight: "bold",
-            }}
-          >
+          <Typography style={{ textTransform: "capitalize" }} variant="h4">
             {title}
           </Typography>
         </Box>
-        <Typography style={{opacity: 0.6}}>{content}</Typography>
+        <Typography variant="subtitle2" style={{ opacity: 0.6 }}>{content}</Typography>
         <Box my={1}>
           <Grid container justify="center">
-            <Button variant="secondary" link={link} title="Read More" />
+            <Link to={link}>
+              <Button variant="outlined">Read More</Button>
+            </Link>
           </Grid>
         </Box>
       </Box>

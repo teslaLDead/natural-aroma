@@ -1,8 +1,9 @@
 import React from "react"
 import { makeStyles } from "@material-ui/core"
-import { Box, Grid } from "@material-ui/core"
-import Typography from "common/Typography"
+import { Box, Grid, Typography } from "@material-ui/core"
+// import Typography from "common/Typography"
 import Fade from "react-reveal/Fade"
+import { Parallax } from "react-scroll-parallax"
 
 const useStyles = makeStyles({
   img: {
@@ -10,8 +11,28 @@ const useStyles = makeStyles({
   },
   heroImageContainer: {
     position: "absolute",
-    left: 0,
+    left: -150,
+    ["@media (max-width:680px)"]: {
+      position: "relative",
+      left: 0
+    },
   },
+  heroImageText: {
+    color: "white",
+    fontSize: 36,
+    fontFamily: "AxiformaBlack",
+    fontWeight: "bold",
+    left: "10%",
+    top: "calc(50% - 20px)",
+    transform: "translateY(320px)",
+    ['@media (max-width: 680px)']:{
+      transform: 'translateY(-160px)',
+      textAlign:'center',
+      fontSize: 26
+    }
+    // position: "absolute",
+  },
+
   // todo - make this responsive
   qualitySectionContainer: {
     minHeight: 700,
@@ -19,6 +40,9 @@ const useStyles = makeStyles({
   heroImageHeadingContainer: {
     position: "relative",
     height: "100%",
+  },
+  qualityHeader:{
+    fontSize: '1.35rem'
   },
   heroImageHeading: {
     // top: "calc(50% - 20px)",
@@ -42,7 +66,7 @@ const Quality = ({ img, title, content }) => {
   return (
     <Grid item xs={12} lg={6} className={classes.qualityItemContainer}>
       <Fade delay={200}>
-        <Box py={5} mx={3}>
+        <Box py={5} mx={2}>
           <Grid container>
             <Grid xs={3}>
               <Box mx={1}>
@@ -53,10 +77,12 @@ const Quality = ({ img, title, content }) => {
             </Grid>
             <Grid xs={9}>
               <Fade delay={400}>
-                <Typography variant="h3">{title}</Typography>
+                <Box my={2}>
+                  <Typography variant="h4" className={classes.qualityHeader}>{title}</Typography>
+                </Box>
               </Fade>
               <Fade delay={600} duration={1500}>
-                <Typography variant="p">{content}</Typography>
+                <Typography>{content}</Typography>
               </Fade>
             </Grid>
           </Grid>
@@ -71,7 +97,7 @@ const CompanyQualities = ({}) => {
   return (
     <Box my={5} py={3}>
       <Grid container className={classes.qualitySectionContainer}>
-        <Grid item xs={12} lg={6}>
+        <Grid item xs={12} lg={5}>
           <Box className={classes.heroImageContainer}>
             <img
               src="https://ucarecdn.com/9f21e4e0-9353-4165-bb22-4337da58987c/Group43.png"
@@ -80,24 +106,14 @@ const CompanyQualities = ({}) => {
           </Box>
           <Box className={classes.heroImageHeadingContainer}>
             <Fade delay={200} duration={2500}>
-              <Typography
-                style={{
-                  color: "white",
-                  fontSize: 36,
-                  fontFamily: "AxiformaBlack",
-                  fontWeight: "bold",
-                  left: "10%",
-                  top: "calc(50% - 20px)",
-                  transform: "translateY(320px)",
-                  // position: "absolute",
-                }}
-              >
+              <Typography className={classes.heroImageText}>
                 WHY CHOOSE US
               </Typography>
             </Fade>
           </Box>
         </Grid>
-        <Grid item xs={12} lg={6}>
+
+        <Grid item xs={12} lg={7}>
           <Grid container className={classes.qualityListContainer}>
             <Quality
               img="https://ucarecdn.com/c42d3056-cbd6-4a7a-be00-eef4ec76e894/badge.png"

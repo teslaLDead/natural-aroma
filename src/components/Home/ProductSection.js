@@ -1,14 +1,12 @@
 import React from "react"
 import { jsx, css } from "@emotion/react"
-import SecondaryButton from "common/SecondaryButton"
 import { Link } from "gatsby"
-import Typography from "../common/Typography"
-// import {Typography} from "@material-ui/core";
 import basil from "../../images/basil.jpg"
 import Button from "common/Button"
 import Fade from "react-reveal/Fade"
+import { Parallax } from "react-scroll-parallax"
 
-import { Box, Grid, makeStyles } from "@material-ui/core"
+import { Box, Grid, makeStyles, Typography } from "@material-ui/core"
 
 const style = {
   grid: {
@@ -57,7 +55,12 @@ const style = {
     borderRadius: 200,
     justifyContent: "center",
     border: "4px solid #40D068",
+    transition: "transform 1s",
     alignItems: "stretch",
+    transform: "scale(1)",
+    "& :hover": {
+      transform: "scale(1.1)",
+    },
   },
   productThumbnail: {
     display: "flex",
@@ -84,7 +87,7 @@ const ProductThumbnail = ({ image, title, link, ind }) => {
               <img src={basil} alt={title} />
             </Box>
           </Fade>
-          <Typography variant="p">
+          <Typography>
             <Fade delay={(ind + 1) * 200} ssrReveal>
               {" "}
               <b>{title}</b>
@@ -104,35 +107,47 @@ const ProductSection = ({
   reversed,
 }) => {
   const classes = useStyles()
+  // const isMobile = window.screen.width < 600
   return (
     <Box className={classes.productCategory}>
-      <Grid container direction={reversed ? "row-reverse" : "row"}>
+      <Grid container direction={reversed ? "row-reverse" : "row"} spacing={5}>
         <Grid item xs={12} lg={6}>
-          <Box>
-            <Fade ssrReveal>
-              <Typography style={{textAlign:'center'}} variant="h4">Popular {title}</Typography>
-            </Fade>
-          </Box>
-          <Grid container>
-            {popularProducts.map((product, ind) => (
-              <Grid item xs={12} lg={4}>
-                <ProductThumbnail ind={ind} {...product} />
-              </Grid>
-            ))}
-          </Grid>
-        </Grid>
-        <Grid item xs={12} lg={6}>
-          <Box mx={5}>
-            <Fade ssrReveal>
-              <Typography variant="h3">{title}</Typography>
-            </Fade>
-            <Fade ssrReveal>
-              <Typography variant="p">{description}</Typography>
-            </Fade>
-            <Box mt={3}>
-              <Button variant="secondary" title={"View " + title} to={link} />
+          <Parallax y={[-20, 20]} disabled={false}>
+            <Box>
+              <Fade ssrReveal>
+                <Box my={2}>
+                  <Typography style={{ textAlign: "center" }} variant="h4">
+                    Popular {title}
+                  </Typography>
+                </Box>
+              </Fade>
             </Box>
-          </Box>
+            <Grid container>
+              {popularProducts.map((product, ind) => (
+                <Grid item xs={12} lg={4}>
+                  <ProductThumbnail ind={ind} {...product} />
+                </Grid>
+              ))}
+            </Grid>
+          </Parallax>
+        </Grid>
+
+        <Grid item xs={12} lg={6}>
+          <Parallax y={[-20, 50]} disabled={false}>
+            <Box mx={5}>
+              <Fade ssrReveal>
+                <Typography variant="h3">{title}</Typography>
+              </Fade>
+              <Fade ssrReveal>
+                <Box my={1}>
+                  <Typography>{description}</Typography>
+                </Box>
+              </Fade>
+              <Box mt={3}>
+                <Button variant="secondary" title={"View " + title} to={link} />
+              </Box>
+            </Box>
+          </Parallax>
         </Grid>
       </Grid>
     </Box>

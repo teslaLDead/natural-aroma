@@ -1,11 +1,13 @@
-import React from "react"
+import React, { useState } from "react"
 import Thumbnail from "./Thumbnail"
 import BlogSuggestions from "../../Blog/BlogSuggestions"
 import CategoryNav from "./CategoryNav"
-import { Box, Button, Grid, makeStyles } from "@material-ui/core"
-import Typography from "../../common/Typography"
+import { Box, Button, Grid, makeStyles, Typography } from "@material-ui/core"
+// import Typography from "../../common/Typography
 import ImageViewer from "./ImageViewer"
 import { Helmet } from "react-helmet"
+import { Fade } from "react-reveal"
+import BulkInquiryForm from "./BulkInquiryForm"
 
 const sampleRelatedProducts = [
   {
@@ -84,36 +86,50 @@ const ProductPage = ({
   manufacturing_details,
   thumbnail,
 }) => {
+  const [enquiryFormOpen, setEnquiryFormOpen] = useState(false)
+  const closeEnquiryForm = () => setEnquiryFormOpen(false)
+  const openEnquiryForm = () => setEnquiryFormOpen(true)
   const classes = useStyles()
   return (
     <Box className={classes.mainContent}>
+      <BulkInquiryForm
+        product={name.toUpperCase()}
+        open={enquiryFormOpen}
+        handleClose={closeEnquiryForm}
+      />
       <Helmet>
         <title>{name.toUpperCase()} | Natural Aroma Products</title>
       </Helmet>
-      <Grid container>
-        <Grid item xs={2}>
+      <Grid container spacing={2}>
+        <Grid item xs={12} lg={2}>
           <Box mr={1}>
             <CategoryNav />
           </Box>
         </Grid>
-        <Grid item xs={4}>
+        <Grid item lg={4} xs={12}>
           <Box my={2}>
             <Grid container alignItems="center" justifyContent="space-between">
-              <Typography
-                style={{
-                  textTransform: "capitalize",
-                }}
-                variant="h2"
-              >
-                {name}
-              </Typography>
-              <Button >Bulk Enquiry</Button>
+              <Fade ssrReveal delay={200}>
+                <Typography
+                  style={{
+                    textTransform: "capitalize",
+                  }}
+                  variant="h2"
+                >
+                  {name}
+                </Typography>
+              </Fade>
+              <Fade ssrReveal delay={400}>
+                <Button variant="outlined" onClick={openEnquiryForm}>Bulk Enquiry</Button>
+              </Fade>
             </Grid>
           </Box>
-          <ImageViewer images={productImages} thumbnail={thumbnail} />
+          <Fade ssrReveal delay={600}>
+            <ImageViewer images={productImages} thumbnail={thumbnail} />
+          </Fade>
         </Grid>
-        <Grid item xs={1} />
-        <Grid item xs={5}>
+        <Grid item lg={1} />
+        <Grid item lg={5} xs={12}>
           <Box my={2}>
             <Typography variant="h4">Product Details</Typography>
             <Box>
@@ -121,13 +137,13 @@ const ProductPage = ({
             </Box>
           </Box>
           <Box my={5}>
-            <Typography variant="h4">Description</Typography>
+            <Fade ssrReveal delay={600}>
+              <Typography variant="h4">Description</Typography>
+            </Fade>
             <Box>
               {/* {descriptions.map(description => ( */}
               <Box>
-                <Typography style={{ color: "#000000a3" }}>
-                  {description}
-                </Typography>
+                <Typography variant="body2">{description}</Typography>
               </Box>
               {/* ))} */}
             </Box>
@@ -138,9 +154,7 @@ const ProductPage = ({
               {manufacturing_details &&
                 manufacturing_details.map(detail => (
                   <Box my={2}>
-                    <Typography style={{ color: "#000000a3" }}>
-                      {detail}
-                    </Typography>
+                    <Typography variant="body2">{detail}</Typography>
                   </Box>
                 ))}
             </Box>
@@ -151,16 +165,16 @@ const ProductPage = ({
         <Typography variant="h3">Related Products</Typography>
       </Box>
       <Box>
-        <Grid container>
+        <Grid container spacing={2}>
           {sampleRelatedProducts.map((product, index) => (
-            <Grid item xs={3}>
+            <Grid item xs={12} lg={3}>
               <Thumbnail {...product} />
             </Grid>
           ))}
         </Grid>
       </Box>
       <Box>
-        <BlogSuggestions title="Related blogs" suggestions={[]} />
+        {/* <BlogSuggestions title="Related blogs" suggestions={[]} /> */}
       </Box>
     </Box>
   )
