@@ -7,8 +7,8 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 import { Box } from "@mui/material"
 import Fade from "react-reveal/Fade"
-import { Button, Grid,  Typography } from "@mui/material"
-import {makeStyles} from "@mui/styles" 
+import { Button, Grid, Typography } from "@mui/material"
+import { makeStyles } from "@mui/styles"
 import HeroImage1 from "../images/heroimage1.jpg"
 import HeroImage2 from "../images/heroimage2.jpg"
 import HeroImage3 from "../images/heroimage3.jpg"
@@ -22,31 +22,28 @@ import ComapnyStats from "../components/Home/CompanyStats"
 import CompanyQualities from "../components/Home/CompanyQualities"
 import BlogSuggestions from "../components/Blog/BlogSuggestions"
 import { Parallax } from "react-scroll-parallax"
-const useStyles = makeStyles({
-  header: {
-    minHeight: "100vh",
-    ["@media (max-width:720px)"]: {
-      marginTop: 80,
-    },
+const header = css({
+  minHeight: "100vh",
+  ["@media (max-width:720px)"]: {
+    marginTop: 80,
   },
-  heroImageBackground: {
-    position: "absolute",
-    width: 500,
-    height: 380,
-    top: 200,
-    left: "40%",
-    background: "#5ee733",
-    zIndex: -1,
-    ["@media (max-width: 700px)"]: {
-      display: "none",
-    },
+})
+const heroImageBackground = css({
+  position: "absolute",
+  width: 500,
+  height: 380,
+  top: 200,
+  left: "40%",
+  background: "#5ee733",
+  zIndex: -1,
+  ["@media (max-width: 700px)"]: {
+    display: "none",
   },
 })
 
 const Header = () => {
-  const classes = useStyles()
   return (
-    <Grid className={classes.header} container alignItems="center" spacing={5}>
+    <Grid css={header} container alignItems="center" spacing={5}>
       {/* for Grid text */}
       <Grid item xs={12} lg={6}>
         <Fade
