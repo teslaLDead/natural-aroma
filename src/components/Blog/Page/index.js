@@ -1,6 +1,7 @@
 import React from "react"
 import { Helmet } from "react-helmet"
-import { Box, Grid, Typography, Button, makeStyles } from "@material-ui/core"
+import { Box, Grid, Typography, Button } from "@mui/material"
+import {makeStyles} from "@mui/styles"
 import { Link } from "gatsby"
 
 const useStyles = makeStyles({

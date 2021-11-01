@@ -1,8 +1,8 @@
 import React from "react"
 // import Typography from "../../common/Typography"
 import { Link } from "gatsby"
-import { Box, Grid, Typography } from "@material-ui/core"
-import { makeStyles } from "@material-ui/core"
+import { Box, Grid, Typography } from "@mui/material"
+import { makeStyles } from "@mui/styles"
 import Fade from "react-reveal"
 
 const useStyles = makeStyles({

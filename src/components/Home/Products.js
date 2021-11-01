@@ -3,7 +3,7 @@ import { css } from "@emotion/react"
 import ProductSection from "./ProductSection"
 // import Typography from "common/Typography"
 import basil from "../../images/basil.jpg"
-import { Box, Grid, Typography } from "@material-ui/core"
+import { Box, Grid, Typography } from "@mui/material"
 import Fade from "react-reveal/Fade"
 const products = () => {
   return [

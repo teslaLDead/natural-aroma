@@ -1,6 +1,8 @@
 import React from "react"
 import Header from "common/Header"
-import { Grid, Box, Typography, makeStyles } from "@material-ui/core"
+import { Grid, Box, Typography } from "@mui/material"
+import {makeStyles} from "@mui/styles"
+
 import Fade from "react-reveal"
 import { Parallax } from "react-scroll-parallax"
 import { Helmet } from "react-helmet"

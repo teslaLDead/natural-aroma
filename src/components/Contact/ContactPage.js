@@ -1,5 +1,6 @@
 import React, { useState } from "react"
-import { Grid, TextField, Box, Button, makeStyles } from "@material-ui/core"
+import { Grid, TextField, Box, Button } from "@mui/material"
+import {makeStyles} from "@mui/styles"
 import Typography from "common/Typography"
 import { Helmet } from "react-helmet"
 import { Parallax } from "react-scroll-parallax"

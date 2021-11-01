@@ -9,15 +9,15 @@ import React from "react"
 import { jsx, css } from "@emotion/react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
-import { Button } from "@material-ui/core"
-import { createTheme, ThemeProvider } from "@material-ui/core/styles"
+import { Button } from "@mui/material"
+import { createTheme, ThemeProvider } from "@mui/material/styles"
 import Navbar from "./Navbar"
 import Footer from "./Footer/Footer"
 import ContactForm from "./Footer/ContactForm"
 import "./layout.css"
-import { green } from "@material-ui/core/colors"
+import { green } from "@mui/material/colors"
 import { ParallaxProvider } from "react-scroll-parallax"
-import { makeStyles } from "@material-ui/styles"
+import { makeStyles } from "@mui/styles"
 
 // breakpoints for the layouts
 const breakpoints = [576, 768, 992, 1200, 1600]
@@ -42,53 +42,103 @@ const layoutCentering = {
 }
 
 const theme = createTheme({
+  palette:{
+    primary:{
+      main: "#56C035",
+      contrastText: '#fff',
+    }
+  },
   typography: {
     fontFamily: "AxiformaRegular!important",
     h1: {
       fontFamily: "AxiformaBlack!important",
-      fontSize: "3rem",
-    },
-  },
-  palette: {
-    primary: green,
-  },
-  overrides: {
-    MuiButton: {
-      outlined: {
-        border: "2px solid #56C035!important",
+      fontSize: "3.3rem",
+      ["@media (max-width: 720px)"]: {
+        fontSize: "2.5rem",
       },
     },
-    MuiButton: {
-      root: {
-        minHeight: "50px!important",
-        fontFamily: "AxiformaBlack!important",
-        border: "2px solid #56C035!important",
-        color: "#000000d4",
-        borderRadius: "5px!important",
-        minWidth: "150px!important",
-        textTransform: "capitalize!important",
-        fontSize: "14px!important",
-        transition: "0.4s",
-        "&:hover": {
-          color: "white",
-          background: "#56C035",
-        },
+    h2: {
+      fontFamily: "AxiformaBlack!important",
+      fontSize: "2.3rem",
+      ["@media (max-width: 720px)"]: {
+        fontSize: "1.7rem",
       },
-      contained: {
-        color: "white",
-        background: "#56C035",
-        backgroundColor: "#56C035",
-        "&:hover": {
-          color: "#56C035",
-          backgroundColor: "white",
-        },
+    },
+    h3: {
+      fontSize: "1.55rem",
+      fontFamily: "AxiformaBlack!important",
+      ["@media (max-width: 720px)"]: {
+        fontSize: "1.55rem",
       },
-      outlined: {
+    },
+    h4: {
+      fontSize: "1rem",
+      fontFamily: "AxiformaBlack!important",
+    },
+    h6: {
+      fontSize: "16px!important",
+    },
+    body1: {
+      fontSize: "0.85rem",
+      lineHeight: "1.6rem",
+      color: "#010009d1",
+      "& b": {
         color: "black",
-        backgroundColor: "white",
-        "&:hover": {
-          color: "black",
-          backgroundColor: "#f1f2f3",
+      },
+    },
+    body2: {
+      fontSize: "0.8rem",
+      lineHeight: "1.6rem",
+      color: "#020719bf",
+      "& b": {
+        color: "black",
+      },
+    },
+    p: {
+      fontFamily: "AxiformaRegular!important",
+      fontSize: "0.8rem",
+    },
+    subtitle2: {
+      fontFamily: "AxiformaBlack!important",
+      fontSize: "0.8rem",
+      fontWeight: 500,
+    },
+  },
+  components: {
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          minHeight: "50px!important",
+          fontFamily: "AxiformaBlack!important",
+          border: "2px solid #56C035!important",
+          color: "#000000d4",
+          borderRadius: "5px!important",
+          minWidth: "150px!important",
+          textTransform: "capitalize!important",
+          fontSize: "14px!important",
+          transition: "0.4s",
+          "&:hover": {
+            color: "white",
+            background: "#56C035",
+          },
+        },
+        outlined: {
+          color: "black!important",
+          backgroundColor: "white",
+          border: "2px solid #56C035!important",
+          "&:hover": {
+            color: "black!important",
+            backgroundColor: "#f1f2f3!important",
+          },
+        },
+        containedPrimary: {
+          color: "white",
+          background: "#56C035!important",
+          backgroundColor: "#56C035",
+          "&:hover": {
+            color: "#56C035!important",
+            backgroundColor: "white!important",
+          },
         },
       },
     },
@@ -134,59 +184,9 @@ const theme = createTheme({
       root: {
         fontFamily: "AxiformaRegular!important",
       },
-      h6: {
-        fontSize: "16px!important",
-      },
+      
       subtitle2: {
         fontFamily: "AxiformaBlack!important",
-      },
-      h1: {
-        fontSize: "3.3rem",
-        ["@media (max-width: 720px)"]: {
-          fontSize: "2.5rem",
-        },
-      },
-      h2: {
-        fontFamily: "AxiformaBlack!important",
-        fontSize: "2.3rem",
-        ["@media (max-width: 720px)"]: {
-          fontSize: "1.7rem",
-        },
-      },
-      h3: {
-        fontSize: "1.55rem",
-        fontFamily: "AxiformaBlack!important",
-        ["@media (max-width: 720px)"]: {
-          fontSize: "1.55rem",
-        },
-      },
-      h4: {
-        fontSize: "1rem",
-        fontFamily: "AxiformaBlack!important",
-      },
-      body1: {
-        fontSize: "0.85rem",
-        lineHeight: "1.6rem",
-        color: "#010009d1",
-        "& b": {
-          color: "black",
-        },
-      },
-      body2: {
-        fontSize: "0.8rem",
-        lineHeight: "1.6rem",
-        color: "#020719bf",
-        "& b": {
-          color: "black",
-        },
-      },
-      p: {
-        fontFamily: "AxiformaRegular!important",
-        fontSize: "0.8rem",
-      },
-      subtitle2: {
-        fontSize: "0.8rem",
-        fontWeight: 500,
       },
     },
   },
@@ -195,7 +195,7 @@ const theme = createTheme({
 const useStyles = makeStyles({
   enquiryButton: {
     position: "absolute",
-    display:'none'
+    display: "none",
   },
 })
 

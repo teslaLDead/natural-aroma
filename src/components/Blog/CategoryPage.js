@@ -1,7 +1,8 @@
 import React from "react"
 import BlogThumbnail from "./Thumbnail"
 import Typography from "common/Typography"
-import { Box, Grid, makeStyles } from "@material-ui/core"
+import { Box, Grid,  } from "@mui/material"
+import {makeStyles} from "@mui/styles"
 import CategoryNav from "../Pages/Products/CategoryNav"
 
 const useStyles = makeStyles({

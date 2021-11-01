@@ -6,7 +6,9 @@ import Button from "common/Button"
 import Fade from "react-reveal/Fade"
 import { Parallax } from "react-scroll-parallax"
 
-import { Box, Grid, makeStyles, Typography } from "@material-ui/core"
+import { Box, Grid, Typography } from "@mui/material"
+import {makeStyles} from "@mui/styles"
+
 
 const style = {
   grid: {

@@ -2,7 +2,9 @@ import React, { useState } from "react"
 import Thumbnail from "./Thumbnail"
 import BlogSuggestions from "../../Blog/BlogSuggestions"
 import CategoryNav from "./CategoryNav"
-import { Box, Button, Grid, makeStyles, Typography } from "@material-ui/core"
+import { Box, Button, Grid, Typography } from "@mui/material"
+import {makeStyles} from "@mui/styles"
+
 // import Typography from "../../common/Typography
 import ImageViewer from "./ImageViewer"
 import { Helmet } from "react-helmet"

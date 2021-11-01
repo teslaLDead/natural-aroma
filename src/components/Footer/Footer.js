@@ -9,7 +9,9 @@ import linkedin from "../../images/social-icons/linkedin.png"
 import facebook from "../../images/social-icons/facebook.png"
 import twitter from "../../images/social-icons/twitter.png"
 import instagram from "../../images/social-icons/instagram.png"
-import { Grid, Typography, makeStyles, Box } from "@material-ui/core"
+import { Grid, Typography, Box } from "@mui/material"
+import {makeStyles} from "@mui/styles"
+
 
 // connect with use icons
 import mail from "../../images/icons/mail.png"

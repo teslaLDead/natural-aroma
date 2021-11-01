@@ -1,7 +1,9 @@
 import React from "react"
 // import Button from "common/Button"
 import { Link } from "gatsby"
-import { Box, Grid, makeStyles, Button, Typography } from "@material-ui/core"
+import { Box, Grid, Button, Typography } from "@mui/material"
+import {makeStyles} from "@mui/styles"
+
 import { Fade } from "react-reveal"
 
 // todo this will require some UX changes due to product name size

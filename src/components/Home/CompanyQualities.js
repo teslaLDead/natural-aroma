@@ -1,6 +1,6 @@
 import React from "react"
-import { makeStyles } from "@material-ui/core"
-import { Box, Grid, Typography } from "@material-ui/core"
+import { makeStyles } from "@mui/styles"
+import { Box, Grid, Typography } from "@mui/material"
 // import Typography from "common/Typography"
 import Fade from "react-reveal/Fade"
 import { Parallax } from "react-scroll-parallax"

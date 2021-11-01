@@ -6,8 +6,6 @@ import { jsx, css } from "@emotion/react"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import { Box } from "@mui/material"
-import ActionButton from "../components/common/ActionButton"
-import SecondaryButton from "../components/common/SecondaryButton"
 import Fade from "react-reveal/Fade"
 import { Button, Grid,  Typography } from "@mui/material"
 import {makeStyles} from "@mui/styles" 
@@ -59,7 +57,7 @@ const Header = () => {
           delay={300}
         >
           <Typography variant="h1">
-            We Manufacture Best Quality Oils and Aroma Products
+            We Manufacture The Best Quality Oils and Aroma Products
           </Typography>
         </Fade>
         <div
@@ -72,7 +70,7 @@ const Header = () => {
         >
           <Fade ssrReveal={true} delay={300}>
             <Link to="/products">
-              <Button variant="contained" disableElevation>
+              <Button color="primary" variant="contained" disableElevation>
                 View Products
               </Button>
             </Link>

@@ -11,7 +11,9 @@ import SearchForm from "./Search/SearchForm"
 import { StaticQuery, graphql, useStaticQuery } from "gatsby"
 import capitalize from "lodash/capitalize"
 import BlogCategories from "./BlogCategories"
-import { Box, Button, Grid, makeStyles } from "@material-ui/core"
+import { Box, Button, Grid} from "@mui/material"
+import {makeStyles} from "@mui/styles"
+
 
 const displayFlexCenter = {
   display: "flex",

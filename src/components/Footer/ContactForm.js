@@ -2,7 +2,9 @@ import React from "react"
 import { jsx, css } from "@emotion/react"
 import { Link } from "gatsby"
 import HeroImage from "../../images/get quote image.jpg"
-import { Button, Grid, makeStyles } from "@material-ui/core"
+import { Button, Grid } from "@mui/material"
+import {makeStyles} from "@mui/styles"
+
 const useStyles = makeStyles({
   container: {
     minHeight: 350,

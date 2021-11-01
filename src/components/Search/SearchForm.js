@@ -9,10 +9,9 @@ import {
   DialogContent,
   Typography,
   IconButton,
-} from "@material-ui/core"
+} from "@mui/material"
+import {makeStyles} from "@mui/styles"
 import { Link } from "gatsby"
-import { makeStyles } from "@material-ui/styles"
-
 const useStyles = makeStyles({
   container: {
     minWidth: "80%",

@@ -1,5 +1,5 @@
 import React from "react"
-import { Box, Typography, Grid } from "@material-ui/core"
+import { Box, Typography, Grid } from "@mui/material"
 import Products from "../../components/Home/Products"
 import Layout from "../../components/layout"
 import Header from "../../components/common/Header"

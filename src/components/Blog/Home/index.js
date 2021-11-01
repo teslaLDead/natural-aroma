@@ -3,7 +3,8 @@ import React from "react"
 import CategoryNav from "../../Pages/Products/CategoryNav"
 import Header from "common/Header"
 import BlogThumbnail from "../Thumbnail"
-import { Grid, Box, makeStyles, Typography } from "@material-ui/core"
+import { Grid, Box,  Typography } from "@mui/material"
+import { makeStyles } from "@mui/styles"
 import { Helmet } from "react-helmet"
 
 const useStyles = makeStyles({

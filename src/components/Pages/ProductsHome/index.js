@@ -1,7 +1,8 @@
 import React from "react";
 import Header from "common/Header"
-import Typography from "common/Typography";
-import { Grid, Box, makeStyles } from "@material-ui/core";
+import { Grid, Box, Typography } from "@mui/material";
+import {makeStyles} from "@mui/styles"
+
 import ProductSection from "../../Home/ProductSection";
 import basil from '../../../images/basil.jpg';
 import BlogSuggestions from "../../Blog/BlogSuggestions";

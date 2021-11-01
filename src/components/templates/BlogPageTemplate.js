@@ -1,7 +1,7 @@
 import React from "react"
 import Layout from "../layout"
 import CategoryPage from "../Blog/CategoryPage"
-import { Grid, Box } from "@material-ui/core"
+import { Grid, Box } from "@mui/material"
 import BlogPage from "../Blog/Page"
 import CategoryNav from "../Pages/Products/CategoryNav"
 

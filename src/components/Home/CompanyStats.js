@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react"
 import { jsx, css } from "@emotion/react"
 import Fade from "react-reveal/Fade"
-import { Grid, makeStyles } from "@material-ui/core"
+import { Grid } from "@mui/material"
+import {makeStyles} from "@mui/styles"
+
 
 // todo - add animation
 const style = {

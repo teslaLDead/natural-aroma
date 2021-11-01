@@ -1,5 +1,7 @@
 import React from "react"
-import { Grid, Box, makeStyles, Typography } from "@material-ui/core"
+import { Grid, Box, Typography } from "@mui/material"
+import {makeStyles} from "@mui/styles"
+
 import { Link } from "gatsby"
 import Thumbnail from "./Thumbnail"
 import BlogSuggestions from "../../Blog/BlogSuggestions"

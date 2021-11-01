@@ -10,8 +10,9 @@ import {
   MenuItem,
   TextField,
   IconButton,
-  makeStyles,
-} from "@material-ui/core"
+} from "@mui/material"
+import {makeStyles} from "@mui/styles"
+
 import Typography from "common/Typography"
 
 const useStyles = makeStyles({})

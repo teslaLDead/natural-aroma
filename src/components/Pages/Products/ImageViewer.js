@@ -1,6 +1,8 @@
 // image viewer for a product
 import React, { useState, useEffect } from "react"
-import { Grid, Box, makeStyles } from "@material-ui/core"
+import { Grid, Box } from "@mui/material"
+import {makeStyles} from "@mui/styles"
+
 import Fade from "react-reveal/Fade"
 
 const useStyles = makeStyles({

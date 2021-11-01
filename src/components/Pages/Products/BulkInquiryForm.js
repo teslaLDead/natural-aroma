@@ -3,7 +3,6 @@ import {
   Box,
   Button,
   Grid,
-  makeStyles,
   Typography,
   DialogTitle,
   Dialog,
@@ -11,7 +10,9 @@ import {
   TextField,
   Select,
   MenuItem,
-} from "@material-ui/core"
+} from "@mui/material"
+import {makeStyles} from "@mui/styles"
+
 
 const BulkInquiryForm = ({ product, open, handleClose }) => {
   const [quantity, setQuantity] = useState(1)
