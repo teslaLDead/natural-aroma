@@ -13,6 +13,7 @@ module.exports = {
     siteUrl: `https://naturalaroma.co`,
   },
   plugins: [
+    `gatsby-plugin-material-ui`,
     // {
     //   resolve: `gatsby-plugin-material-ui`,
     //   options: {
