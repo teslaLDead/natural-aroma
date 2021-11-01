@@ -1,19 +1,19 @@
 import React from "react";
 import Header from "common/Header"
 import { Grid, Box, Typography } from "@mui/material";
-import {makeStyles} from "@mui/styles"
+import {jss, css} from "@emotion/react"
 
 import ProductSection from "../../Home/ProductSection";
 import basil from '../../../images/basil.jpg';
 import BlogSuggestions from "../../Blog/BlogSuggestions";
 
-const useStyles = makeStyles({
+const classes ={
     productContainer:{
        "& > div":{
            marginTop:0
        }
     }
-})
+}
 
 const products = () => {
     return [{
@@ -123,7 +123,6 @@ const products = () => {
 }
 
 const ProductsHome = ({ }) => {
-    const classes = useStyles()
     return (
       <>
             <Header variant="secondary">
@@ -134,7 +133,7 @@ const ProductsHome = ({ }) => {
                     </Grid>
                 </Typography>
             </Header>
-            <Box className={classes.productContainer}>
+            <Box css={classes.productContainer}>
                 {products().map((product, ind) => <ProductSection reversed={ind % 2 !== 0} {...product} />)}
             </Box>
             <Box>

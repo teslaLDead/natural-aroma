@@ -10,14 +10,10 @@ import {
   MenuItem,
   TextField,
   IconButton,
+  Typography
 } from "@mui/material"
-import {makeStyles} from "@mui/styles"
 
-import Typography from "common/Typography"
-
-const useStyles = makeStyles({})
 const EnquiryForm = ({ title, product, openState, closeForm }) => {
-  const classes = useStyles()
   const [open, setOpen] = useState(false)
 
   useEffect(() => {

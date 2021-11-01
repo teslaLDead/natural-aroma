@@ -1,6 +1,6 @@
 import React from "react"
 import { Grid, Box, Typography } from "@mui/material"
-import {makeStyles} from "@mui/styles"
+import {jss, css} from "@emotion/react"
 
 import { Link } from "gatsby"
 import Thumbnail from "./Thumbnail"
@@ -12,16 +12,15 @@ import Fade from "react-reveal/Fade"
 
 // todos - add lazy laoding to the thumbnail component
 
-const categoryPageStyles = makeStyles({
+const classes = {
   header: {
     margin: "100px 0",
     textTransform: "capitalize",
   },
-})
+}
 
 const CategoryPage = ({ category, products }) => {
   console.log("category", category)
-  const classes = categoryPageStyles()
   const sampleProductArrays = products.map(({ frontmatter }) => (
     <Grid item xs={12} lg={4}>
       <Thumbnail
@@ -36,7 +35,7 @@ const CategoryPage = ({ category, products }) => {
       <Helmet>
         <title>{capitalize(category)} Products | Natural Aroma Products</title>
       </Helmet>
-      <Box my={3} mt={5} className={classes.header}>
+      <Box my={3} mt={5} css={classes.header}>
         <Fade delay={100}>
           <Typography variant="h1">
             {/* product category name */}

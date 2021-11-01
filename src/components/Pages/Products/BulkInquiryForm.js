@@ -11,7 +11,6 @@ import {
   Select,
   MenuItem,
 } from "@mui/material"
-import {makeStyles} from "@mui/styles"
 
 
 const BulkInquiryForm = ({ product, open, handleClose }) => {

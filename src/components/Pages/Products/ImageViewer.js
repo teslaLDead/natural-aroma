@@ -1,11 +1,10 @@
 // image viewer for a product
 import React, { useState, useEffect } from "react"
 import { Grid, Box } from "@mui/material"
-import {makeStyles} from "@mui/styles"
 
 import Fade from "react-reveal/Fade"
 
-const useStyles = makeStyles({
+const classes = {
   hero: {
     width: "100%",
   },
@@ -24,9 +23,8 @@ const useStyles = makeStyles({
     maxHeight: 120,
     overflow: "hidden",
   },
-})
+}
 const ImageViewer = ({ images, thumbnail }) => {
-  const classes = useStyles()
   const [displayImages, setDisplayImages] = useState([]) // store images in this state to manipulate the one that will be displayed in the header
 
   useEffect(() => {
@@ -54,21 +52,21 @@ const ImageViewer = ({ images, thumbnail }) => {
       {displayImages
         .filter(el => el.main)
         .map(el => (
-          <Box className={classes.hero}>
+          <Box css={classes.hero}>
             <Fade ssrReveal delay={200} duration={1500}>
               {" "}
-              <img className={classes.heroImage} src={el.src} alt={el.name} />
+              <img css={classes.heroImage} src={el.src} alt={el.name} />
             </Fade>
           </Box>
         ))}
-      <Box className={classes.thumbnailContainer}>
+      <Box css={classes.thumbnailContainer}>
         {displayImages
           .filter(el => !el.main)
           .map((el, index) => (
             <Box
               ml={index == 0 || index == displayImages.length - 1 ? 0 : 2}
               onClick={() => makeHeroImage(el.id)}
-              className={classes.thumbnail}
+              css={classes.thumbnail}
             >
               <Fade ssrReveal delay={(index + 1) * 100}>
                 <img src={el.src} alt={el.name} />

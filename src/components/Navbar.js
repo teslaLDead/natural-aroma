@@ -12,7 +12,6 @@ import { StaticQuery, graphql, useStaticQuery } from "gatsby"
 import capitalize from "lodash/capitalize"
 import BlogCategories from "./BlogCategories"
 import { Box, Button, Grid} from "@mui/material"
-import {makeStyles} from "@mui/styles"
 
 
 const displayFlexCenter = {
@@ -40,7 +39,7 @@ const aboutNavbar = {
 const breakpoints = [576, 768, 992, 1200, 1400]
 const mq = breakpoints.map(bp => `@media (min-width: ${bp}px)`)
 
-const useStyles = makeStyles({
+const classes = {
   mobileMenu: {
     display: "none",
     margin: "0 20px",
@@ -75,9 +74,8 @@ const useStyles = makeStyles({
   mobileLinks: {
     fontSize: 16,
   },
-})
+}
 const Navbar = ({ layout }) => {
-  const classes = useStyles()
   const [scrollY, setScrollY] = useState(0)
 
   // for search functionality
@@ -185,7 +183,7 @@ const Navbar = ({ layout }) => {
               <div css={css(displayFlexCenter)}>
                 <img
                   onClick={toggleMobileNarBarOpen}
-                  className={classes.mobileMenu}
+                  css={classes.mobileMenu}
                   src={menu}
                   alt="site menu"
                 />
@@ -195,7 +193,7 @@ const Navbar = ({ layout }) => {
                       ...displayFlexCenter,
                     })}
                   >
-                    <img className={classes.logo} src={logo2} />
+                    <img css={classes.logo} src={logo2} />
                     <div
                       css={css({
                         marginLeft: 5,
@@ -229,7 +227,7 @@ const Navbar = ({ layout }) => {
                 {/* mobile nav bar */}
                 <div
                   style={{ display: mobileNavBarOpen ? "block" : "none" }}
-                  className={classes.mobileNavContainers}
+                  css={classes.mobileNavContainers}
                 >
                   <Grid container direction="column">
                     <Grid item xs={12}>
@@ -303,7 +301,7 @@ const Navbar = ({ layout }) => {
                   </Grid>
                 </div>
                 <div
-                  className={classes.navigationMenus}
+                  css={classes.navigationMenus}
                   css={css({
                     position: "relative",
                   })}
@@ -494,7 +492,7 @@ const Navbar = ({ layout }) => {
                     Search
                   </p>
                 </div>
-                <div className={classes.contactButton}>
+                <div css={classes.contactButton}>
                   <Link to="/contact-us">
                     <Button disableElevation variant="contained">
                       Contact Us

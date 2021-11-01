@@ -1,14 +1,14 @@
 import React from "react"
 import { Grid, Box } from "@mui/material"
-import {makeStyles} from "@mui/styles"
 
 import { Link } from "gatsby"
 import { useStaticQuery, graphql } from "gatsby";
 import capitalize  from "lodash/capitalize";
+import { jsx, css } from "@emotion/react"
 
 // this sort of navigation can be use across products and blogs
 
-const categoryNavStyles = makeStyles({
+const classes = {
   container: {
     border: '1px solid #f1f1f1'
   },
@@ -44,20 +44,19 @@ const categoryNavStyles = makeStyles({
     marginLeft: 10,
     color:'#A8A7A7'
   },
-})
+}
 
 const CategoryLink = ({ id, active }) => {
   console.log('id', id)
-  const classes = categoryNavStyles()
   return (
-    <Box className={active ? classes.activeItem : classes.item}>
+    <Box css={active ? classes.activeItem : classes.item}>
       <Link to={"/".concat(id)}>
         <span
-          className={active ? classes.activeCategoryName : classes.categoryName}
+          css={active ? classes.activeCategoryName : classes.categoryName}
         >
           {id.split('-').map(el=>capitalize(el)).join(' ')}
         </span>
-        <span className={classes.count}>(40)</span>
+        <span css={classes.count}>(40)</span>
       </Link>
     </Box>
   )
@@ -79,10 +78,9 @@ const CategoryNav = ({ currentCategoryId }) => {
       }
     }
   `)
-  const classes = categoryNavStyles()
   return (
-    <Box className={classes.container}>
-      <Box className={classes.item}>
+    <Box css={classes.container}>
+      <Box css={classes.item}>
         <p style={{fontSize:13, opacity: 0.5, fontWeight: 'bold'}}>Product Categories</p>
       </Box>
       {data.productCategories.nodes.map(({ frontmatter: { id } }) => (

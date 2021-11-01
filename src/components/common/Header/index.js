@@ -1,26 +1,22 @@
 import React from "react"
 import { Grid } from "@mui/material"
 import { makeStyles } from "@mui/styles"
-const useStyles = makeStyles({
-  secondaryHeader: {
-    minHeight: "70vh",
-  },
-  primaryHeader: {
-    minHeight: "90vh",
-  },
+import { jss, css } from "@emotion/react"
+
+const secondaryHeader = css({
+  minHeight: "70vh",
 })
+const primaryHeader = css({
+  minHeight: "90vh",
+})
+
 const Header = ({ variant, children }) => {
-  const classes = useStyles()
 
   return (
     <Grid
       container
       alignItems="center"
-      className={
-        variant === "secondary"
-          ? classes.secondaryHeader
-          : classes.primaryHeader
-      }
+      css={variant === "secondary" ? secondaryHeader : primaryHeader}
     >
       {children}
     </Grid>

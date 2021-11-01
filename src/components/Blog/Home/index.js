@@ -4,21 +4,20 @@ import CategoryNav from "../../Pages/Products/CategoryNav"
 import Header from "common/Header"
 import BlogThumbnail from "../Thumbnail"
 import { Grid, Box,  Typography } from "@mui/material"
-import { makeStyles } from "@mui/styles"
+import {jss, css} from "@emotion/react"
 import { Helmet } from "react-helmet"
 
-const useStyles = makeStyles({
-  quote: {
-    position: "absolute",
-    left: "70%",
-  },
-  quoteText: {
-    fontSize: 14,
-    fontWeight: "bold",
-  },
+const quote = css({
+  position: "absolute",
+  left: "70%",
 })
+const quoteText = css({
+  fontSize: 14,
+  fontWeight: "bold",
+})
+
 const BlogHome = ({ blogs }) => {
-  const classes = useStyles()
+ 
   // connect this to the cms
   return (
     <Box mb={5} pb={5}>
@@ -34,21 +33,21 @@ const BlogHome = ({ blogs }) => {
           </Grid>
         </Grid>
         <Grid item={6}>
-          <Box className={classes.quote}>
+          <Box css={quote}>
             <Box>
               <img src="" alt="" />{" "}
               {/* for the double quote - this can be an image or test */}
             </Box>
             <Box>
-              <Typography className={classes.quoteText} variant="subtitle1">
+              <Typography css={quoteText} variant="subtitle1">
                 Nothing in life is to be feared, it is only to be understood.
               </Typography>
-              <Typography className={classes.quoteText} variant="subtitle1">
+              <Typography css={quoteText} variant="subtitle1">
                 Now is the time to understand more, so that we may fear less.
               </Typography>
             </Box>
             <Box>
-              <p className={classes.quoteText}>- Marie Curie</p>
+              <p css={quoteText}>- Marie Curie</p>
             </Box>
           </Box>
         </Grid>

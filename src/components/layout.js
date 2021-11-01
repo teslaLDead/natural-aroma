@@ -186,7 +186,7 @@ const theme = createTheme({
       },
       
       subtitle2: {
-        fontFamily: "AxiformaBlack!important",
+        fontFamily: "AxiformaBlack!important", 
       },
     },
   },

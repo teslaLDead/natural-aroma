@@ -7,7 +7,6 @@ import Fade from "react-reveal/Fade"
 import { Parallax } from "react-scroll-parallax"
 
 import { Box, Grid, Typography } from "@mui/material"
-import {makeStyles} from "@mui/styles"
 
 
 const style = {
@@ -73,12 +72,12 @@ const style = {
   },
 }
 
-const useStyles = makeStyles({
+const classes = {
   productCategory: {
     marginTop: 200,
     marginBottom: 200,
   },
-})
+}
 const ProductThumbnail = ({ image, title, link, ind }) => {
   return (
     <Box css={css(style.product)}>
@@ -108,10 +107,9 @@ const ProductSection = ({
   popularProducts,
   reversed,
 }) => {
-  const classes = useStyles()
   // const isMobile = window.screen.width < 600
   return (
-    <Box className={classes.productCategory}>
+    <Box css={classes.productCategory}>
       <Grid container direction={reversed ? "row-reverse" : "row"} spacing={5}>
         <Grid item xs={12} lg={6}>
           <Parallax y={[-20, 20]} disabled={false}>

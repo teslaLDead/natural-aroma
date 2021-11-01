@@ -1,23 +1,22 @@
 import React from "react"
 import Header from "common/Header"
 import { Grid, Box, Typography } from "@mui/material"
-import {makeStyles} from "@mui/styles"
+import { jss, css } from "@emotion/react"
 
 import Fade from "react-reveal"
 import { Parallax } from "react-scroll-parallax"
 import { Helmet } from "react-helmet"
 
-const useStyles = makeStyles({
+const classes = {
   facilityImage: {
     transform: "scale(1)",
     "& :hover": {
       transform: "scale(1.1)",
     },
   },
-})
+}
 
 const Infrastructure = () => {
-  const classes = useStyles()
   return (
     <div>
       <Helmet>
@@ -221,7 +220,7 @@ const Infrastructure = () => {
             <Grid item lg={3} xs={6}>
               <Fade delay={index * 200}>
                 <img
-                  className={classes.facilityImage}
+                  css={classes.facilityImage}
                   src={`https://picsum.photos/id/12${index}/600`}
                 />
               </Fade>

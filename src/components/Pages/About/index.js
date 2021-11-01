@@ -3,7 +3,6 @@ import { jsx, css } from "@emotion/react"
 import Header from "../../common/Header"
 // import Typography from "../../common/Typography"
 import { Box, Grid, Typography } from "@mui/material"
-import {makeStyles} from "@mui/styles"
 
 import { Link } from "gatsby"
 import TeamSection from "./TeamSection"
@@ -100,6 +99,14 @@ const MajorMarkets = ({ markets }) => {
   )
 }
 
+const classes = {
+  header: {
+    minHeight: "70vh",
+  },
+  headerImage: {
+    maxHeight: 400,
+  },
+}
 const AboutPage = ({
   title,
   teamMembers,
@@ -109,16 +116,8 @@ const AboutPage = ({
   headerImages,
   teamHeroImage,
 }) => {
-  const useStyles = makeStyles({
-    header: {
-      minHeight: "70vh",
-    },
-    headerImage: {
-      maxHeight: 400,
-    },
-  })
+  
   const teamImage = getImage(teamHeroImage)
-  const classes = useStyles()
   return (
     <div>
       <Helmet>
@@ -230,7 +229,7 @@ const AboutPage = ({
                 <Grid container alignItems="center" item xs={6}>
                   <Parallax y={[-10, 5 * index]}>
                     <Fade delay={150 * index}>
-                      <img src={src} className={classes.headerImage} />
+                      <img src={src} css={classes.headerImage} />
                     </Fade>
                   </Parallax>
                 </Grid>

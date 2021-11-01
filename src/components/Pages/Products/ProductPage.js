@@ -3,7 +3,7 @@ import Thumbnail from "./Thumbnail"
 import BlogSuggestions from "../../Blog/BlogSuggestions"
 import CategoryNav from "./CategoryNav"
 import { Box, Button, Grid, Typography } from "@mui/material"
-import {makeStyles} from "@mui/styles"
+import {jss, css} from "@emotion/react"
 
 // import Typography from "../../common/Typography
 import ImageViewer from "./ImageViewer"
@@ -33,13 +33,12 @@ const sampleRelatedProducts = [
     imageSrc: "https://picsum.photos/id/227/200/300",
   },
 ]
-const useStyles = makeStyles({
+
+
+const classes = {
   mainContent: {
     marginTop: 120,
   },
-})
-
-const productDetailStyles = makeStyles({
   detailItem: {
     border: "1px solid #F1F1F1",
     display: "flex",
@@ -60,18 +59,17 @@ const productDetailStyles = makeStyles({
       color: "#000000a3",
     },
   },
-})
+}
 
 const ProductDetails = ({ details }) => {
-  const classes = productDetailStyles()
   return (
     <>
       {details.map(({ detail }) => (
-        <Box py={2} className={classes.detailItem}>
-          <Box className={classes.property}>
+        <Box py={2} css={classes.detailItem}>
+          <Box css={classes.property}>
             <p>{detail.key}</p>
           </Box>
-          <Box className={classes.value}>
+          <Box css={classes.value}>
             <p>{detail.value}</p>
           </Box>
         </Box>
@@ -91,9 +89,8 @@ const ProductPage = ({
   const [enquiryFormOpen, setEnquiryFormOpen] = useState(false)
   const closeEnquiryForm = () => setEnquiryFormOpen(false)
   const openEnquiryForm = () => setEnquiryFormOpen(true)
-  const classes = useStyles()
   return (
-    <Box className={classes.mainContent}>
+    <Box css={classes.mainContent}>
       <BulkInquiryForm
         product={name.toUpperCase()}
         open={enquiryFormOpen}

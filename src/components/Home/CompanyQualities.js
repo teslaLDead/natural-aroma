@@ -4,20 +4,20 @@ import { Box, Grid, Typography } from "@mui/material"
 // import Typography from "common/Typography"
 import Fade from "react-reveal/Fade"
 import { Parallax } from "react-scroll-parallax"
+import { jss, css } from "@emotion/react"
 
-const useStyles = makeStyles({
-  img: {
+  const imgClass =  css({
     maxHeight: 60,
-  },
-  heroImageContainer: {
+  })
+  const heroImageContainer =  css({
     position: "absolute",
     left: -150,
     ["@media (max-width:680px)"]: {
       position: "relative",
       left: 0
     },
-  },
-  heroImageText: {
+  })
+  const heroImageText =  css({
     color: "white",
     fontSize: 36,
     fontFamily: "AxiformaBlack",
@@ -31,54 +31,52 @@ const useStyles = makeStyles({
       fontSize: 26
     }
     // position: "absolute",
-  },
+  })
 
   // todo - make this responsive
-  qualitySectionContainer: {
+  const qualitySectionContainer =  css({
     minHeight: 700,
-  },
-  heroImageHeadingContainer: {
+  })
+  const heroImageHeadingContainer =  css({
     position: "relative",
     height: "100%",
-  },
-  qualityHeader:{
+  })
+  const qualityHeader = css({
     fontSize: '1.35rem'
-  },
-  heroImageHeading: {
+  })
+  const heroImageHeading =  css({
     // top: "calc(50% - 20px)",
     transform: "translateY(320px)",
-  },
-  qualityListContainer: {
+  })
+  const qualityListContainer =  css({
     height: "100%",
-  },
-  qualityItemContainer: {
+  })
+  const qualityItemContainer =  css({
     display: "flex",
     alignItems: "center",
-  },
-})
+  })
 
 const sampleContent = `
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque eget nulla ipsum. Donec pretium libero quis orci luctus, sit amet gravida diam scelerisque. 
     `
 
 const Quality = ({ img, title, content }) => {
-  const classes = useStyles()
   return (
-    <Grid item xs={12} lg={6} className={classes.qualityItemContainer}>
+    <Grid item xs={12} lg={6} css={qualityItemContainer}>
       <Fade delay={200}>
         <Box py={5} mx={2}>
           <Grid container>
             <Grid xs={3}>
               <Box mx={1}>
                 <Fade delay={200}>
-                  <img src={img} alt="" className={classes.img} />
+                  <img src={img} alt="" css={imgClass} />
                 </Fade>
               </Box>
             </Grid>
             <Grid xs={9}>
               <Fade delay={400}>
                 <Box my={2}>
-                  <Typography variant="h4" className={classes.qualityHeader}>{title}</Typography>
+                  <Typography variant="h4" css={qualityHeader}>{title}</Typography>
                 </Box>
               </Fade>
               <Fade delay={600} duration={1500}>
@@ -93,20 +91,19 @@ const Quality = ({ img, title, content }) => {
 }
 
 const CompanyQualities = ({}) => {
-  const classes = useStyles()
   return (
     <Box my={5} py={3}>
-      <Grid container className={classes.qualitySectionContainer}>
+      <Grid container css={qualitySectionContainer}>
         <Grid item xs={12} lg={5}>
-          <Box className={classes.heroImageContainer}>
+          <Box css={heroImageContainer}>
             <img
               src="https://ucarecdn.com/9f21e4e0-9353-4165-bb22-4337da58987c/Group43.png"
               alt=""
             />
           </Box>
-          <Box className={classes.heroImageHeadingContainer}>
+          <Box css={heroImageHeadingContainer}>
             <Fade delay={200} duration={2500}>
-              <Typography className={classes.heroImageText}>
+              <Typography css={heroImageText}>
                 WHY CHOOSE US
               </Typography>
             </Fade>
@@ -114,7 +111,7 @@ const CompanyQualities = ({}) => {
         </Grid>
 
         <Grid item xs={12} lg={7}>
-          <Grid container className={classes.qualityListContainer}>
+          <Grid container css={qualityListContainer}>
             <Quality
               img="https://ucarecdn.com/c42d3056-cbd6-4a7a-be00-eef4ec76e894/badge.png"
               title="Utmost Quality"

@@ -10,9 +10,9 @@ import {
   Typography,
   IconButton,
 } from "@mui/material"
-import {makeStyles} from "@mui/styles"
+import {jss, css} from "@emotion/react"
 import { Link } from "gatsby"
-const useStyles = makeStyles({
+const classes = {
   container: {
     minWidth: "80%",
   },
@@ -26,10 +26,9 @@ const useStyles = makeStyles({
   lightText: {
     opacity: 0.36,
   },
-})
+}
 
 const SearchForm = ({ openState, closeSearch }) => {
-  const classes = useStyles()
   const [open, setOpen] = useState(false)
 
   // this suggested items will be changed depending on the search query entered
@@ -64,7 +63,7 @@ const SearchForm = ({ openState, closeSearch }) => {
         </Box>
       </DialogTitle>
       <DialogContent>
-        <Box className={classes.container} mx={4}>
+        <Box css={classes.container} mx={4}>
           <TextField
             label="Search"
             placeholder="Enter Your Search Query"
@@ -75,7 +74,7 @@ const SearchForm = ({ openState, closeSearch }) => {
         <Box my={5} mx={4} pb={5}>
           <Grid container alignItems="center">
             <Box>
-              <Typography className={classes.lightText} variant="h6">
+              <Typography css={classes.lightText} variant="h6">
                 Suggested Results
               </Typography>
             </Box>
@@ -85,7 +84,7 @@ const SearchForm = ({ openState, closeSearch }) => {
                   <Box mx={2} px={2}  style={{ border: "1px solid #f1f1f2!important" }}>
                     <Link
                       to={`/${suggestion}`}
-                      className={classes.suggestionLink}
+                      css={classes.suggestionLink}
                     >
                       <Typography variant="h6">
                         {suggestion.split("-").join(" ")}

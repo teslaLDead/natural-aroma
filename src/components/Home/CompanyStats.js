@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react"
 import { jsx, css } from "@emotion/react"
 import Fade from "react-reveal/Fade"
 import { Grid } from "@mui/material"
-import {makeStyles} from "@mui/styles"
 
 
 // todo - add animation
@@ -26,20 +25,18 @@ const style = {
   },
 }
 
-const useStyles = makeStyles({
-  stats: {
+  const stats = css({
     marginTop: 100,
     marginBottom: 100,
     ['@media (max-width:600px)'] : {
       marginTop: 50,
     marginBottom: 50,
     }
-  },
-})
+  })
+
 
 // todo - connect with the data layer
 export default function ComapnyStats({ clients, products }) {
-  const classes = useStyles()
   const [clientsCounter, setClientsCounter] = useState(0)
   const [productsCounter, setProductsCounter] = useState(0)
   const [qualityCounter, setQualityCounter] = useState(0)
@@ -72,7 +69,7 @@ export default function ComapnyStats({ clients, products }) {
         justifyContent="center"
         alignItems="center"
         direction="column"
-        className={classes.stats}
+        css={stats}
       >
         <Fade onReveal={() => setClientsCounter(1)} delay={100} duration={2000}>
           <p css={css(style.stat)}>{clientsCounter}+</p>
@@ -89,7 +86,7 @@ export default function ComapnyStats({ clients, products }) {
         justifyContent="center"
         alignItems="center"
         direction="column"
-        className={classes.stats}
+        css={stats}
       >
         <Fade delay={100} duration={2000}>
           <p css={css(style.stat)}>{productsCounter}+</p>
@@ -110,7 +107,7 @@ export default function ComapnyStats({ clients, products }) {
         justifyContent="center"
         alignItems="center"
         direction="column"
-        className={classes.stats}
+        css={stats}
       >
         <Fade onReveal={() => setQualityCounter(1)} delay={100} duration={2000}>
           <p css={css(style.stat)}>{qualityCounter}%</p>

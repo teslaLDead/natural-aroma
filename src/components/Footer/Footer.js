@@ -10,44 +10,41 @@ import facebook from "../../images/social-icons/facebook.png"
 import twitter from "../../images/social-icons/twitter.png"
 import instagram from "../../images/social-icons/instagram.png"
 import { Grid, Typography, Box } from "@mui/material"
-import {makeStyles} from "@mui/styles"
-
+import { makeStyles } from "@mui/styles"
 
 // connect with use icons
 import mail from "../../images/icons/mail.png"
 import phone from "../../images/icons/phone.png"
 import telephone from "../../images/icons/telephone.png"
 
-const useStyles = makeStyles({
-  footerLinks: {
+const footerLinks = css({
+  ["@media (max-width: 680px)"]: {
+    textAlign: "center",
+  },
+})
+const links = css({
+  display: "flex",
+  flexDirection: "column",
+  "& a": {
+    fontSize: 14,
+    fontFamily: "AxiformaMedium",
+    marginBottom: 40,
+    fontWeight: 600,
+    color: "black",
     ["@media (max-width: 680px)"]: {
-      textAlign: "center",
+      marginBottom: 20,
     },
   },
-  links: {
-    display: "flex",
-    flexDirection: "column",
-    "& a": {
-      fontSize: 14,
-      fontFamily: "AxiformaMedium",
-      marginBottom: 40,
-      fontWeight: 600,
-      color: "black",
-      ["@media (max-width: 680px)"]: {
-        marginBottom: 20,
-      },
-    },
+})
+const contactLink = css({
+  display: "flex",
+  alignItems: "center",
+  "& p": {
+    marginLeft: 10,
+    fontWeight: 600,
   },
-  contactLink: {
-    display: "flex",
-    alignItems: "center",
-    "& p": {
-      marginLeft: 10,
-      fontWeight: 600,
-    },
-    ["@media (max-width: 680px)"]: {
-      justifyContent: "center",
-    },
+  ["@media (max-width: 680px)"]: {
+    justifyContent: "center",
   },
 })
 
@@ -83,7 +80,6 @@ const footerCss = {
 }
 
 const Footer = ({}) => {
-  const classes = useStyles()
   return (
     <footer>
       <Grid container justifyContent="space-between">
@@ -129,9 +125,9 @@ const Footer = ({}) => {
             </Grid>
           </Box>
         </Grid>
-        <Grid item lg={2} xs={12} className={classes.footerLinks}>
+        <Grid item lg={2} xs={12} css={footerLinks}>
           <h3 css={css(footerCss.subTitles)}>Quick Links</h3>
-          <Box className={classes.links}>
+          <Box css={links}>
             <Link to="/">Home</Link>
             <Link to="/about">About Us</Link>
             <Link to="/products">Products</Link>
@@ -140,9 +136,9 @@ const Footer = ({}) => {
             <Link to="/FAQ">FAQ</Link>
           </Box>
         </Grid>
-        <Grid item lg={2} xs={12} className={classes.footerLinks}>
+        <Grid item lg={2} xs={12} css={footerLinks}>
           <h3 css={css(footerCss.subTitles)}>Products</h3>
-          <Box className={classes.links}>
+          <Box css={links}>
             {/* // todo - make these links dynamic */}
             <Link to="/essential-oils">Essential Oils</Link>
             <Link to="/aroma-oils">Aroma Oils</Link>
@@ -150,19 +146,19 @@ const Footer = ({}) => {
             <Link to="/natural-isolates">Natural Isolates</Link>
           </Box>
         </Grid>
-        <Grid item lg={2} xs={12} className={classes.footerLinks}>
+        <Grid item lg={2} xs={12} css={footerLinks}>
           <h3 css={css(footerCss.subTitles)}>Connect With Us</h3>
-          <Box className={classes.links}>
+          <Box css={links}>
             {/* // todo - make these links dynamic */}
-            <Link className={classes.contactLink} to="/">
+            <Link css={contactLink} to="/">
               <img src={mail} alt="Natural Aroma Email" />
               <Typography> info@naturalaroma.co</Typography>
             </Link>
-            <Link className={classes.contactLink} to="/aroma-oils">
+            <Link css={contactLink} to="/aroma-oils">
               <img src={phone} alt="Natural Aroma phone number" />
               <Typography>+91 120-2761060</Typography>
             </Link>
-            <Link className={classes.contactLink} to="/reconstituted-oils">
+            <Link css={contactLink} to="/reconstituted-oils">
               <img src={telephone} alt="Natural Aroma mobile number" />
               <Typography>+91 9891102691</Typography>
             </Link>
