@@ -2,6 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import { jsx, css } from "@emotion/react"
 import logo from "../images/Logo6 (1).png"
+import logo2 from '../images/Logo.png'
 import menu from "../images/menu.png"
 import ActionButton from "./common/ActionButton"
 import SearchIcon from "../images/search-logo.png"
@@ -53,9 +54,13 @@ const useStyles = makeStyles({
     display: "block",
   },
   contactButton: {
-    display: "none",
+    ["@media (max-width: 680px)"]:{
+      display:'none'
+    }
   },
-
+  logo:{
+    maxWidth:100
+  },
   mobileNavContainers: {
     position: "fixed",
     width: "100%",
@@ -188,7 +193,7 @@ const Navbar = ({ layout }) => {
                       ...displayFlexCenter,
                     })}
                   >
-                    <img src={logo} />
+                    <img className={classes.logo} src={logo2} />
                     <div
                       css={css({
                         marginLeft: 5,

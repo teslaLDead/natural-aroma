@@ -14,6 +14,7 @@
     "gatsby-plugin-gatsby-cloud": "^2.11.0",
     "gatsby-plugin-image": "^1.11.0",
     "gatsby-plugin-manifest": "^3.11.0",
+    "gatsby-plugin-material-ui": "^4.0.3",
     "gatsby-plugin-mdx": "^2.13.0",
     "gatsby-plugin-netlify-cms": "^5.11.0",
     "gatsby-plugin-nprogress": "^3.13.0",

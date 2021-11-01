@@ -9,6 +9,7 @@ import React from "react"
 import { jsx, css } from "@emotion/react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
+import { Button } from "@material-ui/core"
 import { createTheme, ThemeProvider } from "@material-ui/core/styles"
 import Navbar from "./Navbar"
 import Footer from "./Footer/Footer"
@@ -16,6 +17,7 @@ import ContactForm from "./Footer/ContactForm"
 import "./layout.css"
 import { green } from "@material-ui/core/colors"
 import { ParallaxProvider } from "react-scroll-parallax"
+import { makeStyles } from "@material-ui/styles"
 
 // breakpoints for the layouts
 const breakpoints = [576, 768, 992, 1200, 1600]
@@ -100,10 +102,10 @@ const theme = createTheme({
         fontFamily: "AxiformaBlack!important",
       },
     },
-    MuiMenuItem:{
-      root:{
-        fontSize: 14
-      }
+    MuiMenuItem: {
+      root: {
+        fontSize: 14,
+      },
     },
     MuiInputBase: {
       root: {
@@ -190,7 +192,15 @@ const theme = createTheme({
   },
 })
 
+const useStyles = makeStyles({
+  enquiryButton: {
+    position: "absolute",
+    display:'none'
+  },
+})
+
 const Layout = ({ children, removeContactForm }) => {
+  const classes = useStyles()
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -206,6 +216,7 @@ const Layout = ({ children, removeContactForm }) => {
       <ParallaxProvider>
         <ThemeProvider theme={theme}>
           <Navbar layout={layoutCentering} />
+          <Button className={classes.enquiryButton}>Enquire Form</Button>
           <div css={css(layoutCentering)}>
             <main>{children}</main>
             {!removeContactForm && <ContactForm />}

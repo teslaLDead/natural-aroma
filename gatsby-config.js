@@ -13,6 +13,7 @@ module.exports = {
     siteUrl: `https://naturalaroma.co`,
   },
   plugins: [
+    `gatsby-plugin-material-ui`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
     {
