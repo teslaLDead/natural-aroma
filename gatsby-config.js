@@ -4,7 +4,7 @@ module.exports = {
   flags: {
     FAST_DEV: true,
     PARALLEL_SOURCING: true,
-    PARALLEL_QUERY_RUNNING: true
+    PARALLEL_QUERY_RUNNING: true,
   },
   siteMetadata: {
     title: `Natural Aroma Products`,
@@ -13,7 +13,14 @@ module.exports = {
     siteUrl: `https://naturalaroma.co`,
   },
   plugins: [
-    `gatsby-plugin-material-ui`,
+    {
+      resolve: `gatsby-plugin-material-ui`,
+      options: {
+        stylesProvider: {
+          injectFirst: true,
+        },
+      },
+    },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
     {
@@ -89,6 +96,6 @@ module.exports = {
         // Disable the loading spinner.
         showSpinner: false,
       },
-    }
+    },
   ],
 }
