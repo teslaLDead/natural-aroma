@@ -8,7 +8,6 @@ import { Parallax } from "react-scroll-parallax"
 
 import { Box, Grid, Typography } from "@mui/material"
 
-
 const style = {
   grid: {
     display: "grid",
@@ -72,11 +71,9 @@ const style = {
   },
 }
 
-const classes = {
-  productCategory: {
-    marginTop: 200,
-    marginBottom: 200,
-  },
+const productCategory = {
+  marginTop: 200,
+  marginBottom: 200,
 }
 const ProductThumbnail = ({ image, title, link, ind }) => {
   return (
@@ -109,7 +106,7 @@ const ProductSection = ({
 }) => {
   // const isMobile = window.screen.width < 600
   return (
-    <Box css={classes.productCategory}>
+    <Box css={css(productCategory)}>
       <Grid container direction={reversed ? "row-reverse" : "row"} spacing={5}>
         <Grid item xs={12} lg={6}>
           <Parallax y={[-20, 20]} disabled={false}>

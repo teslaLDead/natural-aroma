@@ -1,5 +1,5 @@
 import React from "react"
-import { css } from "@emotion/react"
+import { jsx, css } from "@emotion/react"
 import ProductSection from "./ProductSection"
 // import Typography from "common/Typography"
 import basil from "../../images/basil.jpg"
