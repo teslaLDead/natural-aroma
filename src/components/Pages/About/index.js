@@ -98,15 +98,6 @@ const MajorMarkets = ({ markets }) => {
   )
 }
 
-const useStyles = makeStyles({
-  header: {
-    minHeight: "70vh",
-  },
-  headerImage: {
-    maxHeight: 400,
-  },
-})
-
 const AboutPage = ({
   title,
   teamMembers,
@@ -116,6 +107,14 @@ const AboutPage = ({
   headerImages,
   teamHeroImage,
 }) => {
+  const useStyles = makeStyles({
+    header: {
+      minHeight: "70vh",
+    },
+    headerImage: {
+      maxHeight: 400,
+    },
+  })
   const teamImage = getImage(teamHeroImage)
   const classes = useStyles()
   return (
