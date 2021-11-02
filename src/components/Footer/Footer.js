@@ -1,7 +1,7 @@
 import React from "react"
 import { jsx, css } from "@emotion/react"
 import { Link } from "gatsby"
-import CompanyLogo from "../../images/company-logo.png"
+import CompanyLogo from "../../images/Logo.svg"
 import AddressIcon from "../../images/icons/address-icon.png"
 
 // social links imports

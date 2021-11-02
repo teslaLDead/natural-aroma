@@ -103,13 +103,16 @@ const products = () => {
     },
   ]
 }
+
+const productContainer = {
+  marginTop: 150,
+  marginBottom: 150,
+}
+
 export default function Products({ noDescription }) {
   return (
     <div
-      css={css({
-        marginTop: 150,
-        marginBottom: 150,
-      })}
+      css={productContainer}
     >
       <div
         css={css({

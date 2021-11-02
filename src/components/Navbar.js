@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import { jsx, css } from "@emotion/react"
 import logo from "../images/Logo6 (1).png"
-import logo2 from '../images/Logo.png'
+import logo2 from '../images/Logo.svg'
 import menu from "../images/menu.png"
 import ActionButton from "./common/ActionButton"
 import SearchIcon from "../images/search-logo.png"
@@ -60,7 +60,8 @@ const classes = {
     }
   },
   logo:{
-    maxWidth:100
+    maxWidth:90,
+    padding: '5px 0'
   },
   mobileNavContainers: {
     position: "fixed",
@@ -91,7 +92,8 @@ const Navbar = ({ layout }) => {
   const [aboutNavOpen, setAboutNavOpen] = useState(false)
   const openAboutNavHover = () => {
     setAboutNavOpen(true)
-    closeProductNavBarHover()
+    setProductNavBarOpen(false)
+    setBlogsNarOpen(false)
   }
   const closeAboutNavHover = () => setAboutNavOpen(false)
 
@@ -99,13 +101,14 @@ const Navbar = ({ layout }) => {
   const openProductNavBarHover = () => {
     setProductNavBarOpen(true)
     setBlogsNarOpen(false)
-    closeAboutNavHover()
+    setAboutNavOpen(false)
   }
   const closeProductNavBarHover = () => setProductNavBarOpen(false)
 
   const handleNavBarMouseLeave = () => {
     closeProductNavBarHover()
     closeAboutNavHover()
+    closeBlogsNavBarHover()
   }
   const [blogsNavBarOpen, setBlogsNarOpen] = useState(false)
   const openBlogsNavBarHover = () => {
@@ -198,6 +201,10 @@ const Navbar = ({ layout }) => {
                       css={css({
                         marginLeft: 5,
                         color: "#0C0C0C",
+                        display:"none",
+                        ['@media (max-width:680px)']:{
+                          display:'none'
+                        }
                       })}
                     >
                       <p
@@ -396,12 +403,19 @@ const Navbar = ({ layout }) => {
                   <nav
                     css={css({
                       ...displayFlexCenter,
-                      marginLeft: "2rem",
                       div: {
                         padding: "0 2rem",
                       },
+                      ['@media (max-width: 680px)']:{
+                        display:'none'
+                      }
                     })}
                   >
+                    <div onMouseOver={handleNavBarMouseLeave}> 
+                      <Link css={css(navBarLinks)} to="/">
+                        Home
+                      </Link>
+                    </div>
                     <div onMouseOver={openAboutNavHover}>
                       <Link css={css(navBarLinks)} to="/about">
                         About
