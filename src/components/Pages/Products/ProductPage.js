@@ -160,7 +160,7 @@ const ProductPage = ({
           </Box>
         </Grid>
       </Grid>
-      <Box>
+      {/* <Box>
         <Typography variant="h3">Related Products</Typography>
       </Box>
       <Box>
@@ -171,7 +171,7 @@ const ProductPage = ({
             </Grid>
           ))}
         </Grid>
-      </Box>
+      </Box> */}
       <Box>
         {/* <BlogSuggestions title="Related blogs" suggestions={[]} /> */}
       </Box>
