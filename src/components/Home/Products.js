@@ -5,6 +5,7 @@ import ProductSection from "./ProductSection"
 import basil from "../../images/basil.jpg"
 import { Box, Grid, Typography } from "@mui/material"
 import Fade from "react-reveal/Fade"
+import { useStaticQuery, graphql } from "gatsby"
 const products = () => {
   return [
     {
@@ -110,6 +111,45 @@ const productContainer = {
 }
 
 export default function Products({ noDescription }) {
+  const data = useStaticQuery(graphql`
+  query productsListQuery {
+    productCategories: allMarkdownRemark(
+      filter: {fileAbsolutePath: {regex: "/content/products/productCategories/"}}
+    ) {
+      nodes {
+        id
+        frontmatter {
+          id
+          name
+          description
+        }
+      }
+    }
+
+    popularProducts: allMarkdownRemark(
+      filter: {
+        fileAbsolutePath: { regex: "/content/productList/" }
+        frontmatter: {  showOnHome : {eq: true} }
+      }
+    ) {
+      nodes {
+        frontmatter {
+          title
+          name
+          thumbnail
+          category
+        }
+      }
+    }
+  }
+  `)
+
+  const {
+    productCategories,
+    popularProducts
+  } = data
+  console.log('products', productCategories.nodes)
+  console.log('popular products', popularProducts.nodes)
   return (
     <div
       css={productContainer}
@@ -148,8 +188,8 @@ export default function Products({ noDescription }) {
         </Fade>
       </div>
       <div>
-        {products().map((product, ind) => (
-          <ProductSection reversed={ind % 2 !== 0} {...product} />
+        {productCategories.nodes.map((product, ind) => (
+          <ProductSection reversed={ind % 2 !== 0} popularProducts={popularProducts.nodes.filter(el=>el.frontmatter.category == product.frontmatter.name).slice(0,3)} {...product.frontmatter} />
         ))}
       </div>
     </div>

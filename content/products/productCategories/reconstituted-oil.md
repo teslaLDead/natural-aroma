@@ -1,8 +1,5 @@
 ---
 name: reconstituted oil
 id: reconstituted-oil
-description: Essential oil is a concentrated hydrophobic liquid
-  containing  volatile chemical compounds from plants. Essential oils are also
-  known as volatile oils, ethereal oils, aetherolea, or simply as the oil of the
-  plant from which they were extracted, such as oil of clove.
+description: These oils are made by a method to recreate the fragrance of expensive essential oils or absolutes completely from isolates and synthetic constituents. These kinds of reconstituted oils are used in functional perfumery to lower the cost of production of perfumes.These oils cannot be used for therapeutic purpose as the lack certain trace compounds.
 ---

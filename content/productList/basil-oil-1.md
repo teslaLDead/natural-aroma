@@ -27,7 +27,7 @@ manufacturing_details:
 
 
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Senectus et netus et malesuada fames. Nulla facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum.
-showOnHome: false
+showOnHome: true
 thumbnail: https://ucarecdn.com/fdae0e1c-edb3-4f16-b628-950cb7defe5c/
 productImages:
   - https://ucarecdn.com/fa7dd9ee-4934-44fe-a252-a5004792d901/

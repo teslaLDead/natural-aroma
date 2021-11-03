@@ -83,9 +83,17 @@ const Footer = ({}) => {
   return (
     <footer>
       <Grid container justifyContent="space-between">
-        <Grid item lg={1} xs={12}>
+        <Grid css={css({
+            ['@media (max-width: 680px)']:{
+              textAlign: 'center'
+            }
+          })} item lg={1} xs={12}>
           {/* for logo  */}
-          <img src={CompanyLogo} alt="Natural Aroma Logo" />
+          <img css={css({
+            ['@media (max-width: 680px)']:{
+              width: 120
+            }
+          })} src={CompanyLogo} alt="Natural Aroma Logo" />
         </Grid>
         <Grid item lg={3} xs={12}>
           <div>
@@ -165,18 +173,19 @@ const Footer = ({}) => {
             <div css={css(footerCss.socialLinks)}>
               {/* for social links -  */}
               {/* // todo - get social links */}
-              <Link to="/">
-                <img src={linkedin} alt="Natural Aroma LinkedIn" />
-              </Link>
-              <Link to="/">
-                <img src={facebook} alt="Natural Aroma Twitter" />
-              </Link>
-              <Link to="/">
-                <img src={twitter} alt="Natural Aroma Facebook" />
-              </Link>
-              <Link to="/">
+              <a target="_blank" href="https://www.instagram.com/naturalaromaproducts/">
                 <img src={instagram} alt="Natural Aroma Instagram" />
-              </Link>
+              </a>
+              <a target="_blank" href="">
+                <img src={linkedin} alt="Natural Aroma LinkedIn" />
+              </a>
+              <a target="_blank" href="https://www.facebook.com/Natural-Aroma-Products-Pvt-Ltd-112584390085555/">
+                <img src={facebook} alt="Natural Aroma Facebook" />
+              </a>
+              <a target="_blank" href="https://twitter.com/ProductsAroma">
+                <img src={twitter} alt="Natural Aroma twitter" />
+              </a>
+              
             </div>
           </Box>
         </Grid>

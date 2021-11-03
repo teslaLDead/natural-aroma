@@ -1,8 +1,5 @@
 ---
 name: natural isolates
 id: natural-isolates
-description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-  eiusmod tempor incididunt ut labore et dolore magna aliqua. Feugiat pretium
-  nibh ipsum consequat nisl vel pretium. Velit euismod in pellentesque massa
-  placerat duis ultricies. Quam id leo in vitae turpis massa sed elementum.
+description: Natural isolates are single odor molecules that are extracted from natural raw materials using distillation techniques. They are obtained from botanicals such as rose, mint, and citrus. These isolated aromatics can add unique character and lift to natural perfumes.
 ---

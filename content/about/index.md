@@ -1,18 +1,8 @@
 ---
 aboutUsParagraphs:
-  - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Arcu dictum varius duis
-    at consectetur. Nulla aliquet enim tortor at auctor. Bibendum arcu vitae
-    elementum curabitur vitae nunc sed velit. Facilisis gravida neque convallis
-    a.
-  - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Feugiat pretium nibh
-    ipsum consequat nisl vel pretium. Velit euismod in pellentesque massa
-    placerat duis ultricies. Quam id leo in vitae turpis massa sed elementum.
-  - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Enim facilisis gravida
-    neque convallis a. Enim ut sem viverra aliquet eget sit amet tellus. Ac
-    felis donec et odio pellentesque diam volutpat commodo.
+  - Our company was founded in 1995 since then we have pioneered in the manufacturing of essential oils, aroma chemicals, and natural isolates. Our company products are defined by creative adaptation, strategic enhancement, revolutionary packaging, and consistent innovation. For us, product quality, prompt service and customer satisfaction are of the utmost importance.
+  - We have a state of the art manufacturing plant located in Ghaziabad with a capacity of 24 metric tons. All the products manufactured here conform to stringent quality control and comply with GMP standards. Our in house laboratory is equipped with the latest type of equipments like gas chromatograph, digital polarimeter, refractometer, and density meter to ensure that quality is maintained for our customers.
+  - The three distinctive attributes that distinguish our company from our competitors are our unique technology, strong customer relationship, and extensive product range. It is the strategic management of each of these that we believe will go miles ahead in achieving our target.
   - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
     tempor incididunt ut labore et dolore magna aliqua. Enim facilisis gravida
     neque convallis a. Enim ut sem viverra aliquet eget sit amet tellus. Ac
@@ -64,23 +54,24 @@ para4: This unit enables us to process a superior quality range of products in
   innovations.
 title: Manufacturing Natural Oils and Aroma Products since 1995
 majorMarkets:
-  - Test3
-  - Australia
-  - Test1
-  - test2
-  - test4
   - India
+  - Australia
+  - U.A.E
+  - Africa
+  - USA
+  - Sri Lanka
+  - UK
 teamMembers:
   - member:
-      memberImage: https://picsum.photos/200/300
-      memberName: Jon Doe
-      memberDesignation: ceo
+      memberImage: https://ucarecdn.com/e2d9a857-3f17-4bf9-9f1d-170f9d4b4a48/12200x200.jpg
+      memberName: Pradeep Khandelwal
+      memberDesignation: FOUNDER
   - member:
-      memberImage: https://picsum.photos/200/200
-      memberName: Sanji Mugiwara
-      memberDesignation: Manager
+      memberImage: https://ucarecdn.com/25d61473-7812-4efa-88be-3f60ae61dbf3/2200x200.jpeg
+      memberName: Ramesh Sharma
+      memberDesignation: Head Operative
   - member:
-      memberImage: https://picsum.photos/200/200
-      memberName: Zoro Suke
-      memberDesignation: Associat Manager
+      memberImage: https://ucarecdn.com/c0bfca80-f28f-4f05-afc3-20643b99e014/131024x682200x200.jpeg
+      memberName: Mithlesh Jha
+      memberDesignation: Head Plant Operation
 ---

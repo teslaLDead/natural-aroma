@@ -1,12 +1,10 @@
 import React from "react"
 import { jsx, css } from "@emotion/react"
 import { Link } from "gatsby"
-import basil from "../../images/basil.jpg"
-import Button from "common/Button"
 import Fade from "react-reveal/Fade"
 import { Parallax } from "react-scroll-parallax"
 
-import { Box, Grid, Typography } from "@mui/material"
+import { Box, Grid, Typography, Button } from "@mui/material"
 
 const style = {
   grid: {
@@ -55,10 +53,10 @@ const style = {
     borderRadius: 200,
     justifyContent: "center",
     border: "4px solid #40D068",
-    transition: "transform 1s",
+    transition: "all 0.5s",
     alignItems: "stretch",
     transform: "scale(1)",
-    "& :hover": {
+    "&:hover": {
       transform: "scale(1.1)",
     },
   },
@@ -75,17 +73,17 @@ const productCategory = {
   marginTop: 200,
   marginBottom: 200,
 }
-const ProductThumbnail = ({ image, title, link, ind }) => {
+const ProductThumbnail = ({ name, thumbnail, title, ind }) => {
   return (
     <Box css={css(style.product)}>
-      <Link to={link}>
+      <Link to={`/${title.split(' ').join('-')}`}>
         <Box css={css(style.productThumbnail)}>
           <Fade delay={(ind + 1) * 100} ssrReveal>
             <Box mb={2} css={css(style.productImage)}>
-              <img src={basil} alt={title} />
+              <img src={thumbnail} alt={name} />
             </Box>
           </Fade>
-          <Typography>
+          <Typography css={css({textTransform:'capitalize'})}>
             <Fade delay={(ind + 1) * 200} ssrReveal>
               {" "}
               <b>{title}</b>
@@ -98,13 +96,15 @@ const ProductThumbnail = ({ image, title, link, ind }) => {
 }
 
 const ProductSection = ({
-  title,
+  name,
   description,
   link,
+  id,
   popularProducts,
   reversed,
 }) => {
   // const isMobile = window.screen.width < 600
+  console.log("product category", name, description, id)
   return (
     <Box css={css(productCategory)}>
       <Grid container direction={reversed ? "row-reverse" : "row"} spacing={5}>
@@ -113,8 +113,11 @@ const ProductSection = ({
             <Box>
               <Fade ssrReveal>
                 <Box my={2}>
-                  <Typography style={{ textAlign: "center" }} variant="h4">
-                    Popular {title}
+                  <Typography
+                    style={{ textAlign: "center", textTransform: "capitalize" }}
+                    variant="h4"
+                  >
+                    Popular {name}
                   </Typography>
                 </Box>
               </Fade>
@@ -122,7 +125,7 @@ const ProductSection = ({
             <Grid container>
               {popularProducts.map((product, ind) => (
                 <Grid item xs={12} lg={4}>
-                  <ProductThumbnail ind={ind} {...product} />
+                  <ProductThumbnail ind={ind} {...product.frontmatter} />
                 </Grid>
               ))}
             </Grid>
@@ -133,7 +136,12 @@ const ProductSection = ({
           <Parallax y={[-20, 50]} disabled={false}>
             <Box mx={5}>
               <Fade ssrReveal>
-                <Typography variant="h3">{title}</Typography>
+                <Typography
+                  variant="h3"
+                  css={css({ textTransform: "capitalize" })}
+                >
+                  {name}
+                </Typography>
               </Fade>
               <Fade ssrReveal>
                 <Box my={1}>
@@ -141,7 +149,9 @@ const ProductSection = ({
                 </Box>
               </Fade>
               <Box mt={3}>
-                <Button variant="secondary" title={"View " + title} to={link} />
+                <Link to={`/${id}`}>
+                  <Button variant="outlined">View All {name}</Button>
+                </Link>
               </Box>
             </Box>
           </Parallax>

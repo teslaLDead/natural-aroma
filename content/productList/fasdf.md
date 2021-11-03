@@ -12,53 +12,21 @@ details:
       key: "key "
       value: value
 description: >-
-  <!--StartFragment-->
-
-
   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Senectus et netus et malesuada fames. Nulla facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum.
 
 
 
-
-  <!--EndFragment-->
-
-
-
-
-  <!--StartFragment-->
-
-
   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Senectus et netus et malesuada fames. Nulla facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum.
 
-
-
-
-  <!--EndFragment-->
 manufacturing_details:
   - >-
-    <!--StartFragment-->
 
 
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Senectus et netus et malesuada fames. Nulla facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum.
 
-
-
-
-    <!--EndFragment-->
-
-
-
-
-    <!--StartFragment-->
-
-
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Senectus et netus et malesuada fames. Nulla facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum.
 
-
-
-
-    <!--EndFragment-->
-showOnHome: false
+showOnHome: true
 thumbnail: https://ucarecdn.com/78da14c5-bf4f-4263-93f0-109e5857806b/
 productImages:
   - https://ucarecdn.com/1b137d41-01b0-4285-98d6-d572593426b6/

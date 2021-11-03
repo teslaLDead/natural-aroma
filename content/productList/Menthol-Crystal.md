@@ -1,6 +1,6 @@
 ---
-name: Aniseed Oil
-title: Aniseed Oil
+name: Menthol Crystal
+title: Menthol Crystal
 details:
   - detail:
       key: key
@@ -38,5 +38,5 @@ productImages:
   - https://ucarecdn.com/ba91d600-fadb-47a3-9642-e6834b19a121/
   - https://ucarecdn.com/4e3c9a70-983b-4259-8f4b-8e19653a0d6d/
   - https://ucarecdn.com/41534305-6375-40a9-9dc2-83d2bb582aab/
-category: essential oil
+category: natural isolates
 ---

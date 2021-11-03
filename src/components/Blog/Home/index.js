@@ -10,6 +10,9 @@ import { Helmet } from "react-helmet"
 const quote = css({
   position: "absolute",
   left: "70%",
+  ['@media (max-width: 680px)']:{
+    left: 20
+  }
 })
 const quoteText = css({
   fontSize: 14,
@@ -26,13 +29,12 @@ const BlogHome = ({ blogs }) => {
       </Helmet>
       <Header variant="secondary">
         <Grid container>
-          <Grid item xs={6}>
+          <Grid item xs={12}  lg={6}>
             <Typography variant="h1">
               Sharing our Knowledge About Oils and Aroma
             </Typography>
           </Grid>
-        </Grid>
-        <Grid item={6}>
+          <Grid item xs={12} lg={6}>
           <Box css={quote}>
             <Box>
               <img src="" alt="" />{" "}
@@ -51,19 +53,21 @@ const BlogHome = ({ blogs }) => {
             </Box>
           </Box>
         </Grid>
+        </Grid>
+        
       </Header>
 
       <Box>
         {/* // todo implement pagination  */}
         <Grid container>
           {/* // todo fix this nav bar while scrolling */}
-          <Grid item xs={2}>
+          <Grid item xs={12} lg={2}>
             <CategoryNav categories={[]} />
           </Grid>
-          <Grid item xs={10}>
+          <Grid item xs={12} lg={10}>
             <Grid container>
               {blogs.map(blog => (
-                <Grid item xs={4}>
+                <Grid item xs={12} lg={4}>
                   <BlogThumbnail {...blog} />
                 </Grid>
               ))}

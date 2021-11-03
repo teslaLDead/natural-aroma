@@ -20,11 +20,11 @@ const classes = {
 }
 
 const CategoryPage = ({ category, products }) => {
-  console.log("category", category)
+  console.log("category", category, products)
   const sampleProductArrays = products.map(({ frontmatter }) => (
     <Grid item xs={12} lg={4}>
       <Thumbnail
-        imageSrc={"https://picsum.photos/id/237/300/300"}
+        imageSrc={frontmatter.thumbnail}
         name={frontmatter.name}
         link={"/".concat(frontmatter.name.split(" ").join("-"))}
       />
@@ -57,7 +57,7 @@ const CategoryPage = ({ category, products }) => {
           <Grid container spacing={2}>{sampleProductArrays}</Grid>
         </Grid>
       </Grid>
-      <Box>
+      {/* <Box>
         <BlogSuggestions
           title={category
             .split("-")
@@ -66,7 +66,7 @@ const CategoryPage = ({ category, products }) => {
             .concat(" Blogs")}
           suggestions={[]}
         />
-      </Box>
+      </Box> */}
     </Box>
   )
 }

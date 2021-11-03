@@ -49,7 +49,12 @@ module.exports = {
     },
     `gatsby-transformer-remark`,
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
+    {
+      resolve:  `gatsby-plugin-sharp`,
+      options: {
+        icons: `src/images/Logo.svg`
+      }
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -59,7 +64,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/Logo.svg`, // This path is relative to the root of the site.
+        icon: `src/images/Logo.png`, // This path is relative to the root of the site.
       },
     },
     {

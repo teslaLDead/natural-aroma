@@ -4,14 +4,13 @@ import { Link } from "gatsby"
 import { Box, Grid, Typography } from "@mui/material"
 import { makeStyles } from "@mui/styles"
 import Fade from "react-reveal"
+import {css} from "@emotion/react"
 
-const useStyles = makeStyles({
-  imgContainer: {
-    borderRadius: 200,
-    maxHeight: 200,
-    overflow: "hidden",
-  },
-})
+const imgContainer = {
+  borderRadius: 200,
+  maxHeight: 200,
+  overflow: "hidden",
+}
 const TeamSection = ({ members }) => {
   return (
     <Box my={3} py={3} mt={6}>
@@ -29,19 +28,26 @@ const TeamSection = ({ members }) => {
   )
 }
 
-
 const MemberProfile = ({
   memberName,
   memberDesignation,
   memberImage,
   link,
 }) => {
-  const classes = useStyles()
+  // const classes = useStyles()
   return (
     <Box mx={6} py={1}>
-      <Box my={2} className={classes.imgContainer}>
+      <Box my={2} className={css(imgContainer)}>
         <Fade delay={200}>
           <img
+          css={css({
+            borderRadius: 100,
+            transform:'scale(1)',
+            transition:'all 0.8s',
+            "&:hover":{
+              transform:'scale(1.1)'
+            }
+          })}
             src={memberImage}
             alt={memberName.concat(" ").concat(memberDesignation)}
           />
@@ -50,10 +56,16 @@ const MemberProfile = ({
       <Link to={link}>
         <Fade delay={400}>
           <Box my={2}>
-            <Typography variant="h4" component="p" style={{textTransform:'capitalize', color:'black'}}>
+            <Typography
+              variant="h4"
+              component="p"
+              style={{ textTransform: "capitalize", color: "black" }}
+            >
               <b>{memberName}</b>
             </Typography>
-            <Typography style={{textTransform:'uppercase'}}>{memberDesignation}</Typography>
+            <Typography style={{ textTransform: "uppercase" }}>
+              {memberDesignation}
+            </Typography>
           </Box>
         </Fade>
       </Link>

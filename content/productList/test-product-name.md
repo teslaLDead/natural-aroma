@@ -47,5 +47,5 @@ productImages:
   - https://ucarecdn.com/d658c74a-93ee-4a8b-a935-6cb728074203/
   - https://ucarecdn.com/814d2e5a-86d6-40fe-b4fc-9cca438af62c/
   - https://ucarecdn.com/559ffdda-0c14-467c-895e-00de3416a6cd/
-category: aroma oils
+category: aroma chemicals
 ---

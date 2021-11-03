@@ -1,6 +1,6 @@
 ---
-name: Aniseed Oil
-title: Aniseed Oil
+name: Cedarwood Oil
+title: Cedarwood Oil
 details:
   - detail:
       key: key
