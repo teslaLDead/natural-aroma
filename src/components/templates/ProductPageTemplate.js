@@ -74,10 +74,15 @@ const ProductPageTemplate = ({ pageContext }) => {
   const {
     product: { frontmatter },
   } = pageContext
-  console.log(pageContext, frontmatter.manufacturing_details ,frontmatter.productImages)
+  console.log(pageContext)
   return (
     <Layout>
-      <ProductPage {...frontmatter} />
+      <ProductPage
+        {...frontmatter}
+        relatedProducts={pageContext.relatedProducts.filter(
+          el => el.frontmatter.name !== frontmatter.name
+        )}
+      />
     </Layout>
   )
 }

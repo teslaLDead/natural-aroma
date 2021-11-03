@@ -85,6 +85,7 @@ const ProductPage = ({
   description,
   manufacturing_details,
   thumbnail,
+  relatedProducts
 }) => {
   const [enquiryFormOpen, setEnquiryFormOpen] = useState(false)
   const closeEnquiryForm = () => setEnquiryFormOpen(false)
@@ -160,18 +161,18 @@ const ProductPage = ({
           </Box>
         </Grid>
       </Grid>
-      {/* <Box>
+      <Box>
         <Typography variant="h3">Related Products</Typography>
       </Box>
       <Box>
         <Grid container spacing={2}>
-          {sampleRelatedProducts.map((product, index) => (
+          {relatedProducts.map((product, index) => (
             <Grid item xs={12} lg={3}>
-              <Thumbnail {...product} />
+              <Thumbnail {...product.frontmatter} />
             </Grid>
           ))}
         </Grid>
-      </Box> */}
+      </Box>
       <Box>
         {/* <BlogSuggestions title="Related blogs" suggestions={[]} /> */}
       </Box>

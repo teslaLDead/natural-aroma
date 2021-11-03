@@ -24,7 +24,7 @@ const CategoryPage = ({ category, products }) => {
   const sampleProductArrays = products.map(({ frontmatter }) => (
     <Grid item xs={12} lg={4}>
       <Thumbnail
-        imageSrc={frontmatter.thumbnail}
+        thumbnail={frontmatter.thumbnail}
         name={frontmatter.name}
         link={"/".concat(frontmatter.name.split(" ").join("-"))}
       />

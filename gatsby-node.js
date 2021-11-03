@@ -7,6 +7,7 @@ exports.createPages = async function ({ actions, graphql }) {
         nodes {
           id
           frontmatter {
+            category
             name
             description
             thumbnail
@@ -46,6 +47,22 @@ exports.createPages = async function ({ actions, graphql }) {
         }
       }
 
+      popularRelatedProducts: allMarkdownRemark(
+        filter: {
+          fileAbsolutePath: { regex: "/content/productList/" }
+          frontmatter: { showOnHome: { eq: true } }
+        }
+      ) {
+        nodes {
+          frontmatter {
+            title
+            name
+            thumbnail
+            category
+          }
+        }
+      }
+
       blogs: allMarkdownRemark(
         filter: { fileAbsolutePath: { regex: "/content/blogs/pages/" } }
       ) {
@@ -65,12 +82,16 @@ exports.createPages = async function ({ actions, graphql }) {
   // for products
   data.products.nodes.forEach(node => {
     const slug = node.frontmatter.name.split(" ").join("-")
+    const relatedProducts = data.popularRelatedProducts.nodes.filter(
+      el => el.frontmatter.category == node.frontmatter.category
+    )
+    console.log('related products', relatedProducts)
     actions.createPage({
       path: slug,
       component: require.resolve(
         `./src/components/templates/ProductPageTemplate.js`
       ),
-      context: { product: node },
+      context: { product: node, relatedProducts: relatedProducts },
     })
   })
 

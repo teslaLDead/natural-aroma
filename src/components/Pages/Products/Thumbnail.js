@@ -37,26 +37,26 @@ const classes = {
     fontWeight: "bold",
   },
 }
-const Thumbnail = ({ imageSrc, link, name }) => {
+const Thumbnail = ({ thumbnail, name }) => {
   return (
     <Box css={css(classes.container)}>
       <Box css={css(classes.imgContainer)}>
         <Fade delay={200}>
-          <img css={classes.img} src={imageSrc} alt={name} />
+          <img css={classes.img} src={thumbnail} alt={name} />
         </Fade>
       </Box>
       <Grid container alignItems="center" justifyContent="space-between">
         {/* need to fix this for bigger names like lavendar oil */}
         <Box css={css(classes.productName)} mx={1}>
           <Fade delay={400}>
-            <Typography>
+            <Typography css={css({textTransform:'capitalize'})}>
               <b>{name}</b>
             </Typography>
           </Fade>
         </Box>
         <Box mx={1} my={1}>
           <Fade delay={500}>
-            <Link to={link}>
+            <Link to={`/${name.split(' ').join('-')}`}>
               <Button css={css(classes.button)} variant="outlined">View Product</Button>
             </Link>
           </Fade>
