@@ -47,13 +47,13 @@ const CategoryPage = ({ category, products }) => {
           </Typography>
         </Fade>
       </Box>
-      <Grid container spacing={2}>
+      <Grid container spacing={2} justifyContent="space-between">
         <Grid item xs={12} lg={2}>
           <CategoryNav currentCategoryId={category} />
         </Grid>
-        <Grid item xs={1} />{" "}
+        {/* <Grid item xs={1} />{" "} */}
         {/* required for styling and gap in large screen sizes */}
-        <Grid item lg={9} xs={12}>
+        <Grid item lg={10} xl={9} xs={12}>
           <Grid container spacing={2}>{sampleProductArrays}</Grid>
         </Grid>
       </Grid>

@@ -23,7 +23,7 @@ const Infrastructure = () => {
         <title>Manufacturing & Infrastructure | Natural Aroma Products</title>
       </Helmet>
       <Header variant="secondary">
-        <Grid item xs={12} lg={6}>
+        <Grid item xs={12} xl={6} lg={8}>
           <Fade ssrFadeout={true} ssrReveal={true} duration={1500} delay={300}>
             <Typography variant="h1">
               World Class Facilities for Manufacturing & Exporting

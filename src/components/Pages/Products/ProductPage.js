@@ -100,13 +100,13 @@ const ProductPage = ({
       <Helmet>
         <title>{name.toUpperCase()} | Natural Aroma Products</title>
       </Helmet>
-      <Grid container spacing={2}>
+      <Grid container spacing={2} justifyContent="space-between">
         <Grid item xs={12} lg={2}>
           <Box mr={1}>
             <CategoryNav />
           </Box>
         </Grid>
-        <Grid item lg={4} xs={12}>
+        <Grid item lg={5} xl={4} xs={12}>
           <Box my={2}>
             <Grid container alignItems="center" justifyContent="space-between">
               <Fade ssrReveal delay={200}>
@@ -128,8 +128,8 @@ const ProductPage = ({
             <ImageViewer images={productImages} thumbnail={thumbnail} />
           </Fade>
         </Grid>
-        <Grid item lg={1} />
-        <Grid item lg={5} xs={12}>
+        {/* <Grid item lg={0} xl={1} /> */}
+        <Grid item lg={5} xl={5} xs={12}>
           <Box my={2}>
             <Typography variant="h4">Product Details</Typography>
             <Box>

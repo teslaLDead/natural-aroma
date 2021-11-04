@@ -116,7 +116,6 @@ const AboutPage = ({
   headerImages,
   teamHeroImage,
 }) => {
-  
   const teamImage = getImage(teamHeroImage)
   return (
     <div>
@@ -124,7 +123,7 @@ const AboutPage = ({
         <title>About Us | Natural Aroma Products</title>
       </Helmet>
       <Header variant="secondary">
-        <Grid item xl={6} xs={12}>
+        <Grid item xl={6} lg={8} xs={12}>
           <Fade
             ssrFadeout={true}
             ssrReveal={true}
@@ -138,8 +137,8 @@ const AboutPage = ({
       </Header>
 
       <Box my={5}>
-        <Grid container>
-          <Grid item lg={5} xs={12}>
+        <Grid container spacing={2}>
+          <Grid item xl={5} lg={6} xs={12}>
             {/* into section  */}
             <Box mb={1}>
               {/* intro heading */}
@@ -202,25 +201,8 @@ const AboutPage = ({
                 </b>
               </Typography>
             </Box>
-
-            <Box my={2} mt={4} py={1}>
-              <Typography variant="h3">OUR TEAM</Typography>
-              {ourTeamParagraphs.map(para => (
-                <Box my={4} py={1}>
-                  <Fade
-                    ssrFadeout={true}
-                    ssrReveal={true}
-                    cascade
-                    duration={1200}
-                    delay={300}
-                  >
-                    <Typography>{para}</Typography>
-                  </Fade>
-                </Box>
-              ))}
-            </Box>
           </Grid>
-          <Grid item lg={7} xs={12}>
+          <Grid item lg={6} xl={7} xs={12}>
             {/* // * image grid */}
             {/* // TODO add image source */}
 
@@ -237,6 +219,25 @@ const AboutPage = ({
             </Grid>
           </Grid>
         </Grid>
+        <Grid container>
+          <Box my={2} mt={4} py={1}>
+            <Typography variant="h3">OUR TEAM</Typography>
+            {ourTeamParagraphs.map(para => (
+              <Box my={4} py={1}>
+                <Fade
+                  ssrFadeout={true}
+                  ssrReveal={true}
+                  cascade
+                  duration={1200}
+                  delay={300}
+                >
+                  <Typography>{para}</Typography>
+                </Fade>
+              </Box>
+            ))}
+          </Box>
+        </Grid>
+
         <Box mt={5}>
           <Grid container>
             <Grid item xs={12}>

@@ -9,14 +9,14 @@ const BlogSuggestions = ({ title, suggestions }) => {
     // todo - make this responsive
     <Box my={5} py={3}>
       <Grid container>
-        <Grid item xs={12} lg={3}>
+        <Grid item xs={12} lg={2} xl={3}>
           <Box style={{ display: "flex", alignItems: "center", height: '100%' }}>
             <Typography variant="h3">{title}</Typography>
           </Box>
         </Grid>
-        <Grid container item xs={12} lg={9}>
+        <Grid container item xs={12} lg={10} xl={9}>
           {suggestions.map(blog => (
-            <Grid item xs={12} lg={4}>
+            <Grid item xs={12} md={6} lg={4}>
               <Box mx={1}>
                 <BlogThumbnail {...blog} />
               </Box>

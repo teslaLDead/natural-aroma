@@ -20,7 +20,7 @@ const BlogThumbnail = ({ image, title, content, link }) => {
             {title}
           </Typography>
         </Box>
-        <Typography variant="subtitle2" style={{ opacity: 0.6 }}>{content}</Typography>
+        <Typography variant="body1" style={{ opacity: 0.6 }}><b>{content}</b></Typography>
         <Box my={1}>
           <Grid container justify="center">
             <Link to={link}>

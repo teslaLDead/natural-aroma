@@ -20,7 +20,7 @@ import { ParallaxProvider } from "react-scroll-parallax"
 import { makeStyles } from "@mui/styles"
 
 // breakpoints for the layouts
-const breakpoints = [576, 768, 992, 1200, 1600]
+const breakpoints = [576, 768, 992, 1300, 1440, 1600]
 const mq = breakpoints.map(bp => `@media (min-width: ${bp}px)`)
 
 const layoutCentering = {
@@ -28,12 +28,15 @@ const layoutCentering = {
     maxWidth: 600,
   },
   [mq[2]]: {
-    maxWidth: 800,
+    maxWidth: 900,
   },
   [mq[3]]: {
-    maxWidth: 920,
+    maxWidth: 1220,
   },
   [mq[4]]: {
+    maxWidth: 1320,
+  },
+  [mq[5]]: {
     maxWidth: 1500,
   },
 
@@ -54,21 +57,26 @@ const theme = createTheme({
       fontFamily: "AxiformaBlack!important",
       fontSize: "3.3rem",
       ["@media (max-width: 720px)"]: {
-        fontSize: "2.5rem",
+        fontSize: "2.3rem",
       },
+      ["@media only screen and (max-width: 1400px) and (min-width: 740px)"]:{
+        fontSize: "2.5rem",
+      }
     },
     h2: {
       fontFamily: "AxiformaBlack!important",
       fontSize: "2.3rem",
-      ["@media (max-width: 720px)"]: {
+      ["@media (max-width: 1388px)"]: {
         fontSize: "1.7rem",
       },
+     
+      
     },
     h3: {
       fontSize: "1.55rem",
       fontFamily: "AxiformaBlack!important",
-      ["@media (max-width: 720px)"]: {
-        fontSize: "1.55rem",
+      ["@media (max-width: 1388px)"]: {
+        fontSize: "1.4rem",
       },
     },
     h4: {
@@ -82,6 +90,9 @@ const theme = createTheme({
       fontSize: "0.85rem",
       lineHeight: "1.6rem",
       color: "#010009d1",
+      ["@media (max-width: 1388px)"]: {
+        fontSize: "0.75rem",
+      },
       "& b": {
         color: "black",
       },

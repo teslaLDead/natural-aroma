@@ -16,6 +16,9 @@ import { jss, css } from "@emotion/react"
       position: "relative",
       left: 0
     },
+    ["@media only screen and (min-width: 720px) and (max-width: 1440px)"]: {
+      left: -400
+    },
   })
   const heroImageText =  css({
     color: "white",
@@ -29,7 +32,11 @@ import { jss, css } from "@emotion/react"
       transform: 'translateY(-160px)',
       textAlign:'center',
       fontSize: 26
-    }
+    },
+    ["@media only screen and (min-width: 720px) and (max-width: 1388px)"]: {
+      fontSize:'1.8rem'
+    },
+    
     // position: "absolute",
   })
 
@@ -64,7 +71,9 @@ const Quality = ({ img, title, content }) => {
   return (
     <Grid item xs={12} lg={6} css={qualityItemContainer}>
       <Fade delay={200}>
-        <Box py={5} mx={2}>
+        <Box css={css({
+          padding: 20
+        })}>
           <Grid container>
             <Grid xs={3}>
               <Box mx={1}>
