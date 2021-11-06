@@ -5,7 +5,7 @@ import { makeStyles } from "@mui/styles"
 import { Link } from "gatsby"
 import { jss, css } from "@emotion/react"
 
-const heroImage = css({
+const heroImageCss = css({
   width: "100%",
   height: 600,
   objectFit: "cover",
@@ -37,7 +37,7 @@ const BlogPage = ({ title, category, date, tags, heroImage, content }) => {
   return (
     <Grid>
       <Box my={5}>
-        <img css={heroImage} src={heroImage} alt="hero image" />
+        <img css={heroImageCss} src={heroImage} alt="hero image" />
       </Box>
 
       <Grid container justifyContent="center">
@@ -45,7 +45,9 @@ const BlogPage = ({ title, category, date, tags, heroImage, content }) => {
           <Box my={5}>
             <Grid container justifyContent="space-between" alignItems="center">
               <Grid item xs={8}>
-                <Typography css={title} variant="h1">
+                <Typography css={css({
+                  textTransform:'capitalize'
+                })} variant="h1">
                   {title}
                 </Typography>
               </Grid>

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react"
+import { useStaticQuery, graphql } from "gatsby"
 import {
   Grid,
   Box,
@@ -10,7 +11,11 @@ import {
   Typography,
   IconButton,
 } from "@mui/material"
-import {jss, css} from "@emotion/react"
+import List from "@mui/material/List"
+import ListItem from "@mui/material/ListItem"
+import ListItemText from "@mui/material/ListItemText"
+import ListSubheader from "@mui/material/ListSubheader"
+import { jss, css } from "@emotion/react"
 import { Link } from "gatsby"
 const classes = {
   container: {
@@ -24,12 +29,73 @@ const classes = {
     border: "1px solid #f1f1f2",
   },
   lightText: {
-    opacity: 0.36,
+    opacity: 0.4,
   },
+}
+
+// function to extract relevant information to search from
+const searchResultExtractor = data => {
+  const result = []
+  data.forEach(el => {
+    const { blog, product, category } = el.context
+    if (blog == null && product == null && category == null) console.log("")
+    else if (blog !== null)
+      result.push({
+        type: "blog",
+        link: el.path,
+        name: blog.frontmatter.title,
+      })
+    else if (category !== null)
+      result.push({
+        type: "product-category",
+        link: el.path,
+        name: category,
+      })
+    else
+      result.push({
+        type: "product",
+        link: el.path,
+        name: el.context.product.frontmatter.name,
+      })
+  })
+
+  return result
 }
 
 const SearchForm = ({ openState, closeSearch }) => {
   const [open, setOpen] = useState(false)
+  const [searchQuery, setSearchQuery] = useState("")
+
+  const searchData = useStaticQuery(graphql`
+    query allSiteSearch {
+      allSitePage {
+        nodes {
+          path
+          context {
+            blog {
+              frontmatter {
+                category
+                title
+              }
+            }
+            category
+            product {
+              frontmatter {
+                category
+                name
+              }
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  const [allSiteLink] = useState(
+    searchResultExtractor(searchData.allSitePage.nodes)
+  )
+
+  console.log("search links", allSiteLink)
 
   // this suggested items will be changed depending on the search query entered
   const [suggestedItems, setSuggestedItems] = useState([
@@ -40,7 +106,13 @@ const SearchForm = ({ openState, closeSearch }) => {
   ])
 
   // for search query results
+  // * this will filter the values from all site links when the lenght of search query field reaches more than 3
   const [searchResults, setSearchResults] = useState([])
+
+  const handleSearch = e => {
+    const searchQuery = e.target.value
+    setSearchQuery(searchQuery) // set the field value
+  }
   useEffect(() => {
     setOpen(openState)
   }, [openState])
@@ -50,43 +122,62 @@ const SearchForm = ({ openState, closeSearch }) => {
   }
   return (
     <Dialog fullWidth={true} maxWidth="lg" open={open} onClose={handleClose}>
-      <DialogTitle>
-        <Box mt={2} mb={5} mx={4}>
-          <Grid container>
-            <Typography variant="subtitle1">
-              Search our products range and more.
-            </Typography>
-            <Box>
-              <IconButton onClick={handleClose} />
-            </Box>
-          </Grid>
-        </Box>
-      </DialogTitle>
       <DialogContent>
-        <Box css={classes.container} mx={4}>
+        <Box>
+          <Box my={1} mx={4}>
+            <Grid container>
+              <Typography variant="subtitle2">
+                Search our wide range of products
+              </Typography>
+              <Box>
+                <IconButton onClick={handleClose} />
+              </Box>
+            </Grid>
+          </Box>
+        </Box>
+        <Box css={css(classes.container)} py={1} mx={4}>
           <TextField
+            autoFocus
+            value={searchQuery}
             label="Search"
+            onChange={handleSearch}
             placeholder="Enter Your Search Query"
             fullWidth
-            variant="outlined"
           />
         </Box>
-        <Box my={5} mx={4} pb={5}>
+        <Box my={1} mx={4} pb={3}>
           <Grid container alignItems="center">
             <Box>
-              <Typography css={classes.lightText} variant="h6">
-                Suggested Results
+              <Typography css={css(classes.lightText)} variant="subtitle2">
+                Popular Links
               </Typography>
             </Box>
-            <Box>
+            <Box
+              css={css({
+                marginLeft: 5,
+                ["@media (max-width: 680px)"]: {
+                  marginLeft: 0,
+                },
+              })}
+            >
               <Grid container>
                 {suggestedItems.map(suggestion => (
-                  <Box mx={2} px={2}  style={{ border: "1px solid #f1f1f2!important" }}>
+                  <Box
+                    mr={2}
+                    css={css({
+                      border: "1px solid #f1f1f2!important",
+                      padding: "6px 9px",
+                      ["@media (max-width: 680px)"]: {
+                        marginTop: 2,
+                        marginBottom: 2,
+                      },
+                    })}
+                  >
                     <Link
                       to={`/${suggestion}`}
-                      css={classes.suggestionLink}
+                      css={css(classes.suggestionLink)}
                     >
-                      <Typography variant="h6">
+                      <Typography variant="subtitle2">
                         {suggestion.split("-").join(" ")}
                       </Typography>
                     </Link>
@@ -95,6 +186,55 @@ const SearchForm = ({ openState, closeSearch }) => {
               </Grid>
             </Box>
           </Grid>
+        </Box>
+        <Box mx={4}>
+          <Typography variant="subtitle2" css={css({ opacity: 0.5 })}>
+            Suggested Search Results
+          </Typography>
+          {/* search results will appear here */}
+          <List
+            sx={{
+              width: "100%",
+              bgColor: "white",
+              position: "relative",
+              maxHeight: 300,
+              overflow: "auto",
+            }}
+          >
+            {allSiteLink
+              .filter(item => {
+                const name = item.name.split(" ").join("").toLowerCase()
+                return (
+                  searchQuery.length > 1 &&
+                  name.includes(searchQuery.split(" ").join("").toLowerCase())
+                )
+              })
+              .sort((a, b) => {
+                if (b.name > a.name) return -1
+                if (a.name > b.name) return 1
+                return 0
+              })
+              .map(item => (
+                <Link to={item.link}>
+                  <ListItem key={`item-${item.name}`}>
+                    <Box
+                      css={css({
+                        textTransform: "capitalize",
+                        color: "black",
+                      })}
+                    >
+                      <Typography variant="subtitle1">{item.name}</Typography>
+                      <Typography
+                        css={css({ opacity: 0.4 })}
+                        variant="subtitle2"
+                      >
+                        {item.type}
+                      </Typography>
+                    </Box>
+                  </ListItem>
+                </Link>
+              ))}
+          </List>
         </Box>
       </DialogContent>
     </Dialog>

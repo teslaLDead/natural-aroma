@@ -109,8 +109,12 @@ const theme = createTheme({
       fontFamily: "AxiformaRegular!important",
       fontSize: "0.8rem",
     },
+    subtitle1:{
+      fontFamily: "AxiformaMedium!important",
+      fontWeight: 600
+    },
     subtitle2: {
-      fontFamily: "AxiformaBlack!important",
+      fontFamily: "AxiformaMedium!important",
       fontSize: "0.8rem",
       fontWeight: 500,
     },
