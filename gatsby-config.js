@@ -55,13 +55,13 @@ module.exports = {
         icons: `src/images/Logo.svg`
       }
     },
-    {
-      resolve: `gatsby-plugin-tawk.to`,
-      options: {
-        tawkId: "6186c1ef6885f60a50baa12e",
-        tawkKey: "04167c6bde4e02134487c0308b9e279ffc81586b",
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-tawk.to`,
+    //   options: {
+    //     tawkId: "6186c1ef6885f60a50baa12e",
+    //     tawkKey: "04167c6bde4e02134487c0308b9e279ffc81586b",
+    //   },
+    // },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
