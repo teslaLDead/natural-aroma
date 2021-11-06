@@ -117,7 +117,9 @@ const ContactPage = ({}) => {
               <Typography variant="h1">Contact Us</Typography>
               <Typography>Reach out to us for any inquiry</Typography>
             </Box>
-            <form onSubmit={handleSubmit}>
+            <form method="POST" netlify-honeypot="bot-field" data-netlify="true" name="contact">
+            <input type="hidden" name="bot-field" />
+            <input type="hidden" name="form-name" value="contact" />
               <Box>
                 <Box my={3}>
                   <TextField
