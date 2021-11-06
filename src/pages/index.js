@@ -97,7 +97,7 @@ const Header = () => {
                   delay={200}
                   duration={1200}
                 >
-                  <Parallax y={[-20, 20]}>
+                  <Parallax y={[-30, 30]}>
                     <img src={HeroImage2} alt="hero image1" />
                   </Parallax>
                 </Fade>
@@ -133,7 +133,7 @@ const Header = () => {
                   delay={450}
                   duration={1400}
                 >
-                  <Parallax y={[-40, 80]}>
+                  <Parallax y={[-50, 80]}>
                     <img src={HeroImage3} alt="hero image4" />
                   </Parallax>
                 </Fade>
@@ -153,11 +153,11 @@ const ComapnyProfile = () => {
         <Grid item xs={12} lg={6}>
           <Fade>
             <Box mt={2}>
-              <Typography variant="h2">COMPANY PROFILE</Typography>
+              <Typography variant="h2">Company Profile</Typography>
             </Box>
           </Fade>
           <Fade delay={400}>
-            <Box my={2}>
+            <Box my={2} textAlign="justify">
               <Typography>
                 Our company was founded in 1995 since then we have pioneered in
                 the manufacturing of essential oils, aroma chemicals, and

@@ -166,7 +166,7 @@ export default function Products({ noDescription }) {
         })}
       >
         <Fade delay={400}>
-          <Typography variant="h2">PRODUCTS</Typography>
+          <Typography variant="h2">Our Products</Typography>
         </Fade>
         <Fade delay={600}>
           <Grid container justifyContent="center">

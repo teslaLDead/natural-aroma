@@ -89,7 +89,7 @@ const Quality = ({ img, title, content }) => {
                 </Box>
               </Fade>
               <Fade delay={600} duration={1500}>
-                <Typography>{content}</Typography>
+                <Box textAlign="justify"><Typography>{content}</Typography></Box>
               </Fade>
             </Grid>
           </Grid>

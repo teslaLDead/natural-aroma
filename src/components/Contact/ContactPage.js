@@ -90,7 +90,21 @@ const ContactPage = ({}) => {
   const [email, setEmail] = useState("")
   const [phone, setPhone] = useState("")
   const [message, setMessage] = useState("")
-  const handleSubmit = e => {}
+  const handleSubmit = e => {
+    e.preventDefault()
+    console.log(e.target)
+    const formData = new FormData()
+    formData.append('name',name)
+    formData.append('email',email)
+    formData.append('phone',phone)
+    formData.append('message',message)
+    console.log(formData.getAll('message'))
+    fetch('/',{
+      method:"POST",
+      headers: {"Content-Type": "application/x-www-form-urlencoded"},
+      body: new URLSearchParams(formData).toString()
+    }).then(()=>console.log('form successfully submited')).catch(console.error)
+  }
   return (
     <Box css={mainContainer}>
       <Helmet>
@@ -103,7 +117,7 @@ const ContactPage = ({}) => {
               <Typography variant="h1">Contact Us</Typography>
               <Typography>Reach out to us for any inquiry</Typography>
             </Box>
-            <form name="contact" method="POST" data-netlify="true">
+            <form onSubmit={handleSubmit}>
               <Box>
                 <Box my={3}>
                   <TextField
