@@ -6,11 +6,12 @@ aboutUsParagraphs:
     adaptation, strategic enhancement, revolutionary packaging, and consistent
     innovation. For us, product quality, prompt service and customer
     satisfaction are of utmost importance.
-  - We have a state of the art manufacturing plant located in Ghaziabad . All
-    the products manufactured here conform to stringent quality control and
-    comply with GMP standards. Our in house laboratory is equipped with the
-    latest type of equipments  to ensure that quality is maintained for our
-    customers.
+  - Our leaders believe in the importance of a purpose-driven enterprise. We
+    understand the effects that our decisions can have on the world & the
+    environment. This is the reason we keep on attempting to do our bit in
+    energy, water and waste management. We also educate our workers about the
+    same so that they implement these not just when they are working here but
+    also in their daily lives.
   - The three distinctive attributes that distinguish our company from our
     competitors are our unique technology, strong customer relationship, and
     extensive product range. It is the strategic management of each of these
