@@ -1,24 +1,20 @@
 ---
 aboutUsParagraphs:
   - Our company was founded in 1995 since then we have pioneered in the
-    manufacturing of essential oils, aroma chemicals, and natural isolates. Our
-    company products are defined by creative adaptation, strategic enhancement,
-    revolutionary packaging, and consistent innovation. For us, product quality,
-    prompt service and customer satisfaction are of the utmost importance.
-  - We have a state of the art manufacturing plant located in Ghaziabad with a
-    capacity of 24 metric tons. All the products manufactured here conform to
-    stringent quality control and comply with GMP standards. Our in house
-    laboratory is equipped with the latest type of equipments like gas
-    chromatograph, digital polarimeter, refractometer, and density meter to
-    ensure that quality is maintained for our customers.
+    manufacturing of essential oils, aroma chemicals, natural isolates,carrier
+    oils, fragrances and flavour Our company products are defined by creative
+    adaptation, strategic enhancement, revolutionary packaging, and consistent
+    innovation. For us, product quality, prompt service and customer
+    satisfaction are of the utmost importance.
+  - We have a state of the art manufacturing plant located in Ghaziabad . All
+    the products manufactured here conform to stringent quality control and
+    comply with GMP standards. Our in house laboratory is equipped with the
+    latest type of equipments  to ensure that quality is maintained for our
+    customers.
   - The three distinctive attributes that distinguish our company from our
     competitors are our unique technology, strong customer relationship, and
     extensive product range. It is the strategic management of each of these
     that we believe will go miles ahead in achieving our target.
-  - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Enim facilisis gravida
-    neque convallis a. Enim ut sem viverra aliquet eget sit amet tellus. Ac
-    felis donec et odio pellentesque diam volutpat commodo.
 headerImages:
   - https://ucarecdn.com/4678fa4a-a135-402c-82a9-39fd42bf1260/
   - https://ucarecdn.com/727daa46-8729-40a2-ae62-ad7e051cedb8/
