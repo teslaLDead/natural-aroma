@@ -20,7 +20,7 @@ import { ParallaxProvider } from "react-scroll-parallax"
 import { makeStyles } from "@mui/styles"
 
 // breakpoints for the layouts
-const breakpoints = [576, 768, 992, 1300, 1440, 1600]
+const breakpoints = [576, 768, 1280, 1300, 1440, 1600]
 const mq = breakpoints.map(bp => `@media (min-width: ${bp}px)`)
 
 const layoutCentering = {
@@ -28,7 +28,7 @@ const layoutCentering = {
     maxWidth: 600,
   },
   [mq[2]]: {
-    maxWidth: 900,
+    maxWidth: 1000,
   },
   [mq[3]]: {
     maxWidth: 1220,
@@ -60,7 +60,7 @@ const theme = createTheme({
         fontSize: "2.3rem",
       },
       ["@media only screen and (max-width: 1400px) and (min-width: 740px)"]:{
-        fontSize: "2.5rem",
+        fontSize: "2.3rem",
       }
     },
     h2: {

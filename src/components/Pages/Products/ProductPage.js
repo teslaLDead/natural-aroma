@@ -101,12 +101,16 @@ const ProductPage = ({
         <title>{name.toUpperCase()} | Natural Aroma Products</title>
       </Helmet>
       <Grid container spacing={2} justifyContent="space-between">
-        <Grid item xs={12} lg={2}>
+        <Grid item xs={12} lg={2} css={css({
+          ['@media (max-width: 1281px)']:{
+            display:"none"
+          }
+        })}>
           <Box mr={1}>
             <CategoryNav />
           </Box>
         </Grid>
-        <Grid item lg={5} xl={4} xs={12}>
+        <Grid item lg={6} xl={4} xs={12}>
           <Box my={2}>
             <Grid container alignItems="center" justifyContent="space-between">
               <Fade ssrReveal delay={200}>
@@ -167,7 +171,7 @@ const ProductPage = ({
       <Box>
         <Grid container spacing={2}>
           {relatedProducts.map((product, index) => (
-            <Grid item xs={12} lg={3}>
+            <Grid item xs={12} lg={4} xl={3}>
               <Thumbnail {...product.frontmatter} />
             </Grid>
           ))}

@@ -28,7 +28,7 @@ const BulkInquiryForm = ({ product, open, handleClose }) => {
           method="POST"
           netlify-honeypot="bot-field"
           data-netlify="true"
-          name="product enquiry" 
+          name="product-enquiry"
         >
           <input type="hidden" name="bot-field" />
           <input type="hidden" name="form-name" value="product enquiry" />
@@ -116,7 +116,7 @@ const BulkInquiryForm = ({ product, open, handleClose }) => {
             </Grid>
             <Grid item xs={12}>
               <Box mt={2}>
-                <Button type="submit" variant="contained" fullWidth onClick={submitEnquiry}>
+                <Button type="submit" variant="contained" fullWidth>
                   Send Enquiry
                 </Button>
               </Box>

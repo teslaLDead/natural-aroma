@@ -22,7 +22,7 @@ const classes = {
 const CategoryPage = ({ category, products }) => {
   console.log("category", category, products)
   const sampleProductArrays = products.map(({ frontmatter }) => (
-    <Grid item xs={12} lg={4}>
+    <Grid item xs={12} lg={4} >
       <Thumbnail
         thumbnail={frontmatter.thumbnail}
         name={frontmatter.name}
@@ -48,12 +48,12 @@ const CategoryPage = ({ category, products }) => {
         </Fade>
       </Box>
       <Grid container spacing={2} justifyContent="space-between">
-        <Grid item xs={12} lg={2}>
+        <Grid item xs={12} lg={3} xl={2}>
           <CategoryNav currentCategoryId={category} />
         </Grid>
         {/* <Grid item xs={1} />{" "} */}
         {/* required for styling and gap in large screen sizes */}
-        <Grid item lg={10} xl={9} xs={12}>
+        <Grid item lg={9} xl={10} xs={12}>
           <Grid container spacing={2}>{sampleProductArrays}</Grid>
         </Grid>
       </Grid>
