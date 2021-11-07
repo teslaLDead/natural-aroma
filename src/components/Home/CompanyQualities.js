@@ -16,7 +16,10 @@ import { jss, css } from "@emotion/react"
       position: "relative",
       left: 0
     },
-    ["@media only screen and (min-width: 720px) and (max-width: 1440px)"]: {
+    ["@media only screen and (min-width: 720px) and (max-width: 1280px)"]: {
+      left: -500
+    },
+    ["@media only screen and (min-width: 1281px) and (max-width: 1440px)"]: {
       left: -400
     },
   })
@@ -69,7 +72,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque eget nulla ipsu
 
 const Quality = ({ img, title, content }) => {
   return (
-    <Grid item xs={12} lg={6} css={qualityItemContainer}>
+    <Grid item xs={12} lg={6}  css={qualityItemContainer}>
       <Fade delay={200}>
         <Box css={css({
           padding: 20
@@ -89,7 +92,7 @@ const Quality = ({ img, title, content }) => {
                 </Box>
               </Fade>
               <Fade delay={600} duration={1500}>
-                <Box textAlign="justify"><Typography>{content}</Typography></Box>
+                <Typography>{content}</Typography>
               </Fade>
             </Grid>
           </Grid>
@@ -103,7 +106,7 @@ const CompanyQualities = ({}) => {
   return (
     <Box my={5} py={3}>
       <Grid container css={qualitySectionContainer}>
-        <Grid item xs={12} lg={5}>
+        <Grid item xs={12} lg={4}>
           <Box css={heroImageContainer}>
             <img
               src="https://ucarecdn.com/9f21e4e0-9353-4165-bb22-4337da58987c/Group43.png"
@@ -119,7 +122,7 @@ const CompanyQualities = ({}) => {
           </Box>
         </Grid>
 
-        <Grid item xs={12} lg={7}>
+        <Grid item xs={12} lg={8}>
           <Grid container css={qualityListContainer}>
             <Quality
               img="https://ucarecdn.com/c42d3056-cbd6-4a7a-be00-eef4ec76e894/badge.png"
