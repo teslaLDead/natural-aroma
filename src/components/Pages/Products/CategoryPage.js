@@ -54,7 +54,7 @@ const CategoryPage = ({ category, products }) => {
         {/* <Grid item xs={1} />{" "} */}
         {/* required for styling and gap in large screen sizes */}
         <Grid item lg={9} xl={10} xs={12}>
-          <Grid container spacing={2} justifyContent="space-evenly">{sampleProductArrays}</Grid>
+          <Grid container spacing={2}>{sampleProductArrays}</Grid>
         </Grid>
       </Grid>
       {/* <Box>
