@@ -1,11 +1,11 @@
 ---
 aboutUsParagraphs:
-  - Our company was founded in 1995 since then we have pioneered in the
+  - Our company was founded in 1995 and since then we have pioneered in the
     manufacturing of essential oils, aroma chemicals, natural isolates,carrier
     oils, fragrances and flavour Our company products are defined by creative
     adaptation, strategic enhancement, revolutionary packaging, and consistent
     innovation. For us, product quality, prompt service and customer
-    satisfaction are of the utmost importance.
+    satisfaction are of utmost importance.
   - We have a state of the art manufacturing plant located in Ghaziabad . All
     the products manufactured here conform to stringent quality control and
     comply with GMP standards. Our in house laboratory is equipped with the
