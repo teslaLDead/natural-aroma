@@ -1,6 +1,3 @@
-
-
-
 ---
 name: python script md
 title: python script md
