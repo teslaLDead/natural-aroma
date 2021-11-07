@@ -65,7 +65,7 @@ title: Manufacturing Natural Oils and Aroma Products Since 1995
 majorMarkets:
   - India
   - Australia
-  - U.A.E
+  - China
   - Africa
   - USA
   - Sri Lanka
