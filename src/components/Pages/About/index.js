@@ -196,7 +196,7 @@ const AboutPage = ({
             <Box my={1} mb={6} pb={4} textAlign={{ xs: "center", lg: "left" }}>
               <Typography>
                 <b>
-                  <Link to="/infrastructure">Learn more</Link> about our
+                  <Link to="/about/infrastructure">Learn more</Link> about our
                   infrastructure and manufacturing facilities
                 </b>
               </Typography>
