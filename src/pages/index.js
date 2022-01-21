@@ -21,6 +21,7 @@ import ComapnyStats from "../components/Home/CompanyStats"
 import CompanyQualities from "../components/Home/CompanyQualities"
 import BlogSuggestions from "../components/Blog/BlogSuggestions"
 import { Parallax } from "react-scroll-parallax"
+import TypeIt from "typeit-react"
 const header = css({
   minHeight: "100vh",
   ["@media (max-width:720px)"]: {
@@ -39,7 +40,7 @@ const heroImageBackground = css({
     display: "none",
   },
 })
-
+// todo - refactor header to cms integration
 const Header = () => {
   return (
     <Grid css={header} container alignItems="center" spacing={5}>
@@ -53,12 +54,39 @@ const Header = () => {
           delay={300}
         >
           <Typography variant="h1">
-            We Manufacture The Best Quality Oils and Aroma Products
+            We manufacture the best quality of{" "}
+            <span
+              style={{
+                padding: "5px 3px",
+                color: "#57c036",
+                // background: "",
+              }}
+            >
+              {/* // todo - highlight this section  */}
+              <TypeIt
+                options={{
+                  speed: 90,
+                  waitUntilVisible: true,
+                }}
+                getBeforeInit={i => {
+                  i.type("Natural Isolates ")
+                    .pause(700)
+                    .delete()
+                    .type("Aroma Products ")
+                    .pause(700)
+                    .delete()
+                    .type("Essential Oils ")
+                  return i
+                }}
+              />
+            </span>{" "}
           </Typography>
         </Fade>
         <div
+          // className=""
           css={css({
             display: "flex",
+            marginTop: 20,
             "& a:nth-child(2)": {
               marginLeft: 35,
             },

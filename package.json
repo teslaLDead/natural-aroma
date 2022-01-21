@@ -42,7 +42,8 @@
     "react-helmet": "^6.1.0",
     "react-reveal": "^1.2.2",
     "react-scroll-parallax": "^2.4.0",
-    "styled-components": "^5.3.3"
+    "styled-components": "^5.3.3",
+    "typeit-react": "^2.2.0"
   },
   "devDependencies": {
     "gatsby-plugin-root-import": "^2.0.6",

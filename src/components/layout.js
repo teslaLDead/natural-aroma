@@ -55,7 +55,7 @@ const theme = createTheme({
     fontFamily: "AxiformaRegular!important",
     h1: {
       fontFamily: "AxiformaBlack!important",
-      fontSize: "3.3rem",
+      fontSize: "2.5rem",
       ["@media (max-width: 720px)"]: {
         fontSize: "2.3rem",
       },
@@ -65,7 +65,7 @@ const theme = createTheme({
     },
     h2: {
       fontFamily: "AxiformaBlack!important",
-      fontSize: "2.3rem",
+      fontSize: "1.8rem",
       ["@media (max-width: 1388px)"]: {
         fontSize: "1.7rem",
       },
