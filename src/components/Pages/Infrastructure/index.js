@@ -46,20 +46,32 @@ const Infrastructure = () => {
             >
               <Box my={2} mt={1}>
                 <Typography>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ornare arcu odio ut sem nulla pharetra diam sit. Tristique
-                  risus nec feugiat in. Turpis egestas maecenas pharetra
-                  convallis. Lobortis feugiat vivamus at augue.
+                  At Natural Aroma, we have an exceptional and well-fabricated
+                  infrastructural unit, which is refined with most recent
+                  technology & equipment. In accordance with the global quality
+                  norms, we keep our infrastructural unit updated with cutting
+                  edge instruments guaranteeing product quality and efficiency.
                 </Typography>
               </Box>
               <Box my={3}>
                 <Typography>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ornare arcu odio ut sem nulla pharetra diam sit. Tristique
-                  risus nec feugiat in. Turpis egestas maecenas pharetra
-                  convallis. Lobortis feugiat vivamus at augue.
+                  We have a state of the art manufacturing plant located in
+                  Ghaziabad . All the products manufactured here conform to
+                  stringent quality control and comply with GMP standards. Our
+                  in-house laboratory is equipped with the latest type of
+                  equipment to ensure that quality is maintained for our
+                  customers.
+                </Typography>
+              </Box>
+              <Box my={3}>
+                <Typography>
+                  We manufacture with the planet in mind from the earliest
+                  stages of our R&D, evaluating each material against norms that
+                  surpass regulatory prerequisites. We ensure that raw materials
+                  are inexhaustible or repurposed and sourced in ecologically
+                  and socially capable ways. Our plant also has a rain-water
+                  harvesting setup and we prefer using piped gas instead of the
+                  conventional fuel that is generally used in the industry.
                 </Typography>
               </Box>
             </Fade>
@@ -75,20 +87,16 @@ const Infrastructure = () => {
               </Box>
               <Box my={2}>
                 <Typography>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ornare arcu odio ut sem nulla pharetra diam sit. Tristique
-                  risus nec feugiat in. Turpis egestas maecenas pharetra
-                  convallis. Lobortis feugiat vivamus at augue.
+                  Our quality control lab ensures that stringent testing of raw
+                  materials and the final product is being done to comply with
+                  our company standard.
                 </Typography>
               </Box>
               <Box my={2}>
                 <Typography>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ornare arcu odio ut sem nulla pharetra diam sit. Tristique
-                  risus nec feugiat in. Turpis egestas maecenas pharetra
-                  convallis. Lobortis feugiat vivamus at augue.
+                  Our sprawling manufacturing unit also incorporates a food
+                  safety management system consisting of ISO 22000:2005,
+                  "ISO/TS22002-1:2009" and additional FSSC 22000 requirements.
                 </Typography>
               </Box>
             </Fade>
@@ -172,11 +180,8 @@ const Infrastructure = () => {
             <Box my={2}>
               <Fade delay={600}>
                 <Typography>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ornare arcu odio ut sem nulla pharetra diam sit. Tristique
-                  risus nec feugiat in. Turpis egestas maecenas pharetra
-                  convallis. Lobortis feugiat vivamus at augue.
+                  R&D lab works tirelessly on new product development and
+                  innovation in the existing manufacturing process.
                 </Typography>
               </Fade>
             </Box>

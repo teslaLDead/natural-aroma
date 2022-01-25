@@ -3,7 +3,7 @@ import Thumbnail from "./Thumbnail"
 import BlogSuggestions from "../../Blog/BlogSuggestions"
 import CategoryNav from "./CategoryNav"
 import { Box, Button, Grid, Typography } from "@mui/material"
-import {jss, css} from "@emotion/react"
+import { jss, css } from "@emotion/react"
 
 // import Typography from "../../common/Typography
 import ImageViewer from "./ImageViewer"
@@ -33,7 +33,6 @@ const sampleRelatedProducts = [
     imageSrc: "https://picsum.photos/id/227/200/300",
   },
 ]
-
 
 const classes = {
   mainContent: {
@@ -85,7 +84,7 @@ const ProductPage = ({
   description,
   manufacturing_details,
   thumbnail,
-  relatedProducts
+  relatedProducts,
 }) => {
   const [enquiryFormOpen, setEnquiryFormOpen] = useState(false)
   const closeEnquiryForm = () => setEnquiryFormOpen(false)
@@ -101,11 +100,16 @@ const ProductPage = ({
         <title>{name.toUpperCase()} | Natural Aroma Products</title>
       </Helmet>
       <Grid container spacing={2} justifyContent="space-between">
-        <Grid item xs={12} lg={2} css={css({
-          ['@media (max-width: 1280px)']:{
-            display:"none"
-          }
-        })}>
+        <Grid
+          item
+          xs={12}
+          lg={2}
+          css={css({
+            ["@media (max-width: 1280px)"]: {
+              display: "none",
+            },
+          })}
+        >
           <Box mr={1}>
             <CategoryNav />
           </Box>
@@ -124,7 +128,9 @@ const ProductPage = ({
                 </Typography>
               </Fade>
               <Fade ssrReveal delay={400}>
-                <Button variant="outlined" onClick={openEnquiryForm}>Bulk Enquiry</Button>
+                <Button variant="outlined" onClick={openEnquiryForm}>
+                  Bulk Enquiry
+                </Button>
               </Fade>
             </Grid>
           </Box>
@@ -136,13 +142,17 @@ const ProductPage = ({
         <Grid item lg={5} xl={5} xs={12}>
           <Box my={2}>
             <Typography variant="h4">Product Details</Typography>
-            <Box>
+            <Box mt={2}>
               <ProductDetails details={details} />
             </Box>
           </Box>
           <Box my={5}>
             <Fade ssrReveal delay={600}>
-              <Typography variant="h4">Description</Typography>
+              <>
+                {description && description.length > 0 && (
+                  <Typography variant="h4">Description</Typography>
+                )}
+              </>
             </Fade>
             <Box>
               {/* {descriptions.map(description => ( */}
@@ -153,7 +163,11 @@ const ProductPage = ({
             </Box>
           </Box>
           <Box>
-            <Typography variant="h4">Manufacturing Details</Typography>
+            <>
+              {manufacturing_details && manufacturing_details.length > 0 && (
+                <Typography variant="h4">Manufacturing Details</Typography>
+              )}
+            </>
             <Box>
               {manufacturing_details &&
                 manufacturing_details.map(detail => (

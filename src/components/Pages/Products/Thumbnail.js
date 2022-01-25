@@ -2,14 +2,14 @@ import React from "react"
 // import Button from "common/Button"
 import { Link } from "gatsby"
 import { Box, Grid, Button, Typography } from "@mui/material"
-import {jss, css} from "@emotion/react"
+import { jss, css } from "@emotion/react"
 
 import { Fade } from "react-reveal"
 
 // todo this will require some UX changes due to product name size
 const classes = {
-  button:{
-    minWidth: '125px!important',
+  button: {
+    minWidth: "125px!important",
   },
   container: {
     border: "1px solid #ECEAEA",
@@ -42,22 +42,32 @@ const Thumbnail = ({ thumbnail, name }) => {
     <Box css={css(classes.container)}>
       <Box css={css(classes.imgContainer)}>
         <Fade delay={200}>
-          <img css={classes.img} src={thumbnail} alt={name} />
+          <img
+            css={classes.img}
+            height={500}
+            style={{
+              objectFit: "cover",
+            }}
+            src={thumbnail}
+            alt={name}
+          />
         </Fade>
       </Box>
       <Grid container alignItems="center" justifyContent="space-between">
         {/* need to fix this for bigger names like lavendar oil */}
         <Box css={css(classes.productName)} mx={1}>
           <Fade delay={400}>
-            <Typography css={css({textTransform:'capitalize'})}>
+            <Typography css={css({ textTransform: "capitalize" })}>
               <b>{name}</b>
             </Typography>
           </Fade>
         </Box>
         <Box mx={1} my={1}>
           <Fade delay={500}>
-            <Link to={`/${name.split(' ').join('-')}`}>
-              <Button css={css(classes.button)} variant="outlined">View Product</Button>
+            <Link to={`/${name.split(" ").join("-")}`}>
+              <Button css={css(classes.button)} variant="outlined">
+                View Product
+              </Button>
             </Link>
           </Fade>
         </Box>

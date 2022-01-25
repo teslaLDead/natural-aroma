@@ -5,7 +5,7 @@ tags:
   - test tag1
 date: 2021-09-06T11:02:47.913Z
 showOnHome: false
-category: essential oils
+category: essential oil
 ---
 <!--StartFragment-->
 

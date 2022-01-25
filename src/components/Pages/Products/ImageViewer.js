@@ -8,17 +8,20 @@ const classes = {
   hero: {
     width: "100%",
   },
-  heroImage:{
-    transform: 'scale(1)',
-    "& :hover":{
-      transform: 'scale(1.1)'
-    }
+  heroImage: {
+    transform: "scale(1)",
+    "& :hover": {
+      transform: "scale(1.1)",
+    },
+    objectFit: "fill",
+    width: "100%",
+    height: "500px",
   },
   thumbnailContainer: {
     display: "flex",
   },
   thumbnail: {
-    cursor:'pointer',
+    cursor: "pointer",
     maxWidth: 120,
     maxHeight: 120,
     overflow: "hidden",
@@ -29,16 +32,27 @@ const ImageViewer = ({ images, thumbnail }) => {
 
   useEffect(() => {
     // sets ids to image here
-    console.log(images)
-    setDisplayImages(
-      images.concat(thumbnail).map((el, index) => {
-        return {
-          src: el,
-          id: index,
-          main: index === images.length,
-        }
-      })
-    )
+    console.log("images", images, thumbnail)
+    if (images)
+      setDisplayImages(
+        images.concat(thumbnail).map((el, index) => {
+          return {
+            src: el,
+            id: index,
+            main: index === images.length,
+          }
+        })
+      )
+    else
+      setDisplayImages(
+        [thumbnail].map((el, index) => {
+          return {
+            src: el,
+            id: index,
+            main: true,
+          }
+        })
+      )
   }, [])
 
   const makeHeroImage = key => {

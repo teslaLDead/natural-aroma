@@ -43,7 +43,7 @@ const heroImageBackground = css({
 // todo - refactor header to cms integration
 const Header = () => {
   return (
-    <Grid css={header} container alignItems="center" spacing={5}>
+    <Grid css={header} container alignItems="center" >
       {/* for Grid text */}
       <Grid item xs={12} lg={6}>
         <Fade
@@ -118,7 +118,7 @@ const Header = () => {
               {/* <div className={classes.heroImageBackground}></div> */}
             </Fade>
             <Grid item xs={6}>
-              <Box mt={5} pt={5} mr={3}>
+              <Box mt={5} pt={5} mx={3}>
                 <Fade
                   ssrFadeout={true}
                   ssrReveal={true}
@@ -130,7 +130,7 @@ const Header = () => {
                   </Parallax>
                 </Fade>
               </Box>
-              <Box mt={3} mr={3}>
+              <Box mt={3} mx={3}>
                 <Fade
                   ssrFadeout={true}
                   ssrReveal={true}

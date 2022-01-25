@@ -222,7 +222,7 @@ const AboutPage = ({
         <Grid container>
           <Box my={2} mt={4} py={1}>
             <Typography variant="h3">OUR TEAM</Typography>
-            {ourTeamParagraphs.map(para => (
+            {/* {ourTeamParagraphs.map(para => (
               <Box my={4} py={1}>
                 <Fade
                   ssrFadeout={true}
@@ -234,7 +234,7 @@ const AboutPage = ({
                   <Typography>{para}</Typography>
                 </Fade>
               </Box>
-            ))}
+            ))} */}
           </Box>
         </Grid>
 
