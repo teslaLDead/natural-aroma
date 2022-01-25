@@ -1,6 +1,6 @@
 ---
-name: Cineole 80%
-title: Cineole 80%
+name: Cineole
+title: Cineole
 details:
   - detail:
       key: "Brand"

@@ -1,6 +1,6 @@
 ---
-name: Eucalyptus Oil 60%
-title: Eucalyptus Oil 60%
+name: Eucalyptus Oil
+title: Eucalyptus Oil
 details:
   - detail:
       key: "Cas Number"

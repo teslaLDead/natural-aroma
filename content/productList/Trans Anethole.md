@@ -1,6 +1,6 @@
 ---
-name: Trans Anethole 99.5%
-title: Trans Anethole 99.5%
+name: Trans Anethole 99
+title: Trans Anethole 99
 details:
   - detail:
       key: "Form"

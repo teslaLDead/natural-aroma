@@ -1,6 +1,6 @@
 ---
-name: Alpha Pinene 95%
-title: Alpha Pinene 95%
+name: Alpha Pinene 
+title: Alpha Pinene
 details:
   - detail:
       key: "Packaging Size"

@@ -1,6 +1,6 @@
 ---
-name: Eugenol Chemical (99.5%)
-title: Eugenol Chemical (99.5%)
+name: Eugenol Chemical
+title: Eugenol Chemical
 details:
   - detail:
       key: "Storage"

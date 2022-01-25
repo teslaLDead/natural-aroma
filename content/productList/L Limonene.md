@@ -1,6 +1,6 @@
 ---
-name: L Limonene 95%
-title: L Limonene 95%
+name: L Limonene
+title: L Limonene
 details:
   - detail:
       key: "Brand"

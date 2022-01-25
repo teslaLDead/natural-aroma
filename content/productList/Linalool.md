@@ -1,6 +1,6 @@
 ---
-name: Linalool 98% (Natural)
-title: Linalool 98% (Natural)
+name: Linalool
+title: Linalool
 details:
   - detail:
       key: "Brand"

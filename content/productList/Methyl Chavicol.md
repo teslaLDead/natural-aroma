@@ -1,6 +1,6 @@
 ---
-name: Methyl Chavicol 99%
-title: Methyl Chavicol 99%
+name: Methyl Chavicol
+title: Methyl Chavicol
 details:
   - detail:
       key: "Packaging Size"

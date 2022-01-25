@@ -1,6 +1,6 @@
 ---
-name: Terpinen-4-OL (99%)
-title: Terpinen-4-OL (99%)
+name: Terpinen 4 OL 
+title: Terpinen 4 OL
 details:
   - detail:
       key: "Usage/Application"

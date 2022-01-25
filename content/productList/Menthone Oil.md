@@ -1,6 +1,6 @@
 ---
-name: Menthone Oil (98%)
-title: Menthone Oil (98%)
+name: Menthone Oil
+title: Menthone Oil
 details:
   - detail:
       key: "Brand"

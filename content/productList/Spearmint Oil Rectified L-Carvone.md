@@ -1,6 +1,6 @@
 ---
-name: Spearmint Oil Rectified L-Carvone 90%
-title: Spearmint Oil Rectified L-Carvone 90%
+name: Spearmint Oil Rectified L-Carvone
+title: Spearmint Oil Rectified L-Carvone
 details:
   - detail:
       key: "Usage/Application"

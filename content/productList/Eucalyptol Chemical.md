@@ -1,6 +1,6 @@
 ---
-name: Eucalyptol Chemical (99.5 %)
-title: Eucalyptol Chemical (99.5 %)
+name: Eucalyptol Chemical
+title: Eucalyptol Chemical
 details:
   - detail:
       key: "Brand"

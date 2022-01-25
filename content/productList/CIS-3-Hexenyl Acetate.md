@@ -1,6 +1,6 @@
 ---
-name: CIS-3-Hexenyl Acetate
-title: CIS-3-Hexenyl Acetate
+name: CIS 3 Hexenyl Acetate
+title: CIS 3 Hexenyl Acetate
 details:
   - detail:
       key: "Packaging Size"

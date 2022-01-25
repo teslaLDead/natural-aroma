@@ -1,6 +1,6 @@
 ---
-name: Cineol 99.5%
-title: Cineol 99.5%
+name: Cineol
+title: Cineol
 details:
   - detail:
       key: "Packaging Size"

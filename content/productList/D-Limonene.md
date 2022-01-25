@@ -1,6 +1,6 @@
 ---
-name: D-Limonene 98%
-title: D-Limonene 98%
+name: D-Limonene
+title: D-Limonene
 details:
   - detail:
       key: "Packaging Size"

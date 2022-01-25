@@ -1,6 +1,6 @@
 ---
-name: Gamma Terpinene (98%)
-title: Gamma Terpinene (98%)
+name: Gamma Terpinene
+title: Gamma Terpinene
 details:
   - detail:
       key: "Usage/Application"
