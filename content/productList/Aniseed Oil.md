@@ -35,7 +35,7 @@ details:
   - detail:
       key: "Physical State"
       value: "Liquid"
-showOnHome: true
+showOnHome: false
 thumbnail: https://5.imimg.com/data5/SELLER/Default/2021/12/UR/AV/JE/3823480/aniseed-oil-500x500.jpg
 productImages:
   - ""

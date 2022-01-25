@@ -23,7 +23,7 @@ details:
   - detail:
       key: "Density"
       value: "0.861 g/mL"
-showOnHome: false
+showOnHome: true
 thumbnail: https://5.imimg.com/data5/SELLER/Default/2021/12/TL/RL/BN/3823480/rose-oil-500x500.jpg
 productImages:
   - ""

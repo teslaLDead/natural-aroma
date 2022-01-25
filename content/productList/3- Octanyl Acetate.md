@@ -1,6 +1,6 @@
 ---
-name: 3- Octanyl Acetate
-title: 3- Octanyl Acetate
+name: Octanyl Acetate
+title: Octanyl Acetate
 details:
   - detail:
       key: "Usage/Application"
