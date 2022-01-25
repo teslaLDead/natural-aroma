@@ -56,7 +56,7 @@ details:
   - detail:
       key: "Brand"
       value: "Natural Aroma"
-showOnHome: false
+showOnHome: true
 thumbnail: https://5.imimg.com/data5/SELLER/Default/2021/12/EW/DE/ZL/3823480/basil-oil-500x500.jpg
 productImages:
   - ""

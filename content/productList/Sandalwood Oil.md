@@ -23,7 +23,7 @@ details:
   - detail:
       key: "Country of Origin"
       value: "Made in India"
-showOnHome: false
+showOnHome: true
 thumbnail: https://5.imimg.com/data5/SELLER/Default/2021/12/LE/MW/BK/3823480/sandalwood-oil-500x500.jpg
 productImages:
   - ""

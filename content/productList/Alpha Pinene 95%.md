@@ -56,7 +56,7 @@ details:
   - detail:
       key: "HS Code"
       value: "2902.19"
-showOnHome: false
+showOnHome: true
 thumbnail: https://5.imimg.com/data5/SELLER/Default/2021/12/IE/GU/QQ/3823480/alpha-pinene-95--500x500.png
 productImages:
   - ""

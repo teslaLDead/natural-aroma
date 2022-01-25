@@ -111,7 +111,10 @@ const Infrastructure = () => {
                 <Box m={1}>
                   <Fade delay={100}>
                     <Parallax y={[-50, 20]}>
-                      <img src="https://picsum.photos/id/1/600" alt="" />
+                      <img
+                        src="https://ucarecdn.com/5fc139f6-09dc-4de9-abac-10dd68e23c9d/-/scale_crop/400x400/smart/"
+                        alt=""
+                      />
                     </Parallax>
                   </Fade>
                 </Box>
@@ -119,7 +122,10 @@ const Infrastructure = () => {
                   {" "}
                   <Parallax y={[-30, 25]}>
                     <Fade delay={500}>
-                      <img src="https://picsum.photos/id/3/600" alt="" />
+                      <img
+                        src="https://ucarecdn.com/223cf12d-9ce8-42b6-8164-feea1db66d37/-/scale_crop/400x400/smart/"
+                        alt=""
+                      />
                     </Fade>
                   </Parallax>
                 </Box>
@@ -129,7 +135,10 @@ const Infrastructure = () => {
                   {" "}
                   <Parallax y={[-30, 15]}>
                     <Fade delay={300}>
-                      <img src="https://picsum.photos/id/2/600" alt="" />
+                      <img
+                        src="https://ucarecdn.com/7c58e182-6a2d-4af1-8915-9ca622ba2f9d/-/preview/600x600/"
+                        alt=""
+                      />
                     </Fade>
                   </Parallax>
                 </Box>
@@ -137,7 +146,10 @@ const Infrastructure = () => {
                   {" "}
                   <Parallax y={[-20, 15]}>
                     <Fade delay={700}>
-                      <img src="https://picsum.photos/id/4/600" alt="" />
+                      <img
+                        src="https://ucarecdn.com/ddf9634b-4392-4016-83e8-f78778efa158/-/scale_crop/400x400/smart/"
+                        alt=""
+                      />
                     </Fade>
                   </Parallax>
                 </Box>
@@ -153,7 +165,10 @@ const Infrastructure = () => {
               <Grid item xs={8}>
                 <Parallax y={[-20, 10]}>
                   <Box m={1}>
-                    <img src="https://picsum.photos/id/200/600" alt="" />
+                    <img
+                      src="https://ucarecdn.com/808eff1b-d278-4209-b4a9-d49328741052/-/scale_crop/600x600/smart/"
+                      alt=""
+                    />
                   </Box>
                 </Parallax>
               </Grid>
@@ -161,10 +176,16 @@ const Infrastructure = () => {
               <Grid item xs={4}>
                 <Parallax y={[-10, 20]}>
                   <Box m={1}>
-                    <img src="https://picsum.photos/id/220/600" alt="" />
+                    <img
+                      src="https://ucarecdn.com/f62352f5-2d69-4e0f-9a28-fb3a74cd1bd1/-/preview/400x400/"
+                      alt=""
+                    />
                   </Box>
                   <Box m={1}>
-                    <img src="https://picsum.photos/id/220/600" alt="" />
+                    <img
+                      src="https://ucarecdn.com/2359c26a-1471-41d3-95cb-b664580bfc78/-/scale_crop/500x500/smart/"
+                      alt=""
+                    />
                   </Box>
                 </Parallax>
               </Grid>
@@ -188,15 +209,21 @@ const Infrastructure = () => {
             <Box my={6}>
               <Grid container>
                 {[
-                  "https://picsum.photos/id/220/100",
-                  "https://picsum.photos/id/220/100",
-                  "https://picsum.photos/id/220/100",
-                  "https://picsum.photos/id/220/100",
-                  "https://picsum.photos/id/220/100",
+                  "https://ucarecdn.com/cf7354db-c753-41d6-8b49-330aa11dd785/-/preview/200x200/",
+                  "https://ucarecdn.com/8839e7f8-160f-4e08-b739-86dcbdf4e21e/-/preview/200x200/",
+                  "https://ucarecdn.com/cac898aa-0a18-435f-bb60-527ddf8688fc/-/preview/200x200/",
+                  "https://ucarecdn.com/6478408f-27d1-4596-ba7b-bf7b0bcb4620/-/preview/200x200/",
+                  // "https://ucarecdn.com/f78e57d9-76eb-4884-88de-50661f634433/-/preview/200x200/",
                 ].map((image, index) => (
                   <Box m={1} mr={2}>
                     <Fade delay={index * 100}>
-                      <img src={image} alt="" />
+                      <img
+                        src={image}
+                        alt=""
+                        style={{
+                          filter: "invert(100%)",
+                        }}
+                      />
                     </Fade>
                   </Box>
                 ))}
@@ -205,11 +232,9 @@ const Infrastructure = () => {
             <Box my={2}>
               <Fade dela={200} duration={1500}>
                 <Typography>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ornare arcu odio ut sem nulla pharetra diam sit. Tristique
-                  risus nec feugiat in. Turpis egestas maecenas pharetra
-                  convallis. Lobortis feugiat vivamus at augue.
+                  With the assistance of our well equipped infrastructural unit
+                  and quality management system, we have earned certifications
+                  from different organizations at international level.
                 </Typography>
               </Fade>
             </Box>
@@ -221,12 +246,17 @@ const Infrastructure = () => {
           <Typography variant="h3">Manufacturing Facilities</Typography>
         </Box>
         <Grid container spacing={3}>
-          {Array.apply(null, Array(6)).map((src, index) => (
+          {[
+            '2fba2fb0-bfe1-4a36-8323-24a9793868ce',
+            'ed08dd29-1639-44b8-8d1d-4710f0bcf7bc',
+            '46f24702-f44c-40e3-af0c-e20d5e7b8fdd',
+            '01d748fe-6887-4f3f-b462-dd6c1ae0ffab'
+          ].map((src, index) => (
             <Grid item lg={3} xs={6}>
               <Fade delay={index * 200}>
                 <img
                   css={classes.facilityImage}
-                  src={`https://picsum.photos/id/12${index}/600`}
+                  src={`https://ucarecdn.com/${src}/-/scale_crop/500x500/smart`}
                 />
               </Fade>
             </Grid>

@@ -47,7 +47,7 @@ details:
   - detail:
       key: "Density"
       value: "998 kg/m3"
-showOnHome: false
+showOnHome: true
 thumbnail: https://5.imimg.com/data5/SELLER/Default/2021/12/GI/WY/ZV/3823480/anethole-oil-500x500.jpg
 productImages:
   - ""

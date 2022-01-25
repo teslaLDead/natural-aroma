@@ -23,7 +23,7 @@ details:
   - detail:
       key: "CAS No"
       value: "5471-51-2"
-showOnHome: false
+showOnHome: true
 thumbnail: https://5.imimg.com/data5/SELLER/Default/2021/12/HW/WB/ZF/3823480/raspberry-base-oil-500x500.jpg
 productImages:
   - ""

@@ -32,7 +32,7 @@ details:
   - detail:
       key: "Reference"
       value: "U S P (90) P-821"
-showOnHome: false
+showOnHome: true
 thumbnail: https://5.imimg.com/data5/SELLER/Default/2021/12/ZO/HJ/ND/3823480/menthol-crystal-500x500.jpg
 productImages:
   - ""

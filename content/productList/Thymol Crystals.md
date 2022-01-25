@@ -56,7 +56,7 @@ details:
   - detail:
       key: "Physical State"
       value: "Crystals"
-showOnHome: false
+showOnHome: true
 thumbnail: https://5.imimg.com/data5/SELLER/Default/2021/12/KH/KT/TW/3823480/thymol-crystals-500x500.jpg
 productImages:
   - ""

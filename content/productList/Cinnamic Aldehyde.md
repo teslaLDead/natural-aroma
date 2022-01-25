@@ -59,7 +59,7 @@ details:
   - detail:
       key: "Brand"
       value: "Natural Aroma"
-showOnHome: false
+showOnHome: true
 thumbnail: https://5.imimg.com/data5/SELLER/Default/2021/12/PX/GX/TM/3823480/cinnamic-aldehyde-500x500.jpg
 productImages:
   - ""

@@ -56,7 +56,7 @@ details:
   - detail:
       key: "Physical State"
       value: "Liquid"
-showOnHome: false
+showOnHome: true
 thumbnail: https://5.imimg.com/data5/SELLER/Default/2021/12/SR/XX/KZ/3823480/methyl-eugenol-500x500.jpg
 productImages:
   - ""

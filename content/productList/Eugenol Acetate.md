@@ -62,7 +62,7 @@ details:
   - detail:
       key: "Packaging Type"
       value: "Can,Barrel"
-showOnHome: false
+showOnHome: true
 thumbnail: https://5.imimg.com/data5/SELLER/Default/2021/12/FJ/CZ/KB/3823480/eugenol-acetate-500x500.png
 productImages:
   - ""
