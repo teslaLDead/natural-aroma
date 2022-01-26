@@ -21,7 +21,7 @@ const BlogCategories = ({navBarLinks}) => {
     `)
     return (
       <>
-        {blogs.allMarkdownRemark.edges.map(
+        {/* {blogs.allMarkdownRemark.edges.map(
           ({
             node: {
               frontmatter: { id, name },
@@ -31,7 +31,7 @@ const BlogCategories = ({navBarLinks}) => {
               {name}
             </Link>
           )
-        )}
+        )} */}
       </>
     )
   }

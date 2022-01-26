@@ -159,7 +159,7 @@ const Footer = ({}) => {
             <Link to="/products">Products</Link>
             <Link to="/blogs">Blogs</Link>
             <Link to="/contact-us">Contact Us</Link>
-            <Link to="/FAQ">FAQ</Link>
+            {/* <Link to="/FAQ">FAQ</Link> */}
           </Box>
         </Grid>
         <Grid item lg={2} xs={12} css={footerLinks}>
@@ -168,7 +168,7 @@ const Footer = ({}) => {
             {/* // todo - make these links dynamic */}
             <Link to="/essential-oils">Essential Oils</Link>
             <Link to="/aroma-oils">Aroma Oils</Link>
-            <Link to="/reconstituted-oils">Reconstituted Oils</Link>
+            {/* <Link to="/reconstituted-oils">Reconstituted Oils</Link> */}
             <Link to="/natural-isolates">Natural Isolates</Link>
           </Box>
         </Grid>
@@ -186,7 +186,7 @@ const Footer = ({}) => {
             </Link>
             <Link css={contactLink} to="/reconstituted-oils">
               <img src={telephone} alt="Natural Aroma mobile number" />
-              <Typography>+91 9891102691</Typography>
+              <Typography>+91 8860350140</Typography>
             </Link>
             <div css={css(footerCss.socialLinks)}>
               {/* for social links -  */}
@@ -197,7 +197,7 @@ const Footer = ({}) => {
               >
                 <img src={instagram} alt="Natural Aroma Instagram" />
               </a>
-              <a target="_blank" href="">
+              <a target="_blank" href="https://www.linkedin.com/company/natural-aroma-products/">
                 <img src={linkedin} alt="Natural Aroma LinkedIn" />
               </a>
               <a

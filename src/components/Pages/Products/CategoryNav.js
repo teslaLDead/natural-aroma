@@ -99,7 +99,7 @@ const CategoryNav = ({ currentCategoryId }) => {
     name = name.split(" ").join("-")
     productCategories[name] += 1
   })
-
+  // todo - fix this category so that filter can be removed
   return (
     <Box css={classes.container}>
       <Box css={classes.item}>

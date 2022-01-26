@@ -54,7 +54,7 @@ const Header = () => {
           delay={300}
         >
           <Typography variant="h1">
-            We manufacture the best quality of{" "}
+            We manufacture the best quality{" "}
             <span
               style={{
                 padding: "5px 3px",
@@ -69,13 +69,13 @@ const Header = () => {
                   waitUntilVisible: true,
                 }}
                 getBeforeInit={i => {
-                  i.type("Natural Isolates ")
-                    .pause(700)
+                  i.type("Essential Oils ")
+                    .pause(800)
                     .delete()
-                    .type("Aroma Products ")
-                    .pause(700)
+                    .type("Natural Isolates ")
+                    .pause(800)
                     .delete()
-                    .type("Essential Oils ")
+                    .type("Aroma Chemicals ")
                   return i
                 }}
               />
@@ -288,7 +288,7 @@ const IndexPage = () => (
     <Products />
     <ComapnyStats clients={625} products={70} />
     <CompanyQualities />
-    <BlogSuggestions title="FROM OUR BLOG" />
+    {/* <BlogSuggestions title="FROM OUR BLOG" /> */}
   </Layout>
 )
 

@@ -207,7 +207,7 @@ const ContactPage = ({}) => {
                 />
               </Box>
               <Box>
-                <Typography>+91 9891102691</Typography>
+                <Typography>+91 8860350140</Typography>
               </Box>
             </Box>
           </Grid>

@@ -285,7 +285,7 @@ const Navbar = ({ layout }) => {
                           Blogs
                         </Link>
                       </Box>
-                      <Box style={{display: mobileNavBlogs ? 'block' : 'none'}}>
+                      {/* <Box style={{display: mobileNavBlogs ? 'block' : 'none'}}>
                         {blogs.edges.map(
                           ({
                             node: {
@@ -297,7 +297,7 @@ const Navbar = ({ layout }) => {
                             </Link>
                           )
                         )}
-                      </Box>
+                      </Box> */}
                     </Grid>
                   </Grid>
                   <Grid item xs={12}>
@@ -434,7 +434,7 @@ const Navbar = ({ layout }) => {
                         Blogs
                       </Link>
                     </div>
-                    <div
+                    {/* <div
                       id="blogs-navbar"
                       style={{
                         width: "280px",
@@ -481,7 +481,7 @@ const Navbar = ({ layout }) => {
                           </Link>
                         )
                       )}
-                    </div>
+                    </div> */}
                   </nav>
                 </div>
               </div>

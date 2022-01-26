@@ -195,7 +195,7 @@ const Infrastructure = () => {
           <Grid items xs={12} lg={5}>
             <Box mt={5}>
               <Fade delay={200}>
-                <Typography variant="h3">Certificates and Awards</Typography>
+                <Typography variant="h3">Certification and Memberships</Typography>
               </Fade>
             </Box>
             <Box my={2}>
