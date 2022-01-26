@@ -61,7 +61,8 @@ const classes = {
   },
   logo:{
     maxWidth:90,
-    padding: '5px 0'
+    padding: '5px 0',
+    width: '100%'
   },
   mobileNavContainers: {
     position: "fixed",
@@ -196,7 +197,7 @@ const Navbar = ({ layout }) => {
                       ...displayFlexCenter,
                     })}
                   >
-                    <img css={classes.logo} src={logo2} />
+                    <img css={classes.logo} width="100%" src={logo2} />
                     <div
                       css={css({
                         marginLeft: 5,
