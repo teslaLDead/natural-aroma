@@ -107,13 +107,15 @@ const CategoryNav = ({ currentCategoryId }) => {
           Product Categories
         </p>
       </Box>
-      {Object.keys(productCategories).map(id => (
-        <CategoryLink
-          id={id}
-          active={id.split("-").join(" ") === currentCategoryId}
-          count={productCategories[id]}
-        />
-      ))}
+      {Object.keys(productCategories)
+        .filter(id => id !== "reconstituted-oil")
+        .map(id => (
+          <CategoryLink
+            id={id}
+            active={id.split("-").join(" ") === currentCategoryId}
+            count={productCategories[id]}
+          />
+        ))}
     </Box>
   )
 }
