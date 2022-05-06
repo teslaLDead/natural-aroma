@@ -61,6 +61,9 @@ const heroFont = css({
   fontSize: 36,
   fontWeight: "bold",
 })
+const mapIframe = css({
+  border: 0,
+})
 const textField = css({
   "& .MuiOutlinedInput-root": {
     borderRadius: "0px",
@@ -90,20 +93,24 @@ const ContactPage = ({}) => {
   const [email, setEmail] = useState("")
   const [phone, setPhone] = useState("")
   const [message, setMessage] = useState("")
+  const [mapLoaded, setMapLoaded] = useState(false)
+  const updateMapLoaded = () => setMapLoaded(true)
   const handleSubmit = e => {
     e.preventDefault()
     console.log(e.target)
     const formData = new FormData()
-    formData.append('name',name)
-    formData.append('email',email)
-    formData.append('phone',phone)
-    formData.append('message',message)
-    console.log(formData.getAll('message'))
-    fetch('/',{
-      method:"POST",
-      headers: {"Content-Type": "application/x-www-form-urlencoded"},
-      body: new URLSearchParams(formData).toString()
-    }).then(()=>console.log('form successfully submited')).catch(console.error)
+    formData.append("name", name)
+    formData.append("email", email)
+    formData.append("phone", phone)
+    formData.append("message", message)
+    console.log(formData.getAll("message"))
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(formData).toString(),
+    })
+      .then(() => console.log("form successfully submited"))
+      .catch(console.error)
   }
   return (
     <Box css={mainContainer}>
@@ -117,9 +124,14 @@ const ContactPage = ({}) => {
               <Typography variant="h1">Contact Us</Typography>
               <Typography>Reach out to us for any inquiry</Typography>
             </Box>
-            <form method="POST" netlify-honeypot="bot-field" data-netlify="true" name="contact">
-            <input type="hidden" name="bot-field" />
-            <input type="hidden" name="form-name" value="contact" />
+            <form
+              method="POST"
+              netlify-honeypot="bot-field"
+              data-netlify="true"
+              name="contact"
+            >
+              <input type="hidden" name="bot-field" />
+              <input type="hidden" name="form-name" value="contact" />
               <Box>
                 <Box my={3}>
                   <TextField
@@ -187,9 +199,18 @@ const ContactPage = ({}) => {
             <Box mx={2} css={mapContainer}>
               <Box css={mapStyleElement} />
               <Box css={map}>
-                <Parallax y={[-20, 20]}>
-                  <img src="https://ucarecdn.com/c491b051-3c2b-4e7e-900b-1218cb10b9ad/googlemaps.png" />
-                </Parallax>
+                {mapLoaded && <p>Loading map...</p>}
+                <iframe
+                  css={mapIframe}
+                  width="600"
+                  height="450"
+                  loading="lazy"
+                  onLoad={updateMapLoaded}
+                  allowfullscreen
+                  referrerpolicy="no-referrer-when-downgrade"
+                  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCfr8Lg0341xwlMNBXCBY_7ZejdFOjN8jU
+    &q=place_id:ChIJL5mTFm79DDkRMqRmCpJh6Nc"
+                />
               </Box>
             </Box>
           </Grid>
