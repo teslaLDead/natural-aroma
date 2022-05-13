@@ -30,7 +30,7 @@ const BlogHome = ({ blogs }) => {
         <Grid container>
           <Grid item xs={12} lg={6}>
             <Typography variant="h1">
-              Sharing our Knowledge About Oils and Aroma
+              Sharing our Knowledge about Oils and Aroma
             </Typography>
           </Grid>
           <Grid item xs={12} lg={6}>

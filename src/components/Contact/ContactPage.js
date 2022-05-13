@@ -63,6 +63,7 @@ const heroFont = css({
 })
 const mapIframe = css({
   border: 0,
+  border:'1px solid #fefefe',
 })
 const textField = css({
   "& .MuiOutlinedInput-root": {
@@ -199,17 +200,14 @@ const ContactPage = ({}) => {
             <Box mx={2} css={mapContainer}>
               <Box css={mapStyleElement} />
               <Box css={map}>
-                {mapLoaded && <p>Loading map...</p>}
                 <iframe
                   css={mapIframe}
                   width="600"
                   height="450"
                   loading="lazy"
-                  onLoad={updateMapLoaded}
                   allowfullscreen
                   referrerpolicy="no-referrer-when-downgrade"
-                  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCfr8Lg0341xwlMNBXCBY_7ZejdFOjN8jU
-    &q=place_id:ChIJL5mTFm79DDkRMqRmCpJh6Nc"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3500.427768242597!2d77.31728411489448!3d28.676847882400374!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfa83d5065eff%3A0x623bf0c1d5f95264!2sNatural%20Aroma%20Products%20Pvt.%20Ltd!5e0!3m2!1sen!2sus!4v1651843263743!5m2!1sen!2sus"
                 />
               </Box>
             </Box>

@@ -76,6 +76,9 @@ const Header = () => {
                     .pause(800)
                     .delete()
                     .type("Aroma Chemicals ")
+                    .pause(800)
+                    .delete()
+                    .type("Carrier Oils ")
                   return i
                 }}
               />

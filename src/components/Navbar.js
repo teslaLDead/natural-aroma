@@ -23,6 +23,7 @@ const navBarLinks = {
   fontFamily: "AxiformaMedium",
   fontWeight: 600,
   fontSize: 14,
+  textTransform: 'capitalize',
   color: "#0C0C0C",
   ['@media (max-width: 720px)']:{
     fontSize:18,
